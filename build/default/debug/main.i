@@ -29599,27 +29599,10 @@ void nrf24_ReadData(unsigned char *buffer);
 
 void nrf24_printf_rf_config(void);
 # 39 "main.c" 2
-# 48 "main.c"
-void LED_Initialize(void)
-{
 
 
-    LATFbits.LATF2 = 0;
 
 
-    LATDbits.LATD1 = 0;
-}
-
-void LEDR_Toggle(void)
-{
-
-    LATFbits.LATF2 = !LATFbits.LATF2;
-}
-void LEDG_Toggle(void)
-{
-
-    LATDbits.LATD1 = !LATDbits.LATD1;
-}
 
 
 int main(void)
@@ -29635,11 +29618,10 @@ int main(void)
 
 
 
-    LED_Initialize();
 
-    ANSELBbits.ANSELB0 = 0;
-    TRISBbits.TRISB0 = 1;
-    WPUBbits.WPUB0 = 1;
+    ANSELBbits.ANSELB2 = 0;
+    TRISBbits.TRISB2 = 1;
+    WPUBbits.WPUB2 = 1;
 
 
     LATFbits.LATF3 = 1;
@@ -29647,39 +29629,21 @@ int main(void)
 
 
 
-    TRISCbits.TRISC3 = 0;
-    ANSELCbits.ANSELC3 = 0;
-    LATCbits.LATC3 = 1;
+    TRISAbits.TRISA4 = 0;
+    ANSELAbits.ANSELA4 = 0;
+    LATAbits.LATA4 = 0;
 
 
-    TRISCbits.TRISC5 = 0;
-    ANSELCbits.ANSELC5 = 0;
-    LATCbits.LATC5 = 0;
+    TRISAbits.TRISA6 = 0;
+    ANSELAbits.ANSELA6 = 0;
+    LATAbits.LATA6 = 0;
 
-    LEDG_Toggle();
-    _delay((unsigned long)((1000)*(64000000U/4000.0)));
-    LEDR_Toggle();
-    _delay((unsigned long)((1000)*(64000000U/4000.0)));
-    LEDG_Toggle();
-    LEDR_Toggle();
-
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
 
     SPI1_Initialize();
     SPI1_Open(2);
 
-
-
-
-
-
-
     NRF24_INIT_STATUS init = nrf24_Initialize();
-
-    if(init == NRF24_INIT_OK){
-        LEDG_Toggle();
-        _delay((unsigned long)((1000)*(64000000U/4000.0)));
-    }
 
     uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
 
@@ -29688,30 +29652,29 @@ int main(void)
 
     while(1)
     {
+
         nrf24_WriteRegister(0x07, (1 << 4));
-        uint8_t stat = nrf24_ReadRegister(0x07);
-        uint8_t fifo_stat = nrf24_ReadRegister(0x17);
-        uint8_t rf = nrf24_ReadRegister(0x06);
-        uint8_t txadrr = nrf24_ReadRegister(0x10);
+
+
+
+
         uint8_t carr = nrf24_ReadRegister(0x05);
-        uint8_t conf = nrf24_ReadRegister(0x00);
-# 165 "main.c"
+
+
         nrf24_WritePayload(dataToSend2, 32);
 
         uint8_t status = nrf24_ReadRegister(0x07);
-        fifo_stat = nrf24_ReadRegister(0x17);
+
 
         _delay((unsigned long)((100)*(64000000U/4000000.0)));
-        fifo_stat = nrf24_ReadRegister(0x17);
 
-        LATCbits.LATC5 = 1;
+
+        LATAbits.LATA6 = 1;
         _delay((unsigned long)((300)*(64000000U/4000000.0)));
-        LATCbits.LATC5 = 0;
-
-
+        LATAbits.LATA6 = 0;
 
         status = nrf24_ReadRegister(0x07);
-        fifo_stat = nrf24_ReadRegister(0x17);
+
         if (status & (1 << 5)) {
 
             nrf24_WriteRegister(0x07, (1 << 5));
@@ -29724,9 +29687,7 @@ int main(void)
         counter += 1;
         for (uint8_t i = 0; i < 32; i++){
             dataToSend2[i] = counter;
-
         };
-
 
 
         _delay((unsigned long)((3000)*(64000000U/4000.0)));

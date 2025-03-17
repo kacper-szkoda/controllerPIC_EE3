@@ -29299,9 +29299,9 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    TRISA = 0xFF;
+    TRISA = 0xAF;
     TRISB = 0xFF;
-    TRISC = 0xD2;
+    TRISC = 0xE7;
     TRISD = 0xFD;
     TRISE = 0xF;
     TRISF = 0xF3;
@@ -29309,9 +29309,9 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    ANSELA = 0xFF;
-    ANSELB = 0xFF;
-    ANSELC = 0xC0;
+    ANSELA = 0xAF;
+    ANSELB = 0xFB;
+    ANSELC = 0xC7;
     ANSELD = 0xFD;
     ANSELE = 0x7;
     ANSELF = 0xF3;
@@ -29357,10 +29357,10 @@ void PIN_MANAGER_Initialize(void)
 
 
 
-    SPI1SDIPPS = 0x11;
-    RC0PPS = 0x32;
-    SPI1SCKPPS = 0x14;
-    RC4PPS = 0x31;
+    SPI1SDIPPS = 0x15;
+    RC4PPS = 0x32;
+    SPI1SCKPPS = 0x13;
+    RC3PPS = 0x31;
 
 
 

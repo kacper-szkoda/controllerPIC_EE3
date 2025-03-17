@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "nrf24.c" 2
-# 11 "nrf24.c"
+# 10 "nrf24.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -178,7 +178,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 11 "nrf24.c" 2
+# 10 "nrf24.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdlib.h" 3
@@ -257,7 +257,7 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 12 "nrf24.c" 2
+# 11 "nrf24.c" 2
 
 # 1 "./nrf24.h" 1
 
@@ -29750,7 +29750,7 @@ void nrf24_ReadData(unsigned char *buffer);
 
 
 void nrf24_printf_rf_config(void);
-# 13 "nrf24.c" 2
+# 12 "nrf24.c" 2
 
 
 
@@ -29758,18 +29758,18 @@ void nrf24_WriteRegister(unsigned char address, unsigned char value){
         uint8_t fulladd = (0x20 | (address & 0x1F));
 
         uint8_t buffer[2] = {fulladd, value};
-        LATCbits.LATC3 = 0;
+        LATAbits.LATA4 = 0;
         SPI1_BufferExchange(buffer, 2);
-        LATCbits.LATC3 = 1;
+        LATAbits.LATA4 = 1;
         _delay((unsigned long)((10000)*(64000000U/4000000.0)));
 }
 
 unsigned char nrf24_ReadRegister(unsigned char address){
     uint8_t fulladd = (0x00 | (address & 0x1F));
     uint8_t buffer[2] = {fulladd, 0xFF};
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_BufferExchange(buffer, 2);
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
     _delay((unsigned long)((15)*(64000000U/4000000.0)));
 
     return buffer[1];
@@ -29780,33 +29780,32 @@ void nrf24_WriteBuffer(unsigned char address, unsigned char *buffer, unsigned ch
 
     uint8_t command = (address);
 
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_ByteWrite(command);
     SPI1_BufferWrite(buffer, size);
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
 }
 
 void nrf24_WritePayload(unsigned char *buffer, unsigned char size){
 
 
-
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_ByteWrite(0xA0);
     SPI1_BufferWrite(buffer, size);
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
 }
 
 void nrf24_ReadBuffer(unsigned char address, unsigned char *buffer, unsigned char size){
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_BufferExchange(&address, 1);
     SPI1_BufferExchange(buffer, size);
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
     _delay((unsigned long)((15)*(64000000U/4000000.0)));
 
 }
 
 NRF24_INIT_STATUS nrf24_Initialize() {
-    LATCbits.LATC5 = 0;
+    LATAbits.LATA6 = 0;
     uint8_t stattestres = nrf24_ReadRegister(0x00);
     uint8_t cht = nrf24_ReadRegister(0x05);
 
@@ -29827,9 +29826,9 @@ NRF24_INIT_STATUS nrf24_Initialize() {
 
     uint8_t stat = nrf24_ReadRegister(0x00);
     uint8_t fifostat_not = nrf24_ReadRegister(0x17);
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_ByteWrite(0xE1);
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
     _delay((unsigned long)((10)*(64000000U/4000000.0)));
 
     if (stat & (1 << 1)) {
@@ -29852,9 +29851,9 @@ void nrf24_SetMode(NRF24_OPERATION_MODE mode){
 void nrf24_SendData(unsigned char *buffer){
     nrf24_SetMode(TX_MODE);
     nrf24_WriteBuffer(0xA0, buffer, 32);
-    LATCbits.LATC5 = 1;
+    LATAbits.LATA6 = 1;
     _delay((unsigned long)((10)*(64000000U/4000000.0)));
-    LATCbits.LATC5 = 0;
+    LATAbits.LATA6 = 0;
 }
 
 unsigned char nrf24_DataAvailable(){
@@ -29870,13 +29869,13 @@ void nrf24_ReadData(unsigned char *buffer){
     nrf24_WriteRegister(0x07, 0x70);
 
 
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_ByteWrite(0xE1);
     _delay((unsigned long)((10)*(64000000U/4000.0)));
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
 
-    LATCbits.LATC3 = 0;
+    LATAbits.LATA4 = 0;
     SPI1_ByteWrite(0xE2);
     _delay((unsigned long)((10)*(64000000U/4000.0)));
-    LATCbits.LATC3 = 1;
+    LATAbits.LATA4 = 1;
 }

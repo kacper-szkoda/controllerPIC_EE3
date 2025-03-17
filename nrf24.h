@@ -11,11 +11,11 @@
 #include "mcc_generated_files/spi/spi1.h"
 
 // pinning
-#define CE LATCbits.LATC5
-#define SCK LATCbits.LATC4
-#define CSN LATCbits.LATC3
-#define MISO LATCbits.LATC1
-#define MOSI LATCbits.LATC0
+#define CE LATAbits.LATA6
+#define SCK LATCbits.LATC3
+#define CSN LATAbits.LATA4
+#define MISO LATCbits.LATC5
+#define MOSI LATCbits.LATC4
 
 #define SPI_WRITE_BYTE(dt)               SPI1_ByteWrite(dt)
 #define SPI_READ_BYTE(dt)                SPI1_ByteRead(dt)

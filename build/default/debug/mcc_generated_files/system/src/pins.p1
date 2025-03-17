@@ -140,15 +140,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "14316
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 14316: extern volatile unsigned char SPI1SDIPPS __attribute__((address(0x26B)));
 [v _SPI1SDIPPS `Vuc ~T0 @X0 0 e@619 ]
-"9540
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 9540: extern volatile unsigned char RC0PPS __attribute__((address(0x211)));
-[v _RC0PPS `Vuc ~T0 @X0 0 e@529 ]
-"14250
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 14250: extern volatile unsigned char SPI1SCKPPS __attribute__((address(0x26A)));
-[v _SPI1SCKPPS `Vuc ~T0 @X0 0 e@618 ]
 "9764
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 9764: extern volatile unsigned char RC4PPS __attribute__((address(0x215)));
 [v _RC4PPS `Vuc ~T0 @X0 0 e@533 ]
+"14250
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 14250: extern volatile unsigned char SPI1SCKPPS __attribute__((address(0x26A)));
+[v _SPI1SCKPPS `Vuc ~T0 @X0 0 e@618 ]
+"9708
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 9708: extern volatile unsigned char RC3PPS __attribute__((address(0x214)));
+[v _RC3PPS `Vuc ~T0 @X0 0 e@532 ]
 "40325
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 40325: extern volatile unsigned char IOCAP __attribute__((address(0x405)));
 [v _IOCAP `Vuc ~T0 @X0 0 e@1029 ]
@@ -2801,14 +2801,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 57:     ODCONF = 0x0;
 [e = _ODCONF -> -> 0 `i `uc ]
 "62
-[; ;mcc_generated_files/system/src/pins.c: 62:     TRISA = 0xFF;
-[e = _TRISA -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 62:     TRISA = 0xAF;
+[e = _TRISA -> -> 175 `i `uc ]
 "63
 [; ;mcc_generated_files/system/src/pins.c: 63:     TRISB = 0xFF;
 [e = _TRISB -> -> 255 `i `uc ]
 "64
-[; ;mcc_generated_files/system/src/pins.c: 64:     TRISC = 0xD2;
-[e = _TRISC -> -> 210 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 64:     TRISC = 0xE7;
+[e = _TRISC -> -> 231 `i `uc ]
 "65
 [; ;mcc_generated_files/system/src/pins.c: 65:     TRISD = 0xFD;
 [e = _TRISD -> -> 253 `i `uc ]
@@ -2819,14 +2819,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 67:     TRISF = 0xF3;
 [e = _TRISF -> -> 243 `i `uc ]
 "72
-[; ;mcc_generated_files/system/src/pins.c: 72:     ANSELA = 0xFF;
-[e = _ANSELA -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 72:     ANSELA = 0xAF;
+[e = _ANSELA -> -> 175 `i `uc ]
 "73
-[; ;mcc_generated_files/system/src/pins.c: 73:     ANSELB = 0xFF;
-[e = _ANSELB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 73:     ANSELB = 0xFB;
+[e = _ANSELB -> -> 251 `i `uc ]
 "74
-[; ;mcc_generated_files/system/src/pins.c: 74:     ANSELC = 0xC0;
-[e = _ANSELC -> -> 192 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 74:     ANSELC = 0xC7;
+[e = _ANSELC -> -> 199 `i `uc ]
 "75
 [; ;mcc_generated_files/system/src/pins.c: 75:     ANSELD = 0xFD;
 [e = _ANSELD -> -> 253 `i `uc ]
@@ -2903,17 +2903,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 116:     RC4I2C = 0x0;
 [e = _RC4I2C -> -> 0 `i `uc ]
 "120
-[; ;mcc_generated_files/system/src/pins.c: 120:     SPI1SDIPPS = 0x11;
-[e = _SPI1SDIPPS -> -> 17 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 120:     SPI1SDIPPS = 0x15;
+[e = _SPI1SDIPPS -> -> 21 `i `uc ]
 "121
-[; ;mcc_generated_files/system/src/pins.c: 121:     RC0PPS = 0x32;
-[e = _RC0PPS -> -> 50 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 121:     RC4PPS = 0x32;
+[e = _RC4PPS -> -> 50 `i `uc ]
 "122
-[; ;mcc_generated_files/system/src/pins.c: 122:     SPI1SCKPPS = 0x14;
-[e = _SPI1SCKPPS -> -> 20 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 122:     SPI1SCKPPS = 0x13;
+[e = _SPI1SCKPPS -> -> 19 `i `uc ]
 "123
-[; ;mcc_generated_files/system/src/pins.c: 123:     RC4PPS = 0x31;
-[e = _RC4PPS -> -> 49 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 123:     RC3PPS = 0x31;
+[e = _RC3PPS -> -> 49 `i `uc ]
 "128
 [; ;mcc_generated_files/system/src/pins.c: 128:     IOCAP = 0x0;
 [e = _IOCAP -> -> 0 `i `uc ]

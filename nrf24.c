@@ -7,7 +7,6 @@
  * 
  */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "nrf24.h"
@@ -46,7 +45,6 @@ void nrf24_WriteBuffer(unsigned char address, unsigned char *buffer, unsigned ch
 }
 
 void nrf24_WritePayload(unsigned char *buffer, unsigned char size){
-    
     //only writes payloads now
     
     CSN = 0;
