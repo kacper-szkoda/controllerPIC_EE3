@@ -3,24 +3,24 @@
 [d edition pro ]
 [d chip 18F57Q43 ]
 [d frameptr 1249 ]
-"62 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"64 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [e E17197 . `uc
 SPI_RESET 0
 SPI_IDLE 129
 SPI_BUSY 66
 ]
-"83 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
-[e E17249 . `uc
+"86 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
+[e E17258 . `uc
 NRF24_INIT_OK 0
 NRF24_INIT_FAILED 1
 ]
 "65 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
-[e E17570 . `uc
+[e E17579 . `uc
 NRF24_INIT_OK 0
 NRF24_INIT_FAILED 1
 ]
 "101
-[e E17574 . `uc
+[e E17583 . `uc
 RX_MODE 1
 TX_MODE 2
 ]
@@ -48,39 +48,40 @@ TX_MODE 2
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"45 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
+"48 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
 [v _main main `(i  1 e 2 0 ]
-"78 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"80 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
-"101
+"103
 [v _SPI1_Deinitialize SPI1_Deinitialize `(v  1 e 1 0 ]
-"107
+"109
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
-"133
+"135
 [v _SPI1_Close SPI1_Close `(v  1 e 1 0 ]
-"142
+"144
 [v _SPI1_BufferExchange SPI1_BufferExchange `(v  1 e 1 0 ]
-"173
+[v i2_SPI1_BufferExchange SPI1_BufferExchange `(v  1 e 1 0 ]
+"175
 [v _SPI1_BufferWrite SPI1_BufferWrite `(v  1 e 1 0 ]
-"203
+"205
 [v _SPI1_BufferRead SPI1_BufferRead `(v  1 e 1 0 ]
-"233
+"235
 [v _SPI1_ByteExchange SPI1_ByteExchange `(uc  1 e 1 0 ]
-"267
+"269
 [v _SPI1_ByteWrite SPI1_ByteWrite `(v  1 e 1 0 ]
-"289
+"291
 [v _SPI1_ByteRead SPI1_ByteRead `(uc  1 e 1 0 ]
-"307
+"309
 [v _SPI1_IsTxReady SPI1_IsTxReady `(a  1 e 1 0 ]
-"321
+"323
 [v _SPI1_IsRxReady SPI1_IsRxReady `(a  1 e 1 0 ]
-"335
+"337
 [v _SPI1_RxCompleteCallbackRegister SPI1_RxCompleteCallbackRegister `(v  1 e 1 0 ]
-"340
+"342
 [v _SPI1_TxCompleteCallbackRegister SPI1_TxCompleteCallbackRegister `(v  1 e 1 0 ]
-"345
+"347
 [v _SPI1_Receive_ISR SPI1_Receive_ISR `(v  1 e 1 0 ]
-"393
+"395
 [v _SPI1_Transmit_ISR SPI1_Transmit_ISR `(v  1 e 1 0 ]
 "39 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
@@ -88,34 +89,41 @@ TX_MODE 2
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "80
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-"110
+"118
 [v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
-"119
+"127
 [v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
-"123
+"131
 [v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"136
+"144
 [v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
-"145
+"153
 [v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
-"149
+"157
 [v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"162
+"170
 [v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
-"171
+"179
 [v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
-"175
+"183
 [v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
-"38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/pins.c
+"39 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"146
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
 "38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "45 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"142
+"82
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
+"126
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"140
 [v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
 "15 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
 [v _nrf24_WriteRegister nrf24_WriteRegister `(v  1 e 1 0 ]
+[v i2_nrf24_WriteRegister nrf24_WriteRegister `(v  1 e 1 0 ]
 "25
 [v _nrf24_ReadRegister nrf24_ReadRegister `(uc  1 e 1 0 ]
 "36
@@ -125,10 +133,10 @@ TX_MODE 2
 "56
 [v _nrf24_ReadBuffer nrf24_ReadBuffer `(v  1 e 1 0 ]
 "65
-[v _nrf24_Initialize nrf24_Initialize `(E17249  1 e 1 0 ]
+[v _nrf24_Initialize nrf24_Initialize `(E17258  1 e 1 0 ]
 "101
 [v _nrf24_SetMode nrf24_SetMode `(v  1 e 1 0 ]
-"29 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X/nrf24.h
+"30 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X/nrf24.h
 [v _TXPIPE0 TXPIPE0 `[5]uc  1 e 5 0 ]
 "3338 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [v _SPI1RXB SPI1RXB `VEuc  1 e 1 @128 ]
@@ -239,37 +247,37 @@ TX_MODE 2
 [v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
 "23690
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
-[s S820 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S934 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "23724
-[s S826 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S940 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
-[s S832 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S946 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
-[s S838 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S952 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S843 . 1 `S820 1 . 1 0 `S826 1 . 1 0 `S832 1 . 1 0 `S838 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES843  1 e 1 @794 ]
+[u S957 . 1 `S934 1 . 1 0 `S940 1 . 1 0 `S946 1 . 1 0 `S952 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES957  1 e 1 @794 ]
 "23814
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "40015
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
-[s S1039 . 1 `uc 1 ANSELA0 1 0 :1:0 
+[s S1141 . 1 `uc 1 ANSELA0 1 0 :1:0 
 `uc 1 ANSELA1 1 0 :1:1 
 `uc 1 ANSELA2 1 0 :1:2 
 `uc 1 ANSELA3 1 0 :1:3 
@@ -279,10 +287,10 @@ TX_MODE 2
 `uc 1 ANSELA7 1 0 :1:7 
 ]
 "40032
-[u S1048 . 1 `S1039 1 . 1 0 ]
+[u S1150 . 1 `S1141 1 . 1 0 ]
 "40032
 "40032
-[v _ANSELAbits ANSELAbits `VES1048  1 e 1 @1024 ]
+[v _ANSELAbits ANSELAbits `VES1150  1 e 1 @1024 ]
 "40077
 [v _WPUA WPUA `VEuc  1 e 1 @1025 ]
 "40139
@@ -299,7 +307,7 @@ TX_MODE 2
 [v _IOCAF IOCAF `VEuc  1 e 1 @1031 ]
 "40511
 [v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
-[s S928 . 1 `uc 1 ANSELB0 1 0 :1:0 
+[s S1030 . 1 `uc 1 ANSELB0 1 0 :1:0 
 `uc 1 ANSELB1 1 0 :1:1 
 `uc 1 ANSELB2 1 0 :1:2 
 `uc 1 ANSELB3 1 0 :1:3 
@@ -309,13 +317,13 @@ TX_MODE 2
 `uc 1 ANSELB7 1 0 :1:7 
 ]
 "40528
-[u S937 . 1 `S928 1 . 1 0 ]
+[u S1039 . 1 `S1030 1 . 1 0 ]
 "40528
 "40528
-[v _ANSELBbits ANSELBbits `VES937  1 e 1 @1032 ]
+[v _ANSELBbits ANSELBbits `VES1039  1 e 1 @1032 ]
 "40573
 [v _WPUB WPUB `VEuc  1 e 1 @1033 ]
-[s S970 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S1072 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -325,10 +333,10 @@ TX_MODE 2
 `uc 1 WPUB7 1 0 :1:7 
 ]
 "40590
-[u S979 . 1 `S970 1 . 1 0 ]
+[u S1081 . 1 `S1072 1 . 1 0 ]
 "40590
 "40590
-[v _WPUBbits WPUBbits `VES979  1 e 1 @1033 ]
+[v _WPUBbits WPUBbits `VES1081  1 e 1 @1033 ]
 "40635
 [v _ODCONB ODCONB `VEuc  1 e 1 @1034 ]
 "40697
@@ -339,6 +347,20 @@ TX_MODE 2
 [v _IOCBP IOCBP `VEuc  1 e 1 @1037 ]
 "40883
 [v _IOCBN IOCBN `VEuc  1 e 1 @1038 ]
+[s S564 . 1 `uc 1 IOCBN0 1 0 :1:0 
+`uc 1 IOCBN1 1 0 :1:1 
+`uc 1 IOCBN2 1 0 :1:2 
+`uc 1 IOCBN3 1 0 :1:3 
+`uc 1 IOCBN4 1 0 :1:4 
+`uc 1 IOCBN5 1 0 :1:5 
+`uc 1 IOCBN6 1 0 :1:6 
+`uc 1 IOCBN7 1 0 :1:7 
+]
+"40900
+[u S573 . 1 `S564 1 . 1 0 ]
+"40900
+"40900
+[v _IOCBNbits IOCBNbits `VES573  1 e 1 @1038 ]
 "40945
 [v _IOCBF IOCBF `VEuc  1 e 1 @1039 ]
 "41007
@@ -393,6 +415,20 @@ TX_MODE 2
 [v _SLRCONF SLRCONF `VEuc  1 e 1 @1067 ]
 "42296
 [v _INLVLF INLVLF `VEuc  1 e 1 @1068 ]
+[s S726 . 1 `uc 1 SWIE 1 0 :1:0 
+`uc 1 HLVDIE 1 0 :1:1 
+`uc 1 OSFIE 1 0 :1:2 
+`uc 1 CSWIE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CLC1IE 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 IOCIE 1 0 :1:7 
+]
+"47130
+[u S735 . 1 `S726 1 . 1 0 ]
+"47130
+"47130
+[v _PIE0bits PIE0bits `VES735  1 e 1 @1182 ]
 [s S177 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
 `uc 1 SPI1TXIE 1 0 :1:1 
 `uc 1 SPI1IE 1 0 :1:2 
@@ -407,7 +443,21 @@ TX_MODE 2
 "47289
 "47289
 [v _PIE3bits PIE3bits `VES186  1 e 1 @1185 ]
-[s S595 . 1 `uc 1 INT0IF 1 0 :1:0 
+[s S747 . 1 `uc 1 SWIF 1 0 :1:0 
+`uc 1 HLVDIF 1 0 :1:1 
+`uc 1 OSFIF 1 0 :1:2 
+`uc 1 CSWIF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CLC1IF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 IOCIF 1 0 :1:7 
+]
+"48004
+[u S756 . 1 `S747 1 . 1 0 ]
+"48004
+"48004
+[v _PIR0bits PIR0bits `VES756  1 e 1 @1198 ]
+[s S633 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 ZCDIF 1 0 :1:1 
 `uc 1 ADIF 1 0 :1:2 
 `uc 1 ACTIF 1 0 :1:3 
@@ -417,10 +467,10 @@ TX_MODE 2
 `uc 1 SMT1PWAIF 1 0 :1:7 
 ]
 "48056
-[u S604 . 1 `S595 1 . 1 0 ]
+[u S642 . 1 `S633 1 . 1 0 ]
 "48056
 "48056
-[v _PIR1bits PIR1bits `VES604  1 e 1 @1199 ]
+[v _PIR1bits PIR1bits `VES642  1 e 1 @1199 ]
 [s S338 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
 `uc 1 SPI1TXIF 1 0 :1:1 
 `uc 1 SPI1IF 1 0 :1:2 
@@ -435,7 +485,7 @@ TX_MODE 2
 "48163
 "48163
 [v _PIR3bits PIR3bits `VES347  1 e 1 @1201 ]
-[s S626 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S664 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 CLC2IF 1 0 :1:1 
 `uc 1 CWG1IF 1 0 :1:2 
 `uc 1 NCO1IF 1 0 :1:3 
@@ -445,11 +495,11 @@ TX_MODE 2
 `uc 1 DMA2AIF 1 0 :1:7 
 ]
 "48333
-[u S635 . 1 `S626 1 . 1 0 ]
+[u S673 . 1 `S664 1 . 1 0 ]
 "48333
 "48333
-[v _PIR6bits PIR6bits `VES635  1 e 1 @1204 ]
-[s S657 . 1 `uc 1 INT2IF 1 0 :1:0 
+[v _PIR6bits PIR6bits `VES673  1 e 1 @1204 ]
+[s S695 . 1 `uc 1 INT2IF 1 0 :1:0 
 `uc 1 CLC5IF 1 0 :1:1 
 `uc 1 CWG2IF 1 0 :1:2 
 `uc 1 NCO2IF 1 0 :1:3 
@@ -459,13 +509,13 @@ TX_MODE 2
 `uc 1 DMA3AIF 1 0 :1:7 
 ]
 "48559
-[u S666 . 1 `S657 1 . 1 0 ]
+[u S704 . 1 `S695 1 . 1 0 ]
 "48559
 "48559
-[v _PIR10bits PIR10bits `VES666  1 e 1 @1208 ]
+[v _PIR10bits PIR10bits `VES704  1 e 1 @1208 ]
 "48861
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S1060 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1162 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -475,10 +525,10 @@ TX_MODE 2
 `uc 1 LATA7 1 0 :1:7 
 ]
 "48878
-[u S1069 . 1 `S1060 1 . 1 0 ]
+[u S1171 . 1 `S1162 1 . 1 0 ]
 "48878
 "48878
-[v _LATAbits LATAbits `VES1069  1 e 1 @1214 ]
+[v _LATAbits LATAbits `VES1171  1 e 1 @1214 ]
 "48923
 [v _LATB LATB `VEuc  1 e 1 @1215 ]
 "48985
@@ -489,7 +539,7 @@ TX_MODE 2
 [v _LATE LATE `VEuc  1 e 1 @1218 ]
 "49141
 [v _LATF LATF `VEuc  1 e 1 @1219 ]
-[s S991 . 1 `uc 1 LATF0 1 0 :1:0 
+[s S1093 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -499,13 +549,13 @@ TX_MODE 2
 `uc 1 LATF7 1 0 :1:7 
 ]
 "49158
-[u S1000 . 1 `S991 1 . 1 0 ]
+[u S1102 . 1 `S1093 1 . 1 0 ]
 "49158
 "49158
-[v _LATFbits LATFbits `VES1000  1 e 1 @1219 ]
+[v _LATFbits LATFbits `VES1102  1 e 1 @1219 ]
 "49203
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S1018 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S1120 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -515,13 +565,13 @@ TX_MODE 2
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "49220
-[u S1027 . 1 `S1018 1 . 1 0 ]
+[u S1129 . 1 `S1120 1 . 1 0 ]
 "49220
 "49220
-[v _TRISAbits TRISAbits `VES1027  1 e 1 @1222 ]
+[v _TRISAbits TRISAbits `VES1129  1 e 1 @1222 ]
 "49265
 [v _TRISB TRISB `VEuc  1 e 1 @1223 ]
-[s S949 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S1051 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -531,10 +581,10 @@ TX_MODE 2
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "49282
-[u S958 . 1 `S949 1 . 1 0 ]
+[u S1060 . 1 `S1051 1 . 1 0 ]
 "49282
 "49282
-[v _TRISBbits TRISBbits `VES958  1 e 1 @1223 ]
+[v _TRISBbits TRISBbits `VES1060  1 e 1 @1223 ]
 "49327
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
 [s S273 . 1 `uc 1 TRISC0 1 0 :1:0 
@@ -557,7 +607,7 @@ TX_MODE 2
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
 "49483
 [v _TRISF TRISF `VEuc  1 e 1 @1227 ]
-[s S569 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[s S607 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -566,23 +616,23 @@ TX_MODE 2
 `uc 1 GIE 1 0 :1:7 
 ]
 "49913
-[s S577 . 1 `uc 1 . 1 0 :7:0 
+[s S615 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "49913
-[u S580 . 1 `S569 1 . 1 0 `S577 1 . 1 0 ]
+[u S618 . 1 `S607 1 . 1 0 `S615 1 . 1 0 ]
 "49913
 "49913
-[v _INTCON0bits INTCON0bits `VES580  1 e 1 @1238 ]
-"59 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+[v _INTCON0bits INTCON0bits `VES618  1 e 1 @1238 ]
+"61 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_RxCompleteCallback SPI1_RxCompleteCallback `*.38(v  1 s 3 SPI1_RxCompleteCallback ]
-"60
+"62
 [v _SPI1_TxCompleteCallback SPI1_TxCompleteCallback `*.38(v  1 s 3 SPI1_TxCompleteCallback ]
 [s S165 . 9 `*.39uc 1 transmitBuffer 2 0 `*.39uc 1 receiveBuffer 2 2 `ui 1 bytesToTransmit 2 4 `ui 1 bytesToReceive 2 6 `E17197 1 status 1 8 ]
-"62
+"64
 [v _spi1_descriptor spi1_descriptor `S165  1 s 9 spi1_descriptor ]
 [s S171 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
-"71
+"73
 [v _spi1_configuration spi1_configuration `C[3]S171  1 s 15 spi1_configuration ]
 "38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.38(v  1 e 3 0 ]
@@ -592,33 +642,31 @@ TX_MODE 2
 [v _INT2_InterruptHandler INT2_InterruptHandler `*.38(v  1 e 3 0 ]
 "38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_PeriodMatchCallback TMR0_PeriodMatchCallback `*.38(v  1 s 3 TMR0_PeriodMatchCallback ]
-"45 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
+"48 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
 [v _main main `(i  1 e 2 0 ]
 {
-"125
-[v main@i i `uc  1 a 1 49 ]
-"103
-[v main@status status `uc  1 a 1 48 ]
-"85
-[v main@dataToSend2 dataToSend2 `[32]uc  1 a 32 16 ]
-"83
-[v main@F17284 F17284 `[32]uc  1 s 32 F17284 ]
+"106
+[v main@i i `uc  1 a 1 32 ]
 "88
+[v main@dataToSend2 dataToSend2 `[32]uc  1 a 32 0 ]
+"86
+[v main@F17294 F17294 `[32]uc  1 s 32 F17294 ]
+"91
 [v main@counter counter `uc  1 s 1 counter ]
-"132
+"113
 } 0
 "47 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
 [v _nrf24_WritePayload nrf24_WritePayload `(v  1 e 1 0 ]
 {
-[v nrf24_WritePayload@buffer buffer `*.39uc  1 p 2 6 ]
-[v nrf24_WritePayload@size size `uc  1 p 1 8 ]
+[v nrf24_WritePayload@buffer buffer `*.39uc  1 p 2 20 ]
+[v nrf24_WritePayload@size size `uc  1 p 1 22 ]
 "54
 } 0
 "65
-[v _nrf24_Initialize nrf24_Initialize `(E17249  1 e 1 0 ]
+[v _nrf24_Initialize nrf24_Initialize `(E17258  1 e 1 0 ]
 {
 "85
-[v nrf24_Initialize@stat stat `uc  1 a 1 13 ]
+[v nrf24_Initialize@stat stat `uc  1 a 1 27 ]
 "97
 } 0
 "15
@@ -626,13 +674,15 @@ TX_MODE 2
 {
 [v nrf24_WriteRegister@address address `uc  1 p 1 wreg ]
 "18
-[v nrf24_WriteRegister@buffer buffer `[2]uc  1 a 2 10 ]
+[v nrf24_WriteRegister@buffer buffer `[2]uc  1 a 2 24 ]
 "16
-[v nrf24_WriteRegister@fulladd fulladd `uc  1 a 1 9 ]
+[v nrf24_WriteRegister@fulladd fulladd `uc  1 a 1 23 ]
 "15
 [v nrf24_WriteRegister@address address `uc  1 p 1 wreg ]
-[v nrf24_WriteRegister@value value `uc  1 p 1 6 ]
-[v nrf24_WriteRegister@address address `uc  1 p 1 8 ]
+[v nrf24_WriteRegister@value value `uc  1 p 1 20 ]
+"16
+[v nrf24_WriteRegister@F17616 F17616 `[2]uc  1 s 2 F17616 ]
+[v nrf24_WriteRegister@address address `uc  1 p 1 22 ]
 "23
 } 0
 "36
@@ -640,56 +690,61 @@ TX_MODE 2
 {
 [v nrf24_WriteBuffer@address address `uc  1 p 1 wreg ]
 "39
-[v nrf24_WriteBuffer@command command `uc  1 a 1 10 ]
+[v nrf24_WriteBuffer@command command `uc  1 a 1 24 ]
 "36
 [v nrf24_WriteBuffer@address address `uc  1 p 1 wreg ]
-[v nrf24_WriteBuffer@buffer buffer `*.39uc  1 p 2 6 ]
-[v nrf24_WriteBuffer@size size `uc  1 p 1 8 ]
+[v nrf24_WriteBuffer@buffer buffer `*.39uc  1 p 2 20 ]
+[v nrf24_WriteBuffer@size size `uc  1 p 1 22 ]
 "39
-[v nrf24_WriteBuffer@address address `uc  1 p 1 9 ]
+[v nrf24_WriteBuffer@address address `uc  1 p 1 23 ]
 "45
 } 0
-"267 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"269 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_ByteWrite SPI1_ByteWrite `(v  1 e 1 0 ]
 {
 [v SPI1_ByteWrite@byteData byteData `uc  1 p 1 wreg ]
 [v SPI1_ByteWrite@byteData byteData `uc  1 p 1 wreg ]
-"269
-[v SPI1_ByteWrite@byteData byteData `uc  1 p 1 0 ]
-"287
+"271
+[v SPI1_ByteWrite@byteData byteData `uc  1 p 1 14 ]
+"289
 } 0
-"173
+"175
 [v _SPI1_BufferWrite SPI1_BufferWrite `(v  1 e 1 0 ]
 {
+"177
+[v SPI1_BufferWrite@bufferInput bufferInput `*.39uc  1 a 2 18 ]
 "175
-[v SPI1_BufferWrite@bufferInput bufferInput `*.39uc  1 a 2 4 ]
-"173
-[v SPI1_BufferWrite@bufferData bufferData `*.39v  1 p 2 0 ]
-[v SPI1_BufferWrite@bufferSize bufferSize `ui  1 p 2 2 ]
-"201
+[v SPI1_BufferWrite@bufferData bufferData `*.39v  1 p 2 14 ]
+[v SPI1_BufferWrite@bufferSize bufferSize `ui  1 p 2 16 ]
+"203
 } 0
 "25 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
 [v _nrf24_ReadRegister nrf24_ReadRegister `(uc  1 e 1 0 ]
 {
 [v nrf24_ReadRegister@address address `uc  1 p 1 wreg ]
 "27
-[v nrf24_ReadRegister@buffer buffer `[2]uc  1 a 2 8 ]
+[v nrf24_ReadRegister@buffer buffer `[2]uc  1 a 2 22 ]
 "26
-[v nrf24_ReadRegister@fulladd fulladd `uc  1 a 1 7 ]
+[v nrf24_ReadRegister@fulladd fulladd `uc  1 a 1 21 ]
 "25
 [v nrf24_ReadRegister@address address `uc  1 p 1 wreg ]
-[v nrf24_ReadRegister@address address `uc  1 p 1 6 ]
+[v nrf24_ReadRegister@address address `uc  1 p 1 20 ]
 "34
 } 0
-"142 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"144 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_BufferExchange SPI1_BufferExchange `(v  1 e 1 0 ]
 {
+"146
+[v SPI1_BufferExchange@bufferInput bufferInput `*.39uc  1 a 2 18 ]
 "144
-[v SPI1_BufferExchange@bufferInput bufferInput `*.39uc  1 a 2 4 ]
-"142
-[v SPI1_BufferExchange@bufferData bufferData `*.39v  1 p 2 0 ]
-[v SPI1_BufferExchange@bufferSize bufferSize `ui  1 p 2 2 ]
-"171
+[v SPI1_BufferExchange@bufferData bufferData `*.39v  1 p 2 14 ]
+[v SPI1_BufferExchange@bufferSize bufferSize `ui  1 p 2 16 ]
+"173
+} 0
+"82 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Stop TMR0_Stop `(v  1 e 1 0 ]
+{
+"85
 } 0
 "38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -699,79 +754,118 @@ TX_MODE 2
 "45 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/timer/src/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
-"61
+"62
 } 0
-"38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/pins.c
+"39 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/pins.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"142
+"144
 } 0
 "42 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
 "71
 } 0
-"171
+"179
 [v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 0 ]
-"173
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 14 ]
+"181
 } 0
-"145
+"153
 [v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 0 ]
-"147
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 14 ]
+"155
 } 0
-"119
+"127
 [v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 0 ]
-"121
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.38(v  1 p 3 14 ]
+"129
 } 0
 "39 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/clock.c
 [v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
 {
 "58
 } 0
-"107 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"109 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
 {
 [v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 wreg ]
 [v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 wreg ]
-"111
-[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 2 ]
-"131
+"113
+[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 16 ]
+"133
 } 0
-"78
+"80
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
-"99
+"101
 } 0
-"340
+"342
 [v _SPI1_TxCompleteCallbackRegister SPI1_TxCompleteCallbackRegister `(v  1 e 1 0 ]
 {
-[v SPI1_TxCompleteCallbackRegister@txCompleteCallbackHandler txCompleteCallbackHandler `*.38(v  1 p 3 0 ]
-"343
+[v SPI1_TxCompleteCallbackRegister@txCompleteCallbackHandler txCompleteCallbackHandler `*.38(v  1 p 3 14 ]
+"345
 } 0
-"335
+"337
 [v _SPI1_RxCompleteCallbackRegister SPI1_RxCompleteCallbackRegister `(v  1 e 1 0 ]
 {
-[v SPI1_RxCompleteCallbackRegister@rxCompleteCallbackHandler rxCompleteCallbackHandler `*.38(v  1 p 3 0 ]
-"338
+[v SPI1_RxCompleteCallbackRegister@rxCompleteCallbackHandler rxCompleteCallbackHandler `*.38(v  1 p 3 14 ]
+"340
 } 0
 "80 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/interrupt.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
-"99
+"107
 } 0
-"393 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+"126 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"133
+} 0
+"140
+[v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
+{
+"144
+} 0
+"395 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
 [v _SPI1_Transmit_ISR SPI1_Transmit_ISR `(v  1 e 1 0 ]
 {
-"435
+"437
 } 0
-"345
+"347
 [v _SPI1_Receive_ISR SPI1_Receive_ISR `(v  1 e 1 0 ]
 {
-"391
+"393
+} 0
+"146 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"150
+} 0
+"15 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
+[v i2_nrf24_WriteRegister nrf24_WriteRegister `(v  1 e 1 0 ]
+{
+[v i2nrf24_WriteRegister@address address `uc  1 p 1 wreg ]
+"18
+[v i2nrf24_WriteRegister@buffer buffer `[2]uc  1 a 2 10 ]
+"16
+[v i2nrf24_WriteRegister@fulladd fulladd `uc  1 a 1 9 ]
+"15
+[v i2nrf24_WriteRegister@address address `uc  1 p 1 wreg ]
+[v i2nrf24_WriteRegister@value value `uc  1 p 1 6 ]
+[v i2nrf24_WriteRegister@address address `uc  1 p 1 8 ]
+"23
+} 0
+"144 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+[v i2_SPI1_BufferExchange SPI1_BufferExchange `(v  1 e 1 0 ]
+{
+"146
+[v i2SPI1_BufferExchange@bufferInput bufferInput `*.39uc  1 a 2 4 ]
+"144
+[v i2SPI1_BufferExchange@bufferData bufferData `*.39v  1 p 2 0 ]
+[v i2SPI1_BufferExchange@bufferSize bufferSize `ui  1 p 2 2 ]
+"173
 } 0

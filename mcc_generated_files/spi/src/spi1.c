@@ -36,6 +36,8 @@
 #include "../spi1.h"
 #include "../spi_interrupt_types.h"
 
+
+extern uint8_t ready;
 /*
  * chatGPT
  */

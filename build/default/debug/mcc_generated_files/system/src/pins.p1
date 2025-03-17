@@ -185,6 +185,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42027
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 42027: extern volatile unsigned char IOCEF __attribute__((address(0x427)));
 [v _IOCEF `Vuc ~T0 @X0 0 e@1063 ]
+"40889
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 40889:     struct {
+[s S1928 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1928 . IOCBN0 IOCBN1 IOCBN2 IOCBN3 IOCBN4 IOCBN5 IOCBN6 IOCBN7 ]
+"40888
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 40888: typedef union {
+[u S1927 `S1928 1 ]
+[n S1927 . . ]
+"40900
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 40900: extern volatile IOCBNbits_t IOCBNbits __attribute__((address(0x40E)));
+[v _IOCBNbits `VS1927 ~T0 @X0 0 e@1038 ]
+"94 mcc_generated_files/system/src/../../../nrf24.h
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 94: void nrf24_WriteRegister(unsigned char address, unsigned char value);
+[v _nrf24_WriteRegister `(v ~T0 @X0 0 ef2`uc`uc ]
 "328 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2756,213 +2770,249 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51171
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 51171: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"38 mcc_generated_files/system/src/pins.c
-[; ;mcc_generated_files/system/src/pins.c: 38: void PIN_MANAGER_Initialize(void)
+"29 mcc_generated_files/system/src/../../../nrf24.h
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 29: unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+[v _RXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
+[i _RXPIPE0
+:U ..
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+..
+]
+"30
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 30: unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+[v _TXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
+[i _TXPIPE0
+:U ..
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+-> -> 231 `i `uc
+..
+]
+"32
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 32: uint8_t ready = 1;
+[v _ready `uc ~T0 @X0 1 e ]
+[i _ready
+-> -> 1 `i `uc
+]
+"39 mcc_generated_files/system/src/pins.c
+[; ;mcc_generated_files/system/src/pins.c: 39: void PIN_MANAGER_Initialize(void)
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
-"39
-[; ;mcc_generated_files/system/src/pins.c: 39: {
+"40
+[; ;mcc_generated_files/system/src/pins.c: 40: {
 {
 [e :U _PIN_MANAGER_Initialize ]
 [f ]
-"43
-[; ;mcc_generated_files/system/src/pins.c: 43:     LATA = 0x0;
-[e = _LATA -> -> 0 `i `uc ]
 "44
-[; ;mcc_generated_files/system/src/pins.c: 44:     LATB = 0x0;
-[e = _LATB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 44:     LATA = 0x0;
+[e = _LATA -> -> 0 `i `uc ]
 "45
-[; ;mcc_generated_files/system/src/pins.c: 45:     LATC = 0x0;
-[e = _LATC -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 45:     LATB = 0x0;
+[e = _LATB -> -> 0 `i `uc ]
 "46
-[; ;mcc_generated_files/system/src/pins.c: 46:     LATD = 0x0;
-[e = _LATD -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 46:     LATC = 0x0;
+[e = _LATC -> -> 0 `i `uc ]
 "47
-[; ;mcc_generated_files/system/src/pins.c: 47:     LATE = 0x0;
-[e = _LATE -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 47:     LATD = 0x0;
+[e = _LATD -> -> 0 `i `uc ]
 "48
-[; ;mcc_generated_files/system/src/pins.c: 48:     LATF = 0x0;
+[; ;mcc_generated_files/system/src/pins.c: 48:     LATE = 0x0;
+[e = _LATE -> -> 0 `i `uc ]
+"49
+[; ;mcc_generated_files/system/src/pins.c: 49:     LATF = 0x0;
 [e = _LATF -> -> 0 `i `uc ]
-"52
-[; ;mcc_generated_files/system/src/pins.c: 52:     ODCONA = 0x0;
-[e = _ODCONA -> -> 0 `i `uc ]
 "53
-[; ;mcc_generated_files/system/src/pins.c: 53:     ODCONB = 0x0;
-[e = _ODCONB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 53:     ODCONA = 0x0;
+[e = _ODCONA -> -> 0 `i `uc ]
 "54
-[; ;mcc_generated_files/system/src/pins.c: 54:     ODCONC = 0x0;
-[e = _ODCONC -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 54:     ODCONB = 0x0;
+[e = _ODCONB -> -> 0 `i `uc ]
 "55
-[; ;mcc_generated_files/system/src/pins.c: 55:     ODCOND = 0x0;
-[e = _ODCOND -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 55:     ODCONC = 0x0;
+[e = _ODCONC -> -> 0 `i `uc ]
 "56
-[; ;mcc_generated_files/system/src/pins.c: 56:     ODCONE = 0x0;
-[e = _ODCONE -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 56:     ODCOND = 0x0;
+[e = _ODCOND -> -> 0 `i `uc ]
 "57
-[; ;mcc_generated_files/system/src/pins.c: 57:     ODCONF = 0x0;
+[; ;mcc_generated_files/system/src/pins.c: 57:     ODCONE = 0x0;
+[e = _ODCONE -> -> 0 `i `uc ]
+"58
+[; ;mcc_generated_files/system/src/pins.c: 58:     ODCONF = 0x0;
 [e = _ODCONF -> -> 0 `i `uc ]
-"62
-[; ;mcc_generated_files/system/src/pins.c: 62:     TRISA = 0xAF;
-[e = _TRISA -> -> 175 `i `uc ]
 "63
-[; ;mcc_generated_files/system/src/pins.c: 63:     TRISB = 0xFF;
-[e = _TRISB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 63:     TRISA = 0xAF;
+[e = _TRISA -> -> 175 `i `uc ]
 "64
-[; ;mcc_generated_files/system/src/pins.c: 64:     TRISC = 0xE7;
-[e = _TRISC -> -> 231 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 64:     TRISB = 0xFF;
+[e = _TRISB -> -> 255 `i `uc ]
 "65
-[; ;mcc_generated_files/system/src/pins.c: 65:     TRISD = 0xFD;
-[e = _TRISD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 65:     TRISC = 0xE7;
+[e = _TRISC -> -> 231 `i `uc ]
 "66
-[; ;mcc_generated_files/system/src/pins.c: 66:     TRISE = 0xF;
-[e = _TRISE -> -> 15 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 66:     TRISD = 0xFD;
+[e = _TRISD -> -> 253 `i `uc ]
 "67
-[; ;mcc_generated_files/system/src/pins.c: 67:     TRISF = 0xF3;
+[; ;mcc_generated_files/system/src/pins.c: 67:     TRISE = 0xF;
+[e = _TRISE -> -> 15 `i `uc ]
+"68
+[; ;mcc_generated_files/system/src/pins.c: 68:     TRISF = 0xF3;
 [e = _TRISF -> -> 243 `i `uc ]
-"72
-[; ;mcc_generated_files/system/src/pins.c: 72:     ANSELA = 0xAF;
-[e = _ANSELA -> -> 175 `i `uc ]
 "73
-[; ;mcc_generated_files/system/src/pins.c: 73:     ANSELB = 0xFB;
-[e = _ANSELB -> -> 251 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 73:     ANSELA = 0xAF;
+[e = _ANSELA -> -> 175 `i `uc ]
 "74
-[; ;mcc_generated_files/system/src/pins.c: 74:     ANSELC = 0xC7;
-[e = _ANSELC -> -> 199 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 74:     ANSELB = 0xFB;
+[e = _ANSELB -> -> 251 `i `uc ]
 "75
-[; ;mcc_generated_files/system/src/pins.c: 75:     ANSELD = 0xFD;
-[e = _ANSELD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 75:     ANSELC = 0xC7;
+[e = _ANSELC -> -> 199 `i `uc ]
 "76
-[; ;mcc_generated_files/system/src/pins.c: 76:     ANSELE = 0x7;
-[e = _ANSELE -> -> 7 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 76:     ANSELD = 0xFD;
+[e = _ANSELD -> -> 253 `i `uc ]
 "77
-[; ;mcc_generated_files/system/src/pins.c: 77:     ANSELF = 0xF3;
+[; ;mcc_generated_files/system/src/pins.c: 77:     ANSELE = 0x7;
+[e = _ANSELE -> -> 7 `i `uc ]
+"78
+[; ;mcc_generated_files/system/src/pins.c: 78:     ANSELF = 0xF3;
 [e = _ANSELF -> -> 243 `i `uc ]
-"82
-[; ;mcc_generated_files/system/src/pins.c: 82:     WPUA = 0x0;
-[e = _WPUA -> -> 0 `i `uc ]
 "83
-[; ;mcc_generated_files/system/src/pins.c: 83:     WPUB = 0x0;
-[e = _WPUB -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 83:     WPUA = 0x0;
+[e = _WPUA -> -> 0 `i `uc ]
 "84
-[; ;mcc_generated_files/system/src/pins.c: 84:     WPUC = 0x0;
-[e = _WPUC -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 84:     WPUB = 0x0;
+[e = _WPUB -> -> 0 `i `uc ]
 "85
-[; ;mcc_generated_files/system/src/pins.c: 85:     WPUD = 0x0;
-[e = _WPUD -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 85:     WPUC = 0x0;
+[e = _WPUC -> -> 0 `i `uc ]
 "86
-[; ;mcc_generated_files/system/src/pins.c: 86:     WPUE = 0x0;
-[e = _WPUE -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 86:     WPUD = 0x0;
+[e = _WPUD -> -> 0 `i `uc ]
 "87
-[; ;mcc_generated_files/system/src/pins.c: 87:     WPUF = 0x0;
+[; ;mcc_generated_files/system/src/pins.c: 87:     WPUE = 0x0;
+[e = _WPUE -> -> 0 `i `uc ]
+"88
+[; ;mcc_generated_files/system/src/pins.c: 88:     WPUF = 0x0;
 [e = _WPUF -> -> 0 `i `uc ]
-"93
-[; ;mcc_generated_files/system/src/pins.c: 93:     SLRCONA = 0xFF;
-[e = _SLRCONA -> -> 255 `i `uc ]
 "94
-[; ;mcc_generated_files/system/src/pins.c: 94:     SLRCONB = 0xFF;
-[e = _SLRCONB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 94:     SLRCONA = 0xFF;
+[e = _SLRCONA -> -> 255 `i `uc ]
 "95
-[; ;mcc_generated_files/system/src/pins.c: 95:     SLRCONC = 0xFF;
-[e = _SLRCONC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 95:     SLRCONB = 0xFF;
+[e = _SLRCONB -> -> 255 `i `uc ]
 "96
-[; ;mcc_generated_files/system/src/pins.c: 96:     SLRCOND = 0xFF;
-[e = _SLRCOND -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 96:     SLRCONC = 0xFF;
+[e = _SLRCONC -> -> 255 `i `uc ]
 "97
-[; ;mcc_generated_files/system/src/pins.c: 97:     SLRCONE = 0x7;
-[e = _SLRCONE -> -> 7 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 97:     SLRCOND = 0xFF;
+[e = _SLRCOND -> -> 255 `i `uc ]
 "98
-[; ;mcc_generated_files/system/src/pins.c: 98:     SLRCONF = 0xFF;
+[; ;mcc_generated_files/system/src/pins.c: 98:     SLRCONE = 0x7;
+[e = _SLRCONE -> -> 7 `i `uc ]
+"99
+[; ;mcc_generated_files/system/src/pins.c: 99:     SLRCONF = 0xFF;
 [e = _SLRCONF -> -> 255 `i `uc ]
-"103
-[; ;mcc_generated_files/system/src/pins.c: 103:     INLVLA = 0xFF;
-[e = _INLVLA -> -> 255 `i `uc ]
 "104
-[; ;mcc_generated_files/system/src/pins.c: 104:     INLVLB = 0xFF;
-[e = _INLVLB -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 104:     INLVLA = 0xFF;
+[e = _INLVLA -> -> 255 `i `uc ]
 "105
-[; ;mcc_generated_files/system/src/pins.c: 105:     INLVLC = 0xFF;
-[e = _INLVLC -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 105:     INLVLB = 0xFF;
+[e = _INLVLB -> -> 255 `i `uc ]
 "106
-[; ;mcc_generated_files/system/src/pins.c: 106:     INLVLD = 0xFF;
-[e = _INLVLD -> -> 255 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 106:     INLVLC = 0xFF;
+[e = _INLVLC -> -> 255 `i `uc ]
 "107
-[; ;mcc_generated_files/system/src/pins.c: 107:     INLVLE = 0xF;
-[e = _INLVLE -> -> 15 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 107:     INLVLD = 0xFF;
+[e = _INLVLD -> -> 255 `i `uc ]
 "108
-[; ;mcc_generated_files/system/src/pins.c: 108:     INLVLF = 0xFF;
+[; ;mcc_generated_files/system/src/pins.c: 108:     INLVLE = 0xF;
+[e = _INLVLE -> -> 15 `i `uc ]
+"109
+[; ;mcc_generated_files/system/src/pins.c: 109:     INLVLF = 0xFF;
 [e = _INLVLF -> -> 255 `i `uc ]
-"113
-[; ;mcc_generated_files/system/src/pins.c: 113:     RB1I2C = 0x0;
-[e = _RB1I2C -> -> 0 `i `uc ]
 "114
-[; ;mcc_generated_files/system/src/pins.c: 114:     RB2I2C = 0x0;
-[e = _RB2I2C -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 114:     RB1I2C = 0x0;
+[e = _RB1I2C -> -> 0 `i `uc ]
 "115
-[; ;mcc_generated_files/system/src/pins.c: 115:     RC3I2C = 0x0;
-[e = _RC3I2C -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 115:     RB2I2C = 0x0;
+[e = _RB2I2C -> -> 0 `i `uc ]
 "116
-[; ;mcc_generated_files/system/src/pins.c: 116:     RC4I2C = 0x0;
+[; ;mcc_generated_files/system/src/pins.c: 116:     RC3I2C = 0x0;
+[e = _RC3I2C -> -> 0 `i `uc ]
+"117
+[; ;mcc_generated_files/system/src/pins.c: 117:     RC4I2C = 0x0;
 [e = _RC4I2C -> -> 0 `i `uc ]
-"120
-[; ;mcc_generated_files/system/src/pins.c: 120:     SPI1SDIPPS = 0x15;
-[e = _SPI1SDIPPS -> -> 21 `i `uc ]
 "121
-[; ;mcc_generated_files/system/src/pins.c: 121:     RC4PPS = 0x32;
-[e = _RC4PPS -> -> 50 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 121:     SPI1SDIPPS = 0x15;
+[e = _SPI1SDIPPS -> -> 21 `i `uc ]
 "122
-[; ;mcc_generated_files/system/src/pins.c: 122:     SPI1SCKPPS = 0x13;
-[e = _SPI1SCKPPS -> -> 19 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 122:     RC4PPS = 0x32;
+[e = _RC4PPS -> -> 50 `i `uc ]
 "123
-[; ;mcc_generated_files/system/src/pins.c: 123:     RC3PPS = 0x31;
+[; ;mcc_generated_files/system/src/pins.c: 123:     SPI1SCKPPS = 0x13;
+[e = _SPI1SCKPPS -> -> 19 `i `uc ]
+"124
+[; ;mcc_generated_files/system/src/pins.c: 124:     RC3PPS = 0x31;
 [e = _RC3PPS -> -> 49 `i `uc ]
-"128
-[; ;mcc_generated_files/system/src/pins.c: 128:     IOCAP = 0x0;
-[e = _IOCAP -> -> 0 `i `uc ]
 "129
-[; ;mcc_generated_files/system/src/pins.c: 129:     IOCAN = 0x0;
-[e = _IOCAN -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 129:     IOCAP = 0x0;
+[e = _IOCAP -> -> 0 `i `uc ]
 "130
-[; ;mcc_generated_files/system/src/pins.c: 130:     IOCAF = 0x0;
-[e = _IOCAF -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 130:     IOCAN = 0x0;
+[e = _IOCAN -> -> 0 `i `uc ]
 "131
-[; ;mcc_generated_files/system/src/pins.c: 131:     IOCBP = 0x0;
-[e = _IOCBP -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 131:     IOCAF = 0x0;
+[e = _IOCAF -> -> 0 `i `uc ]
 "132
-[; ;mcc_generated_files/system/src/pins.c: 132:     IOCBN = 0x0;
-[e = _IOCBN -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 132:     IOCBP = 0x0;
+[e = _IOCBP -> -> 0 `i `uc ]
 "133
-[; ;mcc_generated_files/system/src/pins.c: 133:     IOCBF = 0x0;
-[e = _IOCBF -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 133:     IOCBN = 0x0;
+[e = _IOCBN -> -> 0 `i `uc ]
 "134
-[; ;mcc_generated_files/system/src/pins.c: 134:     IOCCP = 0x0;
-[e = _IOCCP -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 134:     IOCBF = 0x0;
+[e = _IOCBF -> -> 0 `i `uc ]
 "135
-[; ;mcc_generated_files/system/src/pins.c: 135:     IOCCN = 0x0;
-[e = _IOCCN -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 135:     IOCCP = 0x0;
+[e = _IOCCP -> -> 0 `i `uc ]
 "136
-[; ;mcc_generated_files/system/src/pins.c: 136:     IOCCF = 0x0;
-[e = _IOCCF -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 136:     IOCCN = 0x0;
+[e = _IOCCN -> -> 0 `i `uc ]
 "137
-[; ;mcc_generated_files/system/src/pins.c: 137:     IOCEP = 0x0;
-[e = _IOCEP -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 137:     IOCCF = 0x0;
+[e = _IOCCF -> -> 0 `i `uc ]
 "138
-[; ;mcc_generated_files/system/src/pins.c: 138:     IOCEN = 0x0;
-[e = _IOCEN -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 138:     IOCEP = 0x0;
+[e = _IOCEP -> -> 0 `i `uc ]
 "139
-[; ;mcc_generated_files/system/src/pins.c: 139:     IOCEF = 0x0;
+[; ;mcc_generated_files/system/src/pins.c: 139:     IOCEN = 0x0;
+[e = _IOCEN -> -> 0 `i `uc ]
+"140
+[; ;mcc_generated_files/system/src/pins.c: 140:     IOCEF = 0x0;
 [e = _IOCEF -> -> 0 `i `uc ]
 "142
-[; ;mcc_generated_files/system/src/pins.c: 142: }
-[e :UE 2413 ]
-}
+[; ;mcc_generated_files/system/src/pins.c: 142:     IOCBNbits.IOCBN2 = 1;
+[e = . . _IOCBNbits 0 2 -> -> 1 `i `uc ]
 "144
-[; ;mcc_generated_files/system/src/pins.c: 144: void PIN_MANAGER_IOC(void)
+[; ;mcc_generated_files/system/src/pins.c: 144: }
+[e :UE 2414 ]
+}
+"146
+[; ;mcc_generated_files/system/src/pins.c: 146: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"145
-[; ;mcc_generated_files/system/src/pins.c: 145: {
+"147
+[; ;mcc_generated_files/system/src/pins.c: 147: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"146
-[; ;mcc_generated_files/system/src/pins.c: 146: }
-[e :UE 2414 ]
+"148
+[; ;mcc_generated_files/system/src/pins.c: 148:     nrf24_WriteRegister(0x07, (1 << 5));
+[e ( _nrf24_WriteRegister (2 , -> -> 7 `i `uc -> << -> 1 `i -> 5 `i `uc ]
+"150
+[; ;mcc_generated_files/system/src/pins.c: 150: }
+[e :UE 2415 ]
 }

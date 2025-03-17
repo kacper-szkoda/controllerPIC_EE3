@@ -29261,7 +29261,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 238 "mcc_generated_files/system/src/../pins.h"
+# 239 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -29271,7 +29271,356 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IRQ_ISR(void);
+# 265 "mcc_generated_files/system/src/../pins.h"
+void IRQ_SetInterruptHandler(void (* InterruptHandler)(void));
+# 276 "mcc_generated_files/system/src/../pins.h"
+extern void (*IRQ_InterruptHandler)(void);
+# 287 "mcc_generated_files/system/src/../pins.h"
+void IRQ_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
+
+# 1 "mcc_generated_files/system/src/../../../nrf24.h" 1
+
+
+
+
+
+
+
+
+# 1 "./mcc_generated_files/system/system.h" 1
+# 41 "./mcc_generated_files/system/system.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdbool.h" 1 3
+# 41 "./mcc_generated_files/system/system.h" 2
+
+# 1 "mcc_generated_files/system/src/../../system/config_bits.h" 1
+# 39 "mcc_generated_files/system/src/../../system/config_bits.h"
+# 1 "mcc_generated_files/system/src/../../system/clock.h" 1
+# 56 "mcc_generated_files/system/src/../../system/clock.h"
+void CLOCK_Initialize(void);
+# 39 "mcc_generated_files/system/src/../../system/config_bits.h" 2
+# 42 "./mcc_generated_files/system/system.h" 2
+
+
+# 1 "mcc_generated_files/system/src/../../spi/spi1.h" 1
+# 44 "mcc_generated_files/system/src/../../spi/spi1.h"
+# 1 "mcc_generated_files/system/src/../../spi/spi_interface.h" 1
+# 39 "mcc_generated_files/system/src/../../spi/spi_interface.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stddef.h" 1 3
+# 19 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stddef.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 138 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef int ptrdiff_t;
+# 20 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stddef.h" 2 3
+# 39 "mcc_generated_files/system/src/../../spi/spi_interface.h" 2
+
+
+
+
+
+
+
+struct SPI_INTERFACE
+{
+    void (*Initialize)(void);
+    void (*Deinitialize)(void);
+    _Bool (*Open)(uint8_t spiConfigIndex);
+    void (*Close)(void);
+    void (*BufferExchange)(void *bufferData, size_t bufferSize);
+    void (*BufferRead)(void *bufferData, size_t bufferSize);
+    void (*BufferWrite)(void *bufferData, size_t bufferSize);
+    uint8_t (*ByteExchange)(uint8_t byteData);
+    uint8_t (*ByteRead)(void);
+    void (*ByteWrite)(uint8_t byteData);
+    _Bool (*IsRxReady)(void);
+    _Bool (*IsTxReady)(void);
+    void (*RxCompleteCallbackRegister)(void (*callbackHandler)(void));
+    void (*TxCompleteCallbackRegister)(void (*callbackHandler)(void));
+};
+# 44 "mcc_generated_files/system/src/../../spi/spi1.h" 2
+
+
+
+
+
+
+
+extern const struct SPI_INTERFACE SPI1_Host;
+# 130 "mcc_generated_files/system/src/../../spi/spi1.h"
+typedef enum
+{
+    HOST_CONFIG,
+    SPI1_DEFAULT
+} spi1_configuration_name_t;
+
+
+
+
+
+
+
+void SPI1_Initialize(void);
+
+
+
+
+
+
+
+void SPI1_Deinitialize(void);
+# 160 "mcc_generated_files/system/src/../../spi/spi1.h"
+_Bool SPI1_Open(uint8_t spiConfigIndex);
+
+
+
+
+
+
+
+void SPI1_Close(void);
+# 177 "mcc_generated_files/system/src/../../spi/spi1.h"
+void SPI1_BufferExchange(void * bufferData, size_t bufferSize);
+# 186 "mcc_generated_files/system/src/../../spi/spi1.h"
+void SPI1_BufferWrite(void * bufferData, size_t bufferSize);
+# 195 "mcc_generated_files/system/src/../../spi/spi1.h"
+void SPI1_BufferRead(void * bufferData, size_t bufferSize);
+
+
+
+
+
+
+
+uint8_t SPI1_ByteExchange(uint8_t byteData);
+
+
+
+
+
+
+
+void SPI1_ByteWrite(uint8_t byteData);
+
+
+
+
+
+
+
+uint8_t SPI1_ByteRead(void);
+# 228 "mcc_generated_files/system/src/../../spi/spi1.h"
+_Bool SPI1_IsRxReady(void);
+# 237 "mcc_generated_files/system/src/../../spi/spi1.h"
+_Bool SPI1_IsTxReady(void);
+
+
+
+
+
+
+
+void SPI1_RxCompleteCallbackRegister(void (*rxCompleteCallbackHandler)(void));
+
+
+
+
+
+
+
+void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void));
+
+
+
+
+
+
+
+void SPI1_Receive_ISR(void);
+
+
+
+
+
+
+
+void SPI1_Transmit_ISR(void);
+
+
+
+
+
+
+
+void SPI1_ISR(void);
+
+void SPI1_SimpleWrite(uint8_t byteData);
+# 44 "./mcc_generated_files/system/system.h" 2
+
+# 1 "mcc_generated_files/system/src/../../system/interrupt.h" 1
+# 69 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INTERRUPT_Initialize (void);
+# 218 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT0_ISR(void);
+# 227 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT0_CallBack(void);
+# 236 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 246 "mcc_generated_files/system/src/../../system/interrupt.h"
+extern void (*INT0_InterruptHandler)(void);
+# 255 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT0_DefaultInterruptHandler(void);
+# 264 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT1_ISR(void);
+# 273 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT1_CallBack(void);
+# 282 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT1_SetInterruptHandler(void (* InterruptHandler)(void));
+# 292 "mcc_generated_files/system/src/../../system/interrupt.h"
+extern void (*INT1_InterruptHandler)(void);
+# 301 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT1_DefaultInterruptHandler(void);
+# 310 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT2_ISR(void);
+# 319 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT2_CallBack(void);
+# 328 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
+# 338 "mcc_generated_files/system/src/../../system/interrupt.h"
+extern void (*INT2_InterruptHandler)(void);
+# 347 "mcc_generated_files/system/src/../../system/interrupt.h"
+void INT2_DefaultInterruptHandler(void);
+# 45 "./mcc_generated_files/system/system.h" 2
+
+
+# 1 "mcc_generated_files/system/src/../../timer/tmr0.h" 1
+# 40 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 1 "mcc_generated_files/system/src/../../timer/tmr0_deprecated.h" 1
+# 40 "mcc_generated_files/system/src/../../timer/tmr0.h" 2
+# 162 "mcc_generated_files/system/src/../../timer/tmr0.h"
+void TMR0_Initialize(void);
+
+
+
+
+
+
+
+void TMR0_Deinitialize(void);
+# 179 "mcc_generated_files/system/src/../../timer/tmr0.h"
+void TMR0_Start(void);
+# 188 "mcc_generated_files/system/src/../../timer/tmr0.h"
+void TMR0_Stop(void);
+# 197 "mcc_generated_files/system/src/../../timer/tmr0.h"
+uint8_t TMR0_CounterGet(void);
+# 206 "mcc_generated_files/system/src/../../timer/tmr0.h"
+void TMR0_CounterSet(uint8_t counterValue);
+# 215 "mcc_generated_files/system/src/../../timer/tmr0.h"
+void TMR0_PeriodSet(uint8_t periodCount);
+# 224 "mcc_generated_files/system/src/../../timer/tmr0.h"
+uint8_t TMR0_PeriodGet(void);
+
+
+
+
+
+
+
+uint8_t TMR0_MaxCountGet(void);
+
+
+
+
+
+
+
+void TMR0_TMRInterruptEnable(void);
+
+
+
+
+
+
+
+void TMR0_TMRInterruptDisable(void);
+
+
+
+
+
+
+
+void TMR0_ISR(void);
+
+
+
+
+
+
+
+void TMR0_PeriodMatchCallbackRegister(void (* CallbackHandler)(void));
+# 47 "./mcc_generated_files/system/system.h" 2
+# 56 "./mcc_generated_files/system/system.h"
+void SYSTEM_Initialize(void);
+# 9 "mcc_generated_files/system/src/../../../nrf24.h" 2
+# 29 "mcc_generated_files/system/src/../../../nrf24.h"
+unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+
+uint8_t ready = 1;
+
+
+typedef enum{
+    NRF24_INIT_OK = 0,
+    NRF24_INIT_FAILED = 1
+}NRF24_INIT_STATUS;
+
+
+typedef enum {
+    RX_MODE = 1,
+    TX_MODE = 2
+}NRF24_OPERATION_MODE;
+# 91 "mcc_generated_files/system/src/../../../nrf24.h"
+void nrf24_WritePayload(unsigned char *, unsigned char);
+
+
+void nrf24_WriteRegister(unsigned char address, unsigned char value);
+
+
+unsigned char nrf24_ReadRegister(unsigned char address);
+
+
+void nrf24_WriteBuffer(unsigned char address, unsigned char *buffer, unsigned char size);
+
+
+void nrf24_ReadBuffer(unsigned char address, unsigned char *buffer, unsigned char size);
+
+
+NRF24_INIT_STATUS nrf24_Initialize();
+
+
+void nrf24_SetMode(NRF24_OPERATION_MODE mode);
+
+
+void nrf24_SendData(unsigned char *buffer);
+
+
+
+unsigned char nrf24_DataAvailable(void);
+
+
+void nrf24_ReadData(unsigned char *buffer);
+
+
+void nrf24_printf_rf_config(void);
+# 36 "mcc_generated_files/system/src/pins.c" 2
 
 
 
@@ -29378,9 +29727,12 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
 
+    IOCBNbits.IOCBN2 = 1;
 
 }
 
 void PIN_MANAGER_IOC(void)
 {
+    nrf24_WriteRegister(0x07, (1 << 5));
+    LATAbits.LATA6 = 0;
 }

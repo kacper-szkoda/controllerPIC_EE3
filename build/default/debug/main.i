@@ -29275,7 +29275,7 @@ void CLOCK_Initialize(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 238 "./mcc_generated_files/system/../system/pins.h"
+# 239 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -29285,6 +29285,20 @@ void PIN_MANAGER_Initialize (void);
 
 
 void PIN_MANAGER_IOC(void);
+
+
+
+
+
+
+
+void IRQ_ISR(void);
+# 265 "./mcc_generated_files/system/../system/pins.h"
+void IRQ_SetInterruptHandler(void (* InterruptHandler)(void));
+# 276 "./mcc_generated_files/system/../system/pins.h"
+extern void (*IRQ_InterruptHandler)(void);
+# 287 "./mcc_generated_files/system/../system/pins.h"
+void IRQ_DefaultInterruptHandler(void);
 # 43 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../spi/spi1.h" 1
@@ -29481,7 +29495,7 @@ void INT2_DefaultInterruptHandler(void);
 # 40 "./mcc_generated_files/system/../timer/tmr0.h"
 # 1 "./mcc_generated_files/system/../timer/tmr0_deprecated.h" 1
 # 40 "./mcc_generated_files/system/../timer/tmr0.h" 2
-# 157 "./mcc_generated_files/system/../timer/tmr0.h"
+# 162 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29491,17 +29505,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 174 "./mcc_generated_files/system/../timer/tmr0.h"
+# 179 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Start(void);
-# 183 "./mcc_generated_files/system/../timer/tmr0.h"
+# 188 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Stop(void);
-# 192 "./mcc_generated_files/system/../timer/tmr0.h"
+# 197 "./mcc_generated_files/system/../timer/tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 201 "./mcc_generated_files/system/../timer/tmr0.h"
+# 206 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 210 "./mcc_generated_files/system/../timer/tmr0.h"
+# 215 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 219 "./mcc_generated_files/system/../timer/tmr0.h"
+# 224 "./mcc_generated_files/system/../timer/tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 
@@ -29518,7 +29532,7 @@ uint8_t TMR0_MaxCountGet(void);
 
 
 
-_Bool TMR0_PeriodMatchStatusGet(void);
+void TMR0_TMRInterruptEnable(void);
 
 
 
@@ -29526,7 +29540,7 @@ _Bool TMR0_PeriodMatchStatusGet(void);
 
 
 
-void TMR0_PeriodMatchStatusClear(void);
+void TMR0_TMRInterruptDisable(void);
 
 
 
@@ -29534,7 +29548,7 @@ void TMR0_PeriodMatchStatusClear(void);
 
 
 
-void TMR0_Tasks(void);
+void TMR0_ISR(void);
 
 
 
@@ -29550,9 +29564,11 @@ void SYSTEM_Initialize(void);
 
 
 # 1 "./nrf24.h" 1
-# 28 "./nrf24.h"
+# 29 "./nrf24.h"
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+
+uint8_t ready = 1;
 
 
 typedef enum{
@@ -29565,7 +29581,7 @@ typedef enum {
     RX_MODE = 1,
     TX_MODE = 2
 }NRF24_OPERATION_MODE;
-# 88 "./nrf24.h"
+# 91 "./nrf24.h"
 void nrf24_WritePayload(unsigned char *, unsigned char);
 
 
@@ -29600,6 +29616,9 @@ void nrf24_ReadData(unsigned char *buffer);
 void nrf24_printf_rf_config(void);
 # 39 "main.c" 2
 
+
+
+extern uint8_t ready;
 
 
 
@@ -29652,34 +29671,12 @@ int main(void)
 
     while(1)
     {
-
+        TMR0_Stop();
         nrf24_WriteRegister(0x07, (1 << 4));
-
-
-
-
-        uint8_t carr = nrf24_ReadRegister(0x05);
-
 
         nrf24_WritePayload(dataToSend2, 32);
 
-        uint8_t status = nrf24_ReadRegister(0x07);
-
-
-        _delay((unsigned long)((100)*(64000000U/4000000.0)));
-
-
         LATAbits.LATA6 = 1;
-        _delay((unsigned long)((300)*(64000000U/4000000.0)));
-        LATAbits.LATA6 = 0;
-
-        status = nrf24_ReadRegister(0x07);
-
-        if (status & (1 << 5)) {
-
-            nrf24_WriteRegister(0x07, (1 << 5));
-        }
-        status = nrf24_ReadRegister(0x07);
 
         if (counter > 41){
             counter =0;

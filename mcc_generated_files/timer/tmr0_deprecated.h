@@ -104,6 +104,20 @@
 #define Timer0_Reload TMR0_PeriodSet
 /**
  * @ingroup tmr08bit
+ * @brief Defines the Custom Name for the \ref TMR0_ISR API.
+ *        The TMR0_OverflowISR will be deprecated in the future release. Use TMR0_ISR instead.
+ */
+/* cppcheck-suppress misra-c2012-2.5 */  
+#define TMR0_OverflowISR TMR0_ISR
+/**
+ * @ingroup tmr08bit
+ * @brief Defines the Custom Name for the \ref TMR0_ISR API.
+ *        The Timer0_OverflowISR will be deprecated in the future release. Use TMR0_ISR instead.
+ */
+/* cppcheck-suppress misra-c2012-2.5 */  
+#define Timer0_OverflowISR TMR0_ISR
+/**
+ * @ingroup tmr08bit
  * @brief Defines the Custom Name for the \ref TMR0_PeriodMatchCallbackRegister API.
  *        The TMR0_OverflowCallbackRegister will be deprecated in the future release. Use TMR0_PeriodMatchCallbackRegister instead.
  */

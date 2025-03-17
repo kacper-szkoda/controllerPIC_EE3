@@ -17,6 +17,7 @@
 #define MISO LATCbits.LATC5
 #define MOSI LATCbits.LATC4
 
+
 #define SPI_WRITE_BYTE(dt)               SPI1_ByteWrite(dt)
 #define SPI_READ_BYTE(dt)                SPI1_ByteRead(dt)
 #define SPI_INIT()                  SPI1_Open(SPI1_DEFAULT)
@@ -27,6 +28,8 @@
 // This data type sets the address data pipe 0.
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+
+uint8_t ready = 1;
 
 // nrf24 status 
 typedef enum{

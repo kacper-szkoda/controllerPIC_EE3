@@ -63,10 +63,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "253
 [; ;mcc_generated_files/spi/src/../spi1.h: 253: void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void));
 [v _SPI1_TxCompleteCallbackRegister `(v ~T0 @X0 0 ef1`*F17189 ]
-[v F17245 `(v ~T0 @X0 0 tf ]
-[v F17247 `(v ~T0 @X0 0 tf ]
-"62 mcc_generated_files/spi/src/spi1.c
-[; ;mcc_generated_files/spi/src/spi1.c: 62: static spi_descriptor_t spi1_descriptor = {
+[v F17246 `(v ~T0 @X0 0 tf ]
+[v F17248 `(v ~T0 @X0 0 tf ]
+"64 mcc_generated_files/spi/src/spi1.c
+[; ;mcc_generated_files/spi/src/spi1.c: 64: static spi_descriptor_t spi1_descriptor = {
 [c E17197 0 129 66 .. ]
 [n E17197 . SPI_RESET SPI_IDLE SPI_BUSY  ]
 "57 mcc_generated_files/spi/src/../spi_interrupt_types.h
@@ -118,8 +118,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3798
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 3798: extern volatile SPI1STATUSbits_t SPI1STATUSbits __attribute__((address(0x087)));
 [v _SPI1STATUSbits `VS170 ~T0 @X0 0 e@135 ]
-[v F17251 `(v ~T0 @X0 0 tf ]
 [v F17252 `(v ~T0 @X0 0 tf ]
+[v F17253 `(v ~T0 @X0 0 tf ]
 "3531
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 3531:     struct {
 [s S162 :1 `uc 1 :1 `uc 1 :1 `uc 1 :4 `uc 1 :1 `uc 1 ]
@@ -184,12 +184,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48163
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 48163: extern volatile PIR3bits_t PIR3bits __attribute__((address(0x4B1)));
 [v _PIR3bits `VS2255 ~T0 @X0 0 e@1201 ]
-[v F17282 `(v ~T0 @X0 0 tf ]
-[v F17284 `(v ~T0 @X0 0 tf ]
-[v F17287 `(v ~T0 @X0 0 tf ]
-[v F17289 `(v ~T0 @X0 0 tf ]
-[v F17292 `(v ~T0 @X0 0 tf ]
-[v F17294 `(v ~T0 @X0 0 tf ]
+[v F17283 `(v ~T0 @X0 0 tf ]
+[v F17285 `(v ~T0 @X0 0 tf ]
+[v F17288 `(v ~T0 @X0 0 tf ]
+[v F17290 `(v ~T0 @X0 0 tf ]
+[v F17293 `(v ~T0 @X0 0 tf ]
+[v F17295 `(v ~T0 @X0 0 tf ]
 "328 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2761,8 +2761,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51171
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 51171: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"42 mcc_generated_files/spi/src/spi1.c
-[; ;mcc_generated_files/spi/src/spi1.c: 42: const struct SPI_INTERFACE SPI1_Host = {
+"44 mcc_generated_files/spi/src/spi1.c
+[; ;mcc_generated_files/spi/src/spi1.c: 44: const struct SPI_INTERFACE SPI1_Host = {
 [v _SPI1_Host `CS2413 ~T0 @X0 1 e ]
 [i _SPI1_Host
 :U ..
@@ -2784,14 +2784,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"59
-[; ;mcc_generated_files/spi/src/spi1.c: 59: static void (*SPI1_RxCompleteCallback)(void);
-[v _SPI1_RxCompleteCallback `*F17245 ~T0 @X0 1 s ]
-"60
-[; ;mcc_generated_files/spi/src/spi1.c: 60: static void (*SPI1_TxCompleteCallback)(void);
-[v _SPI1_TxCompleteCallback `*F17247 ~T0 @X0 1 s ]
+"61
+[; ;mcc_generated_files/spi/src/spi1.c: 61: static void (*SPI1_RxCompleteCallback)(void);
+[v _SPI1_RxCompleteCallback `*F17246 ~T0 @X0 1 s ]
 "62
-[; ;mcc_generated_files/spi/src/spi1.c: 62: static spi_descriptor_t spi1_descriptor = {
+[; ;mcc_generated_files/spi/src/spi1.c: 62: static void (*SPI1_TxCompleteCallback)(void);
+[v _SPI1_TxCompleteCallback `*F17248 ~T0 @X0 1 s ]
+"64
+[; ;mcc_generated_files/spi/src/spi1.c: 64: static spi_descriptor_t spi1_descriptor = {
 [v _spi1_descriptor `S2414 ~T0 @X0 1 s ]
 [i _spi1_descriptor
 :U ..
@@ -2804,8 +2804,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"71
-[; ;mcc_generated_files/spi/src/spi1.c: 71: static const spi_configuration_t spi1_configuration[] = {
+"73
+[; ;mcc_generated_files/spi/src/spi1.c: 73: static const spi_configuration_t spi1_configuration[] = {
 [v _spi1_configuration `CS2415 ~T0 @X0 -> 3 `i s ]
 [i _spi1_configuration
 :U ..
@@ -2832,1047 +2832,1047 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-"78
-[; ;mcc_generated_files/spi/src/spi1.c: 78: void SPI1_Initialize(void)
+"80
+[; ;mcc_generated_files/spi/src/spi1.c: 80: void SPI1_Initialize(void)
 [v _SPI1_Initialize `(v ~T0 @X0 1 ef ]
-"79
-[; ;mcc_generated_files/spi/src/spi1.c: 79: {
+"81
+[; ;mcc_generated_files/spi/src/spi1.c: 81: {
 {
 [e :U _SPI1_Initialize ]
 [f ]
-"81
-[; ;mcc_generated_files/spi/src/spi1.c: 81:     PIE3bits.SPI1IE = 0U;
-[e = . . _PIE3bits 0 2 -> -> 0 `ui `uc ]
-"82
-[; ;mcc_generated_files/spi/src/spi1.c: 82:     PIE3bits.SPI1TXIE = 1U;
-[e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
 "83
-[; ;mcc_generated_files/spi/src/spi1.c: 83:     PIE3bits.SPI1RXIE = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 83:     PIE3bits.SPI1IE = 0U;
+[e = . . _PIE3bits 0 2 -> -> 0 `ui `uc ]
+"84
+[; ;mcc_generated_files/spi/src/spi1.c: 84:     PIE3bits.SPI1TXIE = 1U;
+[e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
+"85
+[; ;mcc_generated_files/spi/src/spi1.c: 85:     PIE3bits.SPI1RXIE = 1U;
 [e = . . _PIE3bits 0 0 -> -> 1 `ui `uc ]
-"86
-[; ;mcc_generated_files/spi/src/spi1.c: 86:     SPI1CON0 = 0x0;
-[e = _SPI1CON0 -> -> 0 `i `uc ]
-"87
-[; ;mcc_generated_files/spi/src/spi1.c: 87:     SPI1CON1 = 0x4;
-[e = _SPI1CON1 -> -> 4 `i `uc ]
 "88
-[; ;mcc_generated_files/spi/src/spi1.c: 88:     SPI1CON2 = 0x0;
-[e = _SPI1CON2 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 88:     SPI1CON0 = 0x0;
+[e = _SPI1CON0 -> -> 0 `i `uc ]
 "89
-[; ;mcc_generated_files/spi/src/spi1.c: 89:     SPI1BAUD = 0x10;
+[; ;mcc_generated_files/spi/src/spi1.c: 89:     SPI1CON1 = 0x4;
+[e = _SPI1CON1 -> -> 4 `i `uc ]
+"90
+[; ;mcc_generated_files/spi/src/spi1.c: 90:     SPI1CON2 = 0x0;
+[e = _SPI1CON2 -> -> 0 `i `uc ]
+"91
+[; ;mcc_generated_files/spi/src/spi1.c: 91:     SPI1BAUD = 0x10;
 [e = _SPI1BAUD -> -> 16 `i `uc ]
-"93
-[; ;mcc_generated_files/spi/src/spi1.c: 93:     SPI1CLK = 0x0;
-[e = _SPI1CLK -> -> 0 `i `uc ]
 "95
-[; ;mcc_generated_files/spi/src/spi1.c: 95:  SPI1STATUSbits.CLRBF = 1U;
-[e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
-"96
-[; ;mcc_generated_files/spi/src/spi1.c: 96:  SPI1_RxCompleteCallbackRegister(((void*)0));
-[e ( _SPI1_RxCompleteCallbackRegister (1 -> -> -> 0 `i `*v `*F17251 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 95:     SPI1CLK = 0x0;
+[e = _SPI1CLK -> -> 0 `i `uc ]
 "97
-[; ;mcc_generated_files/spi/src/spi1.c: 97:  SPI1_TxCompleteCallbackRegister(((void*)0));
-[e ( _SPI1_TxCompleteCallbackRegister (1 -> -> -> 0 `i `*v `*F17252 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 97:  SPI1STATUSbits.CLRBF = 1U;
+[e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
 "98
-[; ;mcc_generated_files/spi/src/spi1.c: 98:  spi1_descriptor.status = SPI_RESET;
-[e = . _spi1_descriptor 4 . `E17197 0 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 98:  SPI1_RxCompleteCallbackRegister(((void*)0));
+[e ( _SPI1_RxCompleteCallbackRegister (1 -> -> -> 0 `i `*v `*F17252 ]
 "99
-[; ;mcc_generated_files/spi/src/spi1.c: 99: }
+[; ;mcc_generated_files/spi/src/spi1.c: 99:  SPI1_TxCompleteCallbackRegister(((void*)0));
+[e ( _SPI1_TxCompleteCallbackRegister (1 -> -> -> 0 `i `*v `*F17253 ]
+"100
+[; ;mcc_generated_files/spi/src/spi1.c: 100:  spi1_descriptor.status = SPI_RESET;
+[e = . _spi1_descriptor 4 . `E17197 0 ]
+"101
+[; ;mcc_generated_files/spi/src/spi1.c: 101: }
 [e :UE 2416 ]
 }
-"101
-[; ;mcc_generated_files/spi/src/spi1.c: 101: void SPI1_Deinitialize(void)
+"103
+[; ;mcc_generated_files/spi/src/spi1.c: 103: void SPI1_Deinitialize(void)
 [v _SPI1_Deinitialize `(v ~T0 @X0 1 ef ]
-"102
-[; ;mcc_generated_files/spi/src/spi1.c: 102: {
+"104
+[; ;mcc_generated_files/spi/src/spi1.c: 104: {
 {
 [e :U _SPI1_Deinitialize ]
 [f ]
-"103
-[; ;mcc_generated_files/spi/src/spi1.c: 103:     SPI1CON0bits.EN = 0U;
-[e = . . _SPI1CON0bits 0 4 -> -> 0 `ui `uc ]
-"104
-[; ;mcc_generated_files/spi/src/spi1.c: 104:  spi1_descriptor.status = SPI_RESET;
-[e = . _spi1_descriptor 4 . `E17197 0 ]
 "105
-[; ;mcc_generated_files/spi/src/spi1.c: 105: }
+[; ;mcc_generated_files/spi/src/spi1.c: 105:     SPI1CON0bits.EN = 0U;
+[e = . . _SPI1CON0bits 0 4 -> -> 0 `ui `uc ]
+"106
+[; ;mcc_generated_files/spi/src/spi1.c: 106:  spi1_descriptor.status = SPI_RESET;
+[e = . _spi1_descriptor 4 . `E17197 0 ]
+"107
+[; ;mcc_generated_files/spi/src/spi1.c: 107: }
 [e :UE 2417 ]
 }
-"107
-[; ;mcc_generated_files/spi/src/spi1.c: 107: _Bool SPI1_Open(uint8_t spiConfigIndex)
+"109
+[; ;mcc_generated_files/spi/src/spi1.c: 109: _Bool SPI1_Open(uint8_t spiConfigIndex)
 [v _SPI1_Open `(a ~T0 @X0 1 ef1`uc ]
-"108
-[; ;mcc_generated_files/spi/src/spi1.c: 108: {
+"110
+[; ;mcc_generated_files/spi/src/spi1.c: 110: {
 {
 [e :U _SPI1_Open ]
-"107
-[; ;mcc_generated_files/spi/src/spi1.c: 107: _Bool SPI1_Open(uint8_t spiConfigIndex)
-[v _spiConfigIndex `uc ~T0 @X0 1 r1 ]
-"108
-[; ;mcc_generated_files/spi/src/spi1.c: 108: {
-[f ]
 "109
-[; ;mcc_generated_files/spi/src/spi1.c: 109:  _Bool returnValue = 0;
+[; ;mcc_generated_files/spi/src/spi1.c: 109: _Bool SPI1_Open(uint8_t spiConfigIndex)
+[v _spiConfigIndex `uc ~T0 @X0 1 r1 ]
+"110
+[; ;mcc_generated_files/spi/src/spi1.c: 110: {
+[f ]
+"111
+[; ;mcc_generated_files/spi/src/spi1.c: 111:  _Bool returnValue = 0;
 [v _returnValue `a ~T0 @X0 1 a ]
 [e = _returnValue -> -> 0 `i `a ]
-"111
-[; ;mcc_generated_files/spi/src/spi1.c: 111:  if(0 == SPI1CON0bits.EN)
-[e $ ! == -> 0 `i -> . . _SPI1CON0bits 0 4 `i 2419  ]
-"112
-[; ;mcc_generated_files/spi/src/spi1.c: 112:  {
-{
 "113
-[; ;mcc_generated_files/spi/src/spi1.c: 113:   spi1_descriptor.status = SPI_IDLE;
-[e = . _spi1_descriptor 4 . `E17197 1 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 113:  if(0 == SPI1CON0bits.EN)
+[e $ ! == -> 0 `i -> . . _SPI1CON0bits 0 4 `i 2419  ]
 "114
-[; ;mcc_generated_files/spi/src/spi1.c: 114:         SPI1CON0 = spi1_configuration[spiConfigIndex].con0;
-[e = _SPI1CON0 . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 0 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 114:  {
+{
 "115
-[; ;mcc_generated_files/spi/src/spi1.c: 115:         SPI1CON1 = spi1_configuration[spiConfigIndex].con1;
-[e = _SPI1CON1 . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 1 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 115:   spi1_descriptor.status = SPI_IDLE;
+[e = . _spi1_descriptor 4 . `E17197 1 ]
 "116
-[; ;mcc_generated_files/spi/src/spi1.c: 116:      SPI1CON2 = spi1_configuration[spiConfigIndex].con2 & ~(0x1) & ~(0x2);
-[e = _SPI1CON2 -> & & -> . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 2 `i ~ -> 1 `i ~ -> 2 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 116:         SPI1CON0 = spi1_configuration[spiConfigIndex].con0;
+[e = _SPI1CON0 . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 0 ]
 "117
-[; ;mcc_generated_files/spi/src/spi1.c: 117:         SPI1BAUD = spi1_configuration[spiConfigIndex].baud;
-[e = _SPI1BAUD . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 3 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 117:         SPI1CON1 = spi1_configuration[spiConfigIndex].con1;
+[e = _SPI1CON1 . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 1 ]
 "118
-[; ;mcc_generated_files/spi/src/spi1.c: 118:         SPI1CLK = spi1_configuration[spiConfigIndex].clksel;
-[e = _SPI1CLK . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 4 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 118:      SPI1CON2 = spi1_configuration[spiConfigIndex].con2 & ~(0x1) & ~(0x2);
+[e = _SPI1CON2 -> & & -> . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 2 `i ~ -> 1 `i ~ -> 2 `i `uc ]
 "119
-[; ;mcc_generated_files/spi/src/spi1.c: 119:   TRISCbits.TRISC4 = 0;
-[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 119:         SPI1BAUD = spi1_configuration[spiConfigIndex].baud;
+[e = _SPI1BAUD . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 3 ]
 "120
-[; ;mcc_generated_files/spi/src/spi1.c: 120:   PIE3bits.SPI1IE = 1U;
-[e = . . _PIE3bits 0 2 -> -> 1 `ui `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 120:         SPI1CLK = spi1_configuration[spiConfigIndex].clksel;
+[e = _SPI1CLK . *U + &U _spi1_configuration * -> _spiConfigIndex `ux -> -> # *U &U _spi1_configuration `ui `ux 4 ]
 "121
-[; ;mcc_generated_files/spi/src/spi1.c: 121:         SPI1CON0bits.EN = 1U;
-[e = . . _SPI1CON0bits 0 4 -> -> 1 `ui `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 121:   TRISCbits.TRISC4 = 0;
+[e = . . _TRISCbits 0 4 -> -> 0 `i `uc ]
 "122
-[; ;mcc_generated_files/spi/src/spi1.c: 122:   returnValue = 1;
-[e = _returnValue -> -> 1 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 122:   PIE3bits.SPI1IE = 1U;
+[e = . . _PIE3bits 0 2 -> -> 1 `ui `uc ]
 "123
-[; ;mcc_generated_files/spi/src/spi1.c: 123:         SPI1CON1bits.CKP = 0;
-[e = . . _SPI1CON1bits 0 5 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 123:         SPI1CON0bits.EN = 1U;
+[e = . . _SPI1CON0bits 0 4 -> -> 1 `ui `uc ]
 "124
-[; ;mcc_generated_files/spi/src/spi1.c: 124:         SPI1CON1bits.CKE = 1;
-[e = . . _SPI1CON1bits 0 6 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 124:   returnValue = 1;
+[e = _returnValue -> -> 1 `i `a ]
 "125
-[; ;mcc_generated_files/spi/src/spi1.c: 125:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 125:         SPI1CON1bits.CKP = 0;
+[e = . . _SPI1CON1bits 0 5 -> -> 0 `i `uc ]
+"126
+[; ;mcc_generated_files/spi/src/spi1.c: 126:         SPI1CON1bits.CKE = 1;
+[e = . . _SPI1CON1bits 0 6 -> -> 1 `i `uc ]
+"127
+[; ;mcc_generated_files/spi/src/spi1.c: 127:  }
 }
 [e $U 2420  ]
-"126
-[; ;mcc_generated_files/spi/src/spi1.c: 126:  else
-[e :U 2419 ]
-"127
-[; ;mcc_generated_files/spi/src/spi1.c: 127:  {
-{
 "128
-[; ;mcc_generated_files/spi/src/spi1.c: 128:   returnValue = 0;
-[e = _returnValue -> -> 0 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 128:  else
+[e :U 2419 ]
 "129
-[; ;mcc_generated_files/spi/src/spi1.c: 129:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 129:  {
+{
+"130
+[; ;mcc_generated_files/spi/src/spi1.c: 130:   returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"131
+[; ;mcc_generated_files/spi/src/spi1.c: 131:  }
 }
 [e :U 2420 ]
-"130
-[; ;mcc_generated_files/spi/src/spi1.c: 130:  return returnValue;
+"132
+[; ;mcc_generated_files/spi/src/spi1.c: 132:  return returnValue;
 [e ) _returnValue ]
 [e $UE 2418  ]
-"131
-[; ;mcc_generated_files/spi/src/spi1.c: 131: }
+"133
+[; ;mcc_generated_files/spi/src/spi1.c: 133: }
 [e :UE 2418 ]
 }
-"133
-[; ;mcc_generated_files/spi/src/spi1.c: 133: void SPI1_Close(void)
+"135
+[; ;mcc_generated_files/spi/src/spi1.c: 135: void SPI1_Close(void)
 [v _SPI1_Close `(v ~T0 @X0 1 ef ]
-"134
-[; ;mcc_generated_files/spi/src/spi1.c: 134: {
+"136
+[; ;mcc_generated_files/spi/src/spi1.c: 136: {
 {
 [e :U _SPI1_Close ]
 [f ]
-"135
-[; ;mcc_generated_files/spi/src/spi1.c: 135:  SPI1CON0bits.EN = 0U;
-[e = . . _SPI1CON0bits 0 4 -> -> 0 `ui `uc ]
-"136
-[; ;mcc_generated_files/spi/src/spi1.c: 136:  PIE3bits.SPI1IE = 0U;
-[e = . . _PIE3bits 0 2 -> -> 0 `ui `uc ]
 "137
-[; ;mcc_generated_files/spi/src/spi1.c: 137:     PIE3bits.SPI1TXIE = 1;
-[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 137:  SPI1CON0bits.EN = 0U;
+[e = . . _SPI1CON0bits 0 4 -> -> 0 `ui `uc ]
 "138
-[; ;mcc_generated_files/spi/src/spi1.c: 138:     PIE3bits.SPI1RXIE = 1;
-[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 138:  PIE3bits.SPI1IE = 0U;
+[e = . . _PIE3bits 0 2 -> -> 0 `ui `uc ]
 "139
-[; ;mcc_generated_files/spi/src/spi1.c: 139:  spi1_descriptor.status = SPI_RESET;
-[e = . _spi1_descriptor 4 . `E17197 0 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 139:     PIE3bits.SPI1TXIE = 1;
+[e = . . _PIE3bits 0 1 -> -> 1 `i `uc ]
 "140
-[; ;mcc_generated_files/spi/src/spi1.c: 140: }
+[; ;mcc_generated_files/spi/src/spi1.c: 140:     PIE3bits.SPI1RXIE = 1;
+[e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
+"141
+[; ;mcc_generated_files/spi/src/spi1.c: 141:  spi1_descriptor.status = SPI_RESET;
+[e = . _spi1_descriptor 4 . `E17197 0 ]
+"142
+[; ;mcc_generated_files/spi/src/spi1.c: 142: }
 [e :UE 2421 ]
 }
-"142
-[; ;mcc_generated_files/spi/src/spi1.c: 142: void SPI1_BufferExchange(void *bufferData, size_t bufferSize)
+"144
+[; ;mcc_generated_files/spi/src/spi1.c: 144: void SPI1_BufferExchange(void *bufferData, size_t bufferSize)
 [v _SPI1_BufferExchange `(v ~T0 @X0 1 ef2`*v`ui ]
-"143
-[; ;mcc_generated_files/spi/src/spi1.c: 143: {
+"145
+[; ;mcc_generated_files/spi/src/spi1.c: 145: {
 {
 [e :U _SPI1_BufferExchange ]
-"142
-[; ;mcc_generated_files/spi/src/spi1.c: 142: void SPI1_BufferExchange(void *bufferData, size_t bufferSize)
+"144
+[; ;mcc_generated_files/spi/src/spi1.c: 144: void SPI1_BufferExchange(void *bufferData, size_t bufferSize)
 [v _bufferData `*v ~T0 @X0 1 r1 ]
 [v _bufferSize `ui ~T0 @X0 1 r2 ]
-"143
-[; ;mcc_generated_files/spi/src/spi1.c: 143: {
+"145
+[; ;mcc_generated_files/spi/src/spi1.c: 145: {
 [f ]
-"144
-[; ;mcc_generated_files/spi/src/spi1.c: 144:  uint8_t* bufferInput = bufferData;
+"146
+[; ;mcc_generated_files/spi/src/spi1.c: 146:  uint8_t* bufferInput = bufferData;
 [v _bufferInput `*uc ~T0 @X0 1 a ]
 [e = _bufferInput -> _bufferData `*uc ]
-"146
-[; ;mcc_generated_files/spi/src/spi1.c: 146:  if (SPI_IDLE == spi1_descriptor.status)
-[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2423  ]
-"147
-[; ;mcc_generated_files/spi/src/spi1.c: 147:     {
-{
 "148
-[; ;mcc_generated_files/spi/src/spi1.c: 148:         SPI1STATUSbits.CLRBF = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 148:  if (SPI_IDLE == spi1_descriptor.status)
+[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2423  ]
+"149
+[; ;mcc_generated_files/spi/src/spi1.c: 149:     {
+{
+"150
+[; ;mcc_generated_files/spi/src/spi1.c: 150:         SPI1STATUSbits.CLRBF = 1U;
 [e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
-"151
-[; ;mcc_generated_files/spi/src/spi1.c: 151:         SPI1CON2 = (SPI1CON2 | 0x1) | 0x2;
+"153
+[; ;mcc_generated_files/spi/src/spi1.c: 153:         SPI1CON2 = (SPI1CON2 | 0x1) | 0x2;
 [e = _SPI1CON2 -> | | -> _SPI1CON2 `i -> 1 `i -> 2 `i `uc ]
-"154
-[; ;mcc_generated_files/spi/src/spi1.c: 154:   spi1_descriptor.transmitBuffer = bufferInput;
-[e = . _spi1_descriptor 0 _bufferInput ]
-"155
-[; ;mcc_generated_files/spi/src/spi1.c: 155:   spi1_descriptor.receiveBuffer = bufferInput;
-[e = . _spi1_descriptor 1 _bufferInput ]
 "156
-[; ;mcc_generated_files/spi/src/spi1.c: 156:         spi1_descriptor.bytesToTransmit = bufferSize;
-[e = . _spi1_descriptor 2 _bufferSize ]
+[; ;mcc_generated_files/spi/src/spi1.c: 156:   spi1_descriptor.transmitBuffer = bufferInput;
+[e = . _spi1_descriptor 0 _bufferInput ]
 "157
-[; ;mcc_generated_files/spi/src/spi1.c: 157:         spi1_descriptor.bytesToReceive = bufferSize;
-[e = . _spi1_descriptor 3 _bufferSize ]
+[; ;mcc_generated_files/spi/src/spi1.c: 157:   spi1_descriptor.receiveBuffer = bufferInput;
+[e = . _spi1_descriptor 1 _bufferInput ]
 "158
-[; ;mcc_generated_files/spi/src/spi1.c: 158:         spi1_descriptor.status = SPI_BUSY;
+[; ;mcc_generated_files/spi/src/spi1.c: 158:         spi1_descriptor.bytesToTransmit = bufferSize;
+[e = . _spi1_descriptor 2 _bufferSize ]
+"159
+[; ;mcc_generated_files/spi/src/spi1.c: 159:         spi1_descriptor.bytesToReceive = bufferSize;
+[e = . _spi1_descriptor 3 _bufferSize ]
+"160
+[; ;mcc_generated_files/spi/src/spi1.c: 160:         spi1_descriptor.status = SPI_BUSY;
 [e = . _spi1_descriptor 4 . `E17197 2 ]
-"161
-[; ;mcc_generated_files/spi/src/spi1.c: 161:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
+"163
+[; ;mcc_generated_files/spi/src/spi1.c: 163:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
 [e = _SPI1TCNTH -> >> _bufferSize -> 8 `i `uc ]
-"162
-[; ;mcc_generated_files/spi/src/spi1.c: 162:   SPI1TCNTL = (uint8_t)(bufferSize);
-[e = _SPI1TCNTL -> _bufferSize `uc ]
 "164
-[; ;mcc_generated_files/spi/src/spi1.c: 164:   PIE3bits.SPI1RXIE = 1U;
-[e = . . _PIE3bits 0 0 -> -> 1 `ui `uc ]
-"165
-[; ;mcc_generated_files/spi/src/spi1.c: 165:   PIE3bits.SPI1TXIE = 1U;
-[e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 164:   SPI1TCNTL = (uint8_t)(bufferSize);
+[e = _SPI1TCNTL -> _bufferSize `uc ]
 "166
-[; ;mcc_generated_files/spi/src/spi1.c: 166:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 166:   PIE3bits.SPI1RXIE = 1U;
+[e = . . _PIE3bits 0 0 -> -> 1 `ui `uc ]
+"167
+[; ;mcc_generated_files/spi/src/spi1.c: 167:   PIE3bits.SPI1TXIE = 1U;
+[e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
+"168
+[; ;mcc_generated_files/spi/src/spi1.c: 168:  }
 }
 [e $U 2424  ]
-"167
-[; ;mcc_generated_files/spi/src/spi1.c: 167:  else
+"169
+[; ;mcc_generated_files/spi/src/spi1.c: 169:  else
 [e :U 2423 ]
-"168
-[; ;mcc_generated_files/spi/src/spi1.c: 168:  {
-{
 "170
-[; ;mcc_generated_files/spi/src/spi1.c: 170:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 170:  {
+{
+"172
+[; ;mcc_generated_files/spi/src/spi1.c: 172:  }
 }
 [e :U 2424 ]
-"171
-[; ;mcc_generated_files/spi/src/spi1.c: 171: }
+"173
+[; ;mcc_generated_files/spi/src/spi1.c: 173: }
 [e :UE 2422 ]
 }
-"173
-[; ;mcc_generated_files/spi/src/spi1.c: 173: void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
+"175
+[; ;mcc_generated_files/spi/src/spi1.c: 175: void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
 [v _SPI1_BufferWrite `(v ~T0 @X0 1 ef2`*v`ui ]
-"174
-[; ;mcc_generated_files/spi/src/spi1.c: 174: {
+"176
+[; ;mcc_generated_files/spi/src/spi1.c: 176: {
 {
 [e :U _SPI1_BufferWrite ]
-"173
-[; ;mcc_generated_files/spi/src/spi1.c: 173: void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
+"175
+[; ;mcc_generated_files/spi/src/spi1.c: 175: void SPI1_BufferWrite(void *bufferData, size_t bufferSize)
 [v _bufferData `*v ~T0 @X0 1 r1 ]
 [v _bufferSize `ui ~T0 @X0 1 r2 ]
-"174
-[; ;mcc_generated_files/spi/src/spi1.c: 174: {
+"176
+[; ;mcc_generated_files/spi/src/spi1.c: 176: {
 [f ]
-"175
-[; ;mcc_generated_files/spi/src/spi1.c: 175:  uint8_t* bufferInput = bufferData;
+"177
+[; ;mcc_generated_files/spi/src/spi1.c: 177:  uint8_t* bufferInput = bufferData;
 [v _bufferInput `*uc ~T0 @X0 1 a ]
 [e = _bufferInput -> _bufferData `*uc ]
-"177
-[; ;mcc_generated_files/spi/src/spi1.c: 177:  if (SPI_IDLE == spi1_descriptor.status)
-[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2426  ]
-"178
-[; ;mcc_generated_files/spi/src/spi1.c: 178:     {
-{
 "179
-[; ;mcc_generated_files/spi/src/spi1.c: 179:   SPI1STATUSbits.CLRBF = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 179:  if (SPI_IDLE == spi1_descriptor.status)
+[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2426  ]
+"180
+[; ;mcc_generated_files/spi/src/spi1.c: 180:     {
+{
+"181
+[; ;mcc_generated_files/spi/src/spi1.c: 181:   SPI1STATUSbits.CLRBF = 1U;
 [e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
-"182
-[; ;mcc_generated_files/spi/src/spi1.c: 182:         SPI1CON2 = (SPI1CON2 & ~0x1) | 0x2;
+"184
+[; ;mcc_generated_files/spi/src/spi1.c: 184:         SPI1CON2 = (SPI1CON2 & ~0x1) | 0x2;
 [e = _SPI1CON2 -> | & -> _SPI1CON2 `i ~ -> 1 `i -> 2 `i `uc ]
-"185
-[; ;mcc_generated_files/spi/src/spi1.c: 185:   spi1_descriptor.transmitBuffer = bufferInput;
-[e = . _spi1_descriptor 0 _bufferInput ]
-"186
-[; ;mcc_generated_files/spi/src/spi1.c: 186:   spi1_descriptor.receiveBuffer = ((void*)0);
-[e = . _spi1_descriptor 1 -> -> -> 0 `i `*v `*uc ]
 "187
-[; ;mcc_generated_files/spi/src/spi1.c: 187:         spi1_descriptor.bytesToTransmit = bufferSize;
-[e = . _spi1_descriptor 2 _bufferSize ]
+[; ;mcc_generated_files/spi/src/spi1.c: 187:   spi1_descriptor.transmitBuffer = bufferInput;
+[e = . _spi1_descriptor 0 _bufferInput ]
 "188
-[; ;mcc_generated_files/spi/src/spi1.c: 188:      spi1_descriptor.bytesToReceive = 0U;
-[e = . _spi1_descriptor 3 -> 0 `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 188:   spi1_descriptor.receiveBuffer = ((void*)0);
+[e = . _spi1_descriptor 1 -> -> -> 0 `i `*v `*uc ]
 "189
-[; ;mcc_generated_files/spi/src/spi1.c: 189:         spi1_descriptor.status = SPI_BUSY;
+[; ;mcc_generated_files/spi/src/spi1.c: 189:         spi1_descriptor.bytesToTransmit = bufferSize;
+[e = . _spi1_descriptor 2 _bufferSize ]
+"190
+[; ;mcc_generated_files/spi/src/spi1.c: 190:      spi1_descriptor.bytesToReceive = 0U;
+[e = . _spi1_descriptor 3 -> 0 `ui ]
+"191
+[; ;mcc_generated_files/spi/src/spi1.c: 191:         spi1_descriptor.status = SPI_BUSY;
 [e = . _spi1_descriptor 4 . `E17197 2 ]
-"192
-[; ;mcc_generated_files/spi/src/spi1.c: 192:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
+"194
+[; ;mcc_generated_files/spi/src/spi1.c: 194:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
 [e = _SPI1TCNTH -> >> _bufferSize -> 8 `i `uc ]
-"193
-[; ;mcc_generated_files/spi/src/spi1.c: 193:   SPI1TCNTL = (uint8_t)(bufferSize);
-[e = _SPI1TCNTL -> _bufferSize `uc ]
 "195
-[; ;mcc_generated_files/spi/src/spi1.c: 195:   PIE3bits.SPI1TXIE = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 195:   SPI1TCNTL = (uint8_t)(bufferSize);
+[e = _SPI1TCNTL -> _bufferSize `uc ]
+"197
+[; ;mcc_generated_files/spi/src/spi1.c: 197:   PIE3bits.SPI1TXIE = 1U;
 [e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
-"196
-[; ;mcc_generated_files/spi/src/spi1.c: 196:  }
+"198
+[; ;mcc_generated_files/spi/src/spi1.c: 198:  }
 }
 [e $U 2427  ]
-"197
-[; ;mcc_generated_files/spi/src/spi1.c: 197:  else
+"199
+[; ;mcc_generated_files/spi/src/spi1.c: 199:  else
 [e :U 2426 ]
-"198
-[; ;mcc_generated_files/spi/src/spi1.c: 198:  {
-{
 "200
-[; ;mcc_generated_files/spi/src/spi1.c: 200:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 200:  {
+{
+"202
+[; ;mcc_generated_files/spi/src/spi1.c: 202:  }
 }
 [e :U 2427 ]
-"201
-[; ;mcc_generated_files/spi/src/spi1.c: 201: }
+"203
+[; ;mcc_generated_files/spi/src/spi1.c: 203: }
 [e :UE 2425 ]
 }
-"203
-[; ;mcc_generated_files/spi/src/spi1.c: 203: void SPI1_BufferRead(void *bufferData, size_t bufferSize)
+"205
+[; ;mcc_generated_files/spi/src/spi1.c: 205: void SPI1_BufferRead(void *bufferData, size_t bufferSize)
 [v _SPI1_BufferRead `(v ~T0 @X0 1 ef2`*v`ui ]
-"204
-[; ;mcc_generated_files/spi/src/spi1.c: 204: {
+"206
+[; ;mcc_generated_files/spi/src/spi1.c: 206: {
 {
 [e :U _SPI1_BufferRead ]
-"203
-[; ;mcc_generated_files/spi/src/spi1.c: 203: void SPI1_BufferRead(void *bufferData, size_t bufferSize)
+"205
+[; ;mcc_generated_files/spi/src/spi1.c: 205: void SPI1_BufferRead(void *bufferData, size_t bufferSize)
 [v _bufferData `*v ~T0 @X0 1 r1 ]
 [v _bufferSize `ui ~T0 @X0 1 r2 ]
-"204
-[; ;mcc_generated_files/spi/src/spi1.c: 204: {
+"206
+[; ;mcc_generated_files/spi/src/spi1.c: 206: {
 [f ]
-"205
-[; ;mcc_generated_files/spi/src/spi1.c: 205:  uint8_t* bufferInput = bufferData;
+"207
+[; ;mcc_generated_files/spi/src/spi1.c: 207:  uint8_t* bufferInput = bufferData;
 [v _bufferInput `*uc ~T0 @X0 1 a ]
 [e = _bufferInput -> _bufferData `*uc ]
-"207
-[; ;mcc_generated_files/spi/src/spi1.c: 207:  if (SPI_IDLE == spi1_descriptor.status)
-[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2429  ]
-"208
-[; ;mcc_generated_files/spi/src/spi1.c: 208:     {
-{
 "209
-[; ;mcc_generated_files/spi/src/spi1.c: 209:   SPI1STATUSbits.CLRBF = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 209:  if (SPI_IDLE == spi1_descriptor.status)
+[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2429  ]
+"210
+[; ;mcc_generated_files/spi/src/spi1.c: 210:     {
+{
+"211
+[; ;mcc_generated_files/spi/src/spi1.c: 211:   SPI1STATUSbits.CLRBF = 1U;
 [e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
-"212
-[; ;mcc_generated_files/spi/src/spi1.c: 212:         SPI1CON2 = (SPI1CON2 & ~0x2) | 0x1;
+"214
+[; ;mcc_generated_files/spi/src/spi1.c: 214:         SPI1CON2 = (SPI1CON2 & ~0x2) | 0x1;
 [e = _SPI1CON2 -> | & -> _SPI1CON2 `i ~ -> 2 `i -> 1 `i `uc ]
-"215
-[; ;mcc_generated_files/spi/src/spi1.c: 215:   spi1_descriptor.transmitBuffer = ((void*)0);
-[e = . _spi1_descriptor 0 -> -> -> 0 `i `*v `*uc ]
-"216
-[; ;mcc_generated_files/spi/src/spi1.c: 216:   spi1_descriptor.receiveBuffer = bufferInput;
-[e = . _spi1_descriptor 1 _bufferInput ]
 "217
-[; ;mcc_generated_files/spi/src/spi1.c: 217:      spi1_descriptor.bytesToTransmit = 0U;
-[e = . _spi1_descriptor 2 -> 0 `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 217:   spi1_descriptor.transmitBuffer = ((void*)0);
+[e = . _spi1_descriptor 0 -> -> -> 0 `i `*v `*uc ]
 "218
-[; ;mcc_generated_files/spi/src/spi1.c: 218:         spi1_descriptor.bytesToReceive = bufferSize;
-[e = . _spi1_descriptor 3 _bufferSize ]
+[; ;mcc_generated_files/spi/src/spi1.c: 218:   spi1_descriptor.receiveBuffer = bufferInput;
+[e = . _spi1_descriptor 1 _bufferInput ]
 "219
-[; ;mcc_generated_files/spi/src/spi1.c: 219:      spi1_descriptor.status = SPI_BUSY;
+[; ;mcc_generated_files/spi/src/spi1.c: 219:      spi1_descriptor.bytesToTransmit = 0U;
+[e = . _spi1_descriptor 2 -> 0 `ui ]
+"220
+[; ;mcc_generated_files/spi/src/spi1.c: 220:         spi1_descriptor.bytesToReceive = bufferSize;
+[e = . _spi1_descriptor 3 _bufferSize ]
+"221
+[; ;mcc_generated_files/spi/src/spi1.c: 221:      spi1_descriptor.status = SPI_BUSY;
 [e = . _spi1_descriptor 4 . `E17197 2 ]
-"222
-[; ;mcc_generated_files/spi/src/spi1.c: 222:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
+"224
+[; ;mcc_generated_files/spi/src/spi1.c: 224:   SPI1TCNTH = (uint8_t)(bufferSize>>8);
 [e = _SPI1TCNTH -> >> _bufferSize -> 8 `i `uc ]
-"223
-[; ;mcc_generated_files/spi/src/spi1.c: 223:   SPI1TCNTL = (uint8_t)(bufferSize);
-[e = _SPI1TCNTL -> _bufferSize `uc ]
 "225
-[; ;mcc_generated_files/spi/src/spi1.c: 225:   PIE3bits.SPI1RXIE = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 225:   SPI1TCNTL = (uint8_t)(bufferSize);
+[e = _SPI1TCNTL -> _bufferSize `uc ]
+"227
+[; ;mcc_generated_files/spi/src/spi1.c: 227:   PIE3bits.SPI1RXIE = 1U;
 [e = . . _PIE3bits 0 0 -> -> 1 `ui `uc ]
-"226
-[; ;mcc_generated_files/spi/src/spi1.c: 226:  }
+"228
+[; ;mcc_generated_files/spi/src/spi1.c: 228:  }
 }
 [e $U 2430  ]
-"227
-[; ;mcc_generated_files/spi/src/spi1.c: 227:  else
+"229
+[; ;mcc_generated_files/spi/src/spi1.c: 229:  else
 [e :U 2429 ]
-"228
-[; ;mcc_generated_files/spi/src/spi1.c: 228:  {
-{
 "230
-[; ;mcc_generated_files/spi/src/spi1.c: 230:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 230:  {
+{
+"232
+[; ;mcc_generated_files/spi/src/spi1.c: 232:  }
 }
 [e :U 2430 ]
-"231
-[; ;mcc_generated_files/spi/src/spi1.c: 231: }
+"233
+[; ;mcc_generated_files/spi/src/spi1.c: 233: }
 [e :UE 2428 ]
 }
-"233
-[; ;mcc_generated_files/spi/src/spi1.c: 233: uint8_t SPI1_ByteExchange(uint8_t byteData)
+"235
+[; ;mcc_generated_files/spi/src/spi1.c: 235: uint8_t SPI1_ByteExchange(uint8_t byteData)
 [v _SPI1_ByteExchange `(uc ~T0 @X0 1 ef1`uc ]
-"234
-[; ;mcc_generated_files/spi/src/spi1.c: 234: {
+"236
+[; ;mcc_generated_files/spi/src/spi1.c: 236: {
 {
 [e :U _SPI1_ByteExchange ]
-"233
-[; ;mcc_generated_files/spi/src/spi1.c: 233: uint8_t SPI1_ByteExchange(uint8_t byteData)
-[v _byteData `uc ~T0 @X0 1 r1 ]
-"234
-[; ;mcc_generated_files/spi/src/spi1.c: 234: {
-[f ]
 "235
-[; ;mcc_generated_files/spi/src/spi1.c: 235:  uint8_t returnValue = 0U;
+[; ;mcc_generated_files/spi/src/spi1.c: 235: uint8_t SPI1_ByteExchange(uint8_t byteData)
+[v _byteData `uc ~T0 @X0 1 r1 ]
+"236
+[; ;mcc_generated_files/spi/src/spi1.c: 236: {
+[f ]
+"237
+[; ;mcc_generated_files/spi/src/spi1.c: 237:  uint8_t returnValue = 0U;
 [v _returnValue `uc ~T0 @X0 1 a ]
 [e = _returnValue -> -> 0 `ui `uc ]
-"236
-[; ;mcc_generated_files/spi/src/spi1.c: 236:  while(SPI_IDLE != spi1_descriptor.status)
+"238
+[; ;mcc_generated_files/spi/src/spi1.c: 238:  while(SPI_IDLE != spi1_descriptor.status)
 [e $U 2432  ]
 [e :U 2433 ]
-"237
-[; ;mcc_generated_files/spi/src/spi1.c: 237:     {
-{
 "239
-[; ;mcc_generated_files/spi/src/spi1.c: 239:     }
+[; ;mcc_generated_files/spi/src/spi1.c: 239:     {
+{
+"241
+[; ;mcc_generated_files/spi/src/spi1.c: 241:     }
 }
 [e :U 2432 ]
-"236
-[; ;mcc_generated_files/spi/src/spi1.c: 236:  while(SPI_IDLE != spi1_descriptor.status)
+"238
+[; ;mcc_generated_files/spi/src/spi1.c: 238:  while(SPI_IDLE != spi1_descriptor.status)
 [e $ != -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2433  ]
 [e :U 2434 ]
-"241
-[; ;mcc_generated_files/spi/src/spi1.c: 241:  SPI1STATUSbits.CLRBF = 1U;
+"243
+[; ;mcc_generated_files/spi/src/spi1.c: 243:  SPI1STATUSbits.CLRBF = 1U;
 [e = . . _SPI1STATUSbits 0 2 -> -> 1 `ui `uc ]
-"244
-[; ;mcc_generated_files/spi/src/spi1.c: 244:  SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
+"246
+[; ;mcc_generated_files/spi/src/spi1.c: 246:  SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
 [e = _SPI1CON2 -> | | -> _SPI1CON2 `i -> 1 `i -> 2 `i `uc ]
-"247
-[; ;mcc_generated_files/spi/src/spi1.c: 247:  spi1_descriptor.transmitBuffer = &byteData;
-[e = . _spi1_descriptor 0 &U _byteData ]
-"248
-[; ;mcc_generated_files/spi/src/spi1.c: 248:  spi1_descriptor.receiveBuffer = &byteData;
-[e = . _spi1_descriptor 1 &U _byteData ]
 "249
-[; ;mcc_generated_files/spi/src/spi1.c: 249:     spi1_descriptor.bytesToTransmit = 1;
-[e = . _spi1_descriptor 2 -> -> 1 `i `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 249:  spi1_descriptor.transmitBuffer = &byteData;
+[e = . _spi1_descriptor 0 &U _byteData ]
 "250
-[; ;mcc_generated_files/spi/src/spi1.c: 250:  spi1_descriptor.bytesToReceive = 1;
-[e = . _spi1_descriptor 3 -> -> 1 `i `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 250:  spi1_descriptor.receiveBuffer = &byteData;
+[e = . _spi1_descriptor 1 &U _byteData ]
 "251
-[; ;mcc_generated_files/spi/src/spi1.c: 251:  spi1_descriptor.status = SPI_BUSY;
+[; ;mcc_generated_files/spi/src/spi1.c: 251:     spi1_descriptor.bytesToTransmit = 1;
+[e = . _spi1_descriptor 2 -> -> 1 `i `ui ]
+"252
+[; ;mcc_generated_files/spi/src/spi1.c: 252:  spi1_descriptor.bytesToReceive = 1;
+[e = . _spi1_descriptor 3 -> -> 1 `i `ui ]
+"253
+[; ;mcc_generated_files/spi/src/spi1.c: 253:  spi1_descriptor.status = SPI_BUSY;
 [e = . _spi1_descriptor 4 . `E17197 2 ]
-"254
-[; ;mcc_generated_files/spi/src/spi1.c: 254:  SPI1TCNTH = 0U;
+"256
+[; ;mcc_generated_files/spi/src/spi1.c: 256:  SPI1TCNTH = 0U;
 [e = _SPI1TCNTH -> -> 0 `ui `uc ]
-"255
-[; ;mcc_generated_files/spi/src/spi1.c: 255:  SPI1TCNTL = 1U;
-[e = _SPI1TCNTL -> -> 1 `ui `uc ]
 "257
-[; ;mcc_generated_files/spi/src/spi1.c: 257:  PIE3bits.SPI1RXIE = 1U;
+[; ;mcc_generated_files/spi/src/spi1.c: 257:  SPI1TCNTL = 1U;
+[e = _SPI1TCNTL -> -> 1 `ui `uc ]
+"259
+[; ;mcc_generated_files/spi/src/spi1.c: 259:  PIE3bits.SPI1RXIE = 1U;
 [e = . . _PIE3bits 0 0 -> -> 1 `ui `uc ]
-"258
-[; ;mcc_generated_files/spi/src/spi1.c: 258:  PIE3bits.SPI1TXIE = 1U;
+"260
+[; ;mcc_generated_files/spi/src/spi1.c: 260:  PIE3bits.SPI1TXIE = 1U;
 [e = . . _PIE3bits 0 1 -> -> 1 `ui `uc ]
-"261
-[; ;mcc_generated_files/spi/src/spi1.c: 261:  while(SPI_BUSY == spi1_descriptor.status){
+"263
+[; ;mcc_generated_files/spi/src/spi1.c: 263:  while(SPI_BUSY == spi1_descriptor.status){
 [e $U 2435  ]
 [e :U 2436 ]
 {
-"262
-[; ;mcc_generated_files/spi/src/spi1.c: 262:  };
+"264
+[; ;mcc_generated_files/spi/src/spi1.c: 264:  };
 }
 [e :U 2435 ]
-"261
-[; ;mcc_generated_files/spi/src/spi1.c: 261:  while(SPI_BUSY == spi1_descriptor.status){
+"263
+[; ;mcc_generated_files/spi/src/spi1.c: 263:  while(SPI_BUSY == spi1_descriptor.status){
 [e $ == -> . `E17197 2 `ui -> . _spi1_descriptor 4 `ui 2436  ]
 [e :U 2437 ]
-"264
-[; ;mcc_generated_files/spi/src/spi1.c: 264:  return byteData;
+"266
+[; ;mcc_generated_files/spi/src/spi1.c: 266:  return byteData;
 [e ) _byteData ]
 [e $UE 2431  ]
-"265
-[; ;mcc_generated_files/spi/src/spi1.c: 265: }
+"267
+[; ;mcc_generated_files/spi/src/spi1.c: 267: }
 [e :UE 2431 ]
 }
-"267
-[; ;mcc_generated_files/spi/src/spi1.c: 267: void SPI1_ByteWrite(uint8_t byteData)
+"269
+[; ;mcc_generated_files/spi/src/spi1.c: 269: void SPI1_ByteWrite(uint8_t byteData)
 [v _SPI1_ByteWrite `(v ~T0 @X0 1 ef1`uc ]
-"268
-[; ;mcc_generated_files/spi/src/spi1.c: 268: {
+"270
+[; ;mcc_generated_files/spi/src/spi1.c: 270: {
 {
 [e :U _SPI1_ByteWrite ]
-"267
-[; ;mcc_generated_files/spi/src/spi1.c: 267: void SPI1_ByteWrite(uint8_t byteData)
-[v _byteData `uc ~T0 @X0 1 r1 ]
-"268
-[; ;mcc_generated_files/spi/src/spi1.c: 268: {
-[f ]
 "269
-[; ;mcc_generated_files/spi/src/spi1.c: 269:  if(SPI_IDLE == spi1_descriptor.status)
-[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2439  ]
+[; ;mcc_generated_files/spi/src/spi1.c: 269: void SPI1_ByteWrite(uint8_t byteData)
+[v _byteData `uc ~T0 @X0 1 r1 ]
 "270
-[; ;mcc_generated_files/spi/src/spi1.c: 270:  {
+[; ;mcc_generated_files/spi/src/spi1.c: 270: {
+[f ]
+"271
+[; ;mcc_generated_files/spi/src/spi1.c: 271:  if(SPI_IDLE == spi1_descriptor.status)
+[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2439  ]
+"272
+[; ;mcc_generated_files/spi/src/spi1.c: 272:  {
 {
-"275
-[; ;mcc_generated_files/spi/src/spi1.c: 275:   SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
+"277
+[; ;mcc_generated_files/spi/src/spi1.c: 277:   SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
 [e = _SPI1CON2 -> | | -> _SPI1CON2 `i -> 1 `i -> 2 `i `uc ]
-"278
-[; ;mcc_generated_files/spi/src/spi1.c: 278:   SPI1TCNTH = 0;
+"280
+[; ;mcc_generated_files/spi/src/spi1.c: 280:   SPI1TCNTH = 0;
 [e = _SPI1TCNTH -> -> 0 `i `uc ]
-"279
-[; ;mcc_generated_files/spi/src/spi1.c: 279:   SPI1TCNTL = 1;
-[e = _SPI1TCNTL -> -> 1 `i `uc ]
 "281
-[; ;mcc_generated_files/spi/src/spi1.c: 281:   SPI1TXB = byteData;
+[; ;mcc_generated_files/spi/src/spi1.c: 281:   SPI1TCNTL = 1;
+[e = _SPI1TCNTL -> -> 1 `i `uc ]
+"283
+[; ;mcc_generated_files/spi/src/spi1.c: 283:   SPI1TXB = byteData;
 [e = _SPI1TXB _byteData ]
-"282
-[; ;mcc_generated_files/spi/src/spi1.c: 282:  }
+"284
+[; ;mcc_generated_files/spi/src/spi1.c: 284:  }
 }
 [e $U 2440  ]
-"283
-[; ;mcc_generated_files/spi/src/spi1.c: 283:  else
+"285
+[; ;mcc_generated_files/spi/src/spi1.c: 285:  else
 [e :U 2439 ]
-"284
-[; ;mcc_generated_files/spi/src/spi1.c: 284:  {
-{
 "286
-[; ;mcc_generated_files/spi/src/spi1.c: 286:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 286:  {
+{
+"288
+[; ;mcc_generated_files/spi/src/spi1.c: 288:  }
 }
 [e :U 2440 ]
-"287
-[; ;mcc_generated_files/spi/src/spi1.c: 287: }
+"289
+[; ;mcc_generated_files/spi/src/spi1.c: 289: }
 [e :UE 2438 ]
 }
-"289
-[; ;mcc_generated_files/spi/src/spi1.c: 289: uint8_t SPI1_ByteRead(void)
+"291
+[; ;mcc_generated_files/spi/src/spi1.c: 291: uint8_t SPI1_ByteRead(void)
 [v _SPI1_ByteRead `(uc ~T0 @X0 1 ef ]
-"290
-[; ;mcc_generated_files/spi/src/spi1.c: 290: {
+"292
+[; ;mcc_generated_files/spi/src/spi1.c: 292: {
 {
 [e :U _SPI1_ByteRead ]
 [f ]
-"291
-[; ;mcc_generated_files/spi/src/spi1.c: 291:  uint8_t returnValue = 0x00U;
+"293
+[; ;mcc_generated_files/spi/src/spi1.c: 293:  uint8_t returnValue = 0x00U;
 [v _returnValue `uc ~T0 @X0 1 a ]
 [e = _returnValue -> -> 0 `ui `uc ]
-"292
-[; ;mcc_generated_files/spi/src/spi1.c: 292:  if(SPI_IDLE == spi1_descriptor.status)
+"294
+[; ;mcc_generated_files/spi/src/spi1.c: 294:  if(SPI_IDLE == spi1_descriptor.status)
 [e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2442  ]
-"293
-[; ;mcc_generated_files/spi/src/spi1.c: 293:  {
-{
 "295
-[; ;mcc_generated_files/spi/src/spi1.c: 295:   SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
+[; ;mcc_generated_files/spi/src/spi1.c: 295:  {
+{
+"297
+[; ;mcc_generated_files/spi/src/spi1.c: 297:   SPI1CON2 = SPI1CON2 | 0x1 | 0x2;
 [e = _SPI1CON2 -> | | -> _SPI1CON2 `i -> 1 `i -> 2 `i `uc ]
-"298
-[; ;mcc_generated_files/spi/src/spi1.c: 298:   returnValue = SPI1RXB;
+"300
+[; ;mcc_generated_files/spi/src/spi1.c: 300:   returnValue = SPI1RXB;
 [e = _returnValue _SPI1RXB ]
-"299
-[; ;mcc_generated_files/spi/src/spi1.c: 299:  }
+"301
+[; ;mcc_generated_files/spi/src/spi1.c: 301:  }
 }
 [e $U 2443  ]
-"300
-[; ;mcc_generated_files/spi/src/spi1.c: 300:  else
-[e :U 2442 ]
-"301
-[; ;mcc_generated_files/spi/src/spi1.c: 301:  {
-{
 "302
-[; ;mcc_generated_files/spi/src/spi1.c: 302:   returnValue = 0x00U;
-[e = _returnValue -> -> 0 `ui `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 302:  else
+[e :U 2442 ]
 "303
-[; ;mcc_generated_files/spi/src/spi1.c: 303:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 303:  {
+{
+"304
+[; ;mcc_generated_files/spi/src/spi1.c: 304:   returnValue = 0x00U;
+[e = _returnValue -> -> 0 `ui `uc ]
+"305
+[; ;mcc_generated_files/spi/src/spi1.c: 305:  }
 }
 [e :U 2443 ]
-"304
-[; ;mcc_generated_files/spi/src/spi1.c: 304:  return returnValue;
+"306
+[; ;mcc_generated_files/spi/src/spi1.c: 306:  return returnValue;
 [e ) _returnValue ]
 [e $UE 2441  ]
-"305
-[; ;mcc_generated_files/spi/src/spi1.c: 305: }
+"307
+[; ;mcc_generated_files/spi/src/spi1.c: 307: }
 [e :UE 2441 ]
 }
-"307
-[; ;mcc_generated_files/spi/src/spi1.c: 307: _Bool SPI1_IsTxReady(void)
+"309
+[; ;mcc_generated_files/spi/src/spi1.c: 309: _Bool SPI1_IsTxReady(void)
 [v _SPI1_IsTxReady `(a ~T0 @X0 1 ef ]
-"308
-[; ;mcc_generated_files/spi/src/spi1.c: 308: {
+"310
+[; ;mcc_generated_files/spi/src/spi1.c: 310: {
 {
 [e :U _SPI1_IsTxReady ]
 [f ]
-"309
-[; ;mcc_generated_files/spi/src/spi1.c: 309:  _Bool returnValue = 0;
+"311
+[; ;mcc_generated_files/spi/src/spi1.c: 311:  _Bool returnValue = 0;
 [v _returnValue `a ~T0 @X0 1 a ]
 [e = _returnValue -> -> 0 `i `a ]
-"310
-[; ;mcc_generated_files/spi/src/spi1.c: 310:     if (SPI_IDLE == spi1_descriptor.status)
-[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2445  ]
-"311
-[; ;mcc_generated_files/spi/src/spi1.c: 311:     {
-{
 "312
-[; ;mcc_generated_files/spi/src/spi1.c: 312:         returnValue = 1;
-[e = _returnValue -> -> 1 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 312:     if (SPI_IDLE == spi1_descriptor.status)
+[e $ ! == -> . `E17197 1 `ui -> . _spi1_descriptor 4 `ui 2445  ]
 "313
-[; ;mcc_generated_files/spi/src/spi1.c: 313:     }
+[; ;mcc_generated_files/spi/src/spi1.c: 313:     {
+{
+"314
+[; ;mcc_generated_files/spi/src/spi1.c: 314:         returnValue = 1;
+[e = _returnValue -> -> 1 `i `a ]
+"315
+[; ;mcc_generated_files/spi/src/spi1.c: 315:     }
 }
 [e $U 2446  ]
-"314
-[; ;mcc_generated_files/spi/src/spi1.c: 314:     else
-[e :U 2445 ]
-"315
-[; ;mcc_generated_files/spi/src/spi1.c: 315:     {
-{
 "316
-[; ;mcc_generated_files/spi/src/spi1.c: 316:         returnValue = 0;
-[e = _returnValue -> -> 0 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 316:     else
+[e :U 2445 ]
 "317
-[; ;mcc_generated_files/spi/src/spi1.c: 317:     }
+[; ;mcc_generated_files/spi/src/spi1.c: 317:     {
+{
+"318
+[; ;mcc_generated_files/spi/src/spi1.c: 318:         returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"319
+[; ;mcc_generated_files/spi/src/spi1.c: 319:     }
 }
 [e :U 2446 ]
-"318
-[; ;mcc_generated_files/spi/src/spi1.c: 318:     return returnValue;
+"320
+[; ;mcc_generated_files/spi/src/spi1.c: 320:     return returnValue;
 [e ) _returnValue ]
 [e $UE 2444  ]
-"319
-[; ;mcc_generated_files/spi/src/spi1.c: 319: }
+"321
+[; ;mcc_generated_files/spi/src/spi1.c: 321: }
 [e :UE 2444 ]
 }
-"321
-[; ;mcc_generated_files/spi/src/spi1.c: 321: _Bool SPI1_IsRxReady(void)
+"323
+[; ;mcc_generated_files/spi/src/spi1.c: 323: _Bool SPI1_IsRxReady(void)
 [v _SPI1_IsRxReady `(a ~T0 @X0 1 ef ]
-"322
-[; ;mcc_generated_files/spi/src/spi1.c: 322: {
+"324
+[; ;mcc_generated_files/spi/src/spi1.c: 324: {
 {
 [e :U _SPI1_IsRxReady ]
 [f ]
-"323
-[; ;mcc_generated_files/spi/src/spi1.c: 323:  _Bool returnValue = 0;
+"325
+[; ;mcc_generated_files/spi/src/spi1.c: 325:  _Bool returnValue = 0;
 [v _returnValue `a ~T0 @X0 1 a ]
 [e = _returnValue -> -> 0 `i `a ]
-"324
-[; ;mcc_generated_files/spi/src/spi1.c: 324:     if((spi1_descriptor.status == SPI_IDLE) && (1U == PIR3bits.SPI1RXIF))
-[e $ ! && == -> . _spi1_descriptor 4 `ui -> . `E17197 1 `ui == -> 1 `ui -> . . _PIR3bits 0 0 `ui 2448  ]
-"325
-[; ;mcc_generated_files/spi/src/spi1.c: 325:     {
-{
 "326
-[; ;mcc_generated_files/spi/src/spi1.c: 326:         returnValue = 1;
-[e = _returnValue -> -> 1 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 326:     if((spi1_descriptor.status == SPI_IDLE) && (1U == PIR3bits.SPI1RXIF))
+[e $ ! && == -> . _spi1_descriptor 4 `ui -> . `E17197 1 `ui == -> 1 `ui -> . . _PIR3bits 0 0 `ui 2448  ]
 "327
-[; ;mcc_generated_files/spi/src/spi1.c: 327:     }
+[; ;mcc_generated_files/spi/src/spi1.c: 327:     {
+{
+"328
+[; ;mcc_generated_files/spi/src/spi1.c: 328:         returnValue = 1;
+[e = _returnValue -> -> 1 `i `a ]
+"329
+[; ;mcc_generated_files/spi/src/spi1.c: 329:     }
 }
 [e $U 2449  ]
-"328
-[; ;mcc_generated_files/spi/src/spi1.c: 328:     else
-[e :U 2448 ]
-"329
-[; ;mcc_generated_files/spi/src/spi1.c: 329:     {
-{
 "330
-[; ;mcc_generated_files/spi/src/spi1.c: 330:         returnValue = 0;
-[e = _returnValue -> -> 0 `i `a ]
+[; ;mcc_generated_files/spi/src/spi1.c: 330:     else
+[e :U 2448 ]
 "331
-[; ;mcc_generated_files/spi/src/spi1.c: 331:     }
+[; ;mcc_generated_files/spi/src/spi1.c: 331:     {
+{
+"332
+[; ;mcc_generated_files/spi/src/spi1.c: 332:         returnValue = 0;
+[e = _returnValue -> -> 0 `i `a ]
+"333
+[; ;mcc_generated_files/spi/src/spi1.c: 333:     }
 }
 [e :U 2449 ]
-"332
-[; ;mcc_generated_files/spi/src/spi1.c: 332:     return returnValue;
+"334
+[; ;mcc_generated_files/spi/src/spi1.c: 334:     return returnValue;
 [e ) _returnValue ]
 [e $UE 2447  ]
-"333
-[; ;mcc_generated_files/spi/src/spi1.c: 333: }
+"335
+[; ;mcc_generated_files/spi/src/spi1.c: 335: }
 [e :UE 2447 ]
 }
-"335
-[; ;mcc_generated_files/spi/src/spi1.c: 335: void SPI1_RxCompleteCallbackRegister(void (*rxCompleteCallbackHandler)(void))
-[v _SPI1_RxCompleteCallbackRegister `(v ~T0 @X0 1 ef1`*F17282 ]
-"336
-[; ;mcc_generated_files/spi/src/spi1.c: 336: {
+"337
+[; ;mcc_generated_files/spi/src/spi1.c: 337: void SPI1_RxCompleteCallbackRegister(void (*rxCompleteCallbackHandler)(void))
+[v _SPI1_RxCompleteCallbackRegister `(v ~T0 @X0 1 ef1`*F17283 ]
+"338
+[; ;mcc_generated_files/spi/src/spi1.c: 338: {
 {
 [e :U _SPI1_RxCompleteCallbackRegister ]
-"335
-[; ;mcc_generated_files/spi/src/spi1.c: 335: void SPI1_RxCompleteCallbackRegister(void (*rxCompleteCallbackHandler)(void))
-[v _rxCompleteCallbackHandler `*F17284 ~T0 @X0 1 r1 ]
-"336
-[; ;mcc_generated_files/spi/src/spi1.c: 336: {
-[f ]
 "337
-[; ;mcc_generated_files/spi/src/spi1.c: 337:  SPI1_RxCompleteCallback = rxCompleteCallbackHandler;
-[e = _SPI1_RxCompleteCallback _rxCompleteCallbackHandler ]
+[; ;mcc_generated_files/spi/src/spi1.c: 337: void SPI1_RxCompleteCallbackRegister(void (*rxCompleteCallbackHandler)(void))
+[v _rxCompleteCallbackHandler `*F17285 ~T0 @X0 1 r1 ]
 "338
-[; ;mcc_generated_files/spi/src/spi1.c: 338: }
+[; ;mcc_generated_files/spi/src/spi1.c: 338: {
+[f ]
+"339
+[; ;mcc_generated_files/spi/src/spi1.c: 339:  SPI1_RxCompleteCallback = rxCompleteCallbackHandler;
+[e = _SPI1_RxCompleteCallback _rxCompleteCallbackHandler ]
+"340
+[; ;mcc_generated_files/spi/src/spi1.c: 340: }
 [e :UE 2450 ]
 }
-"340
-[; ;mcc_generated_files/spi/src/spi1.c: 340: void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void))
-[v _SPI1_TxCompleteCallbackRegister `(v ~T0 @X0 1 ef1`*F17287 ]
-"341
-[; ;mcc_generated_files/spi/src/spi1.c: 341: {
+"342
+[; ;mcc_generated_files/spi/src/spi1.c: 342: void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void))
+[v _SPI1_TxCompleteCallbackRegister `(v ~T0 @X0 1 ef1`*F17288 ]
+"343
+[; ;mcc_generated_files/spi/src/spi1.c: 343: {
 {
 [e :U _SPI1_TxCompleteCallbackRegister ]
-"340
-[; ;mcc_generated_files/spi/src/spi1.c: 340: void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void))
-[v _txCompleteCallbackHandler `*F17289 ~T0 @X0 1 r1 ]
-"341
-[; ;mcc_generated_files/spi/src/spi1.c: 341: {
-[f ]
 "342
-[; ;mcc_generated_files/spi/src/spi1.c: 342:  SPI1_TxCompleteCallback = txCompleteCallbackHandler;
-[e = _SPI1_TxCompleteCallback _txCompleteCallbackHandler ]
+[; ;mcc_generated_files/spi/src/spi1.c: 342: void SPI1_TxCompleteCallbackRegister(void (*txCompleteCallbackHandler)(void))
+[v _txCompleteCallbackHandler `*F17290 ~T0 @X0 1 r1 ]
 "343
-[; ;mcc_generated_files/spi/src/spi1.c: 343: }
+[; ;mcc_generated_files/spi/src/spi1.c: 343: {
+[f ]
+"344
+[; ;mcc_generated_files/spi/src/spi1.c: 344:  SPI1_TxCompleteCallback = txCompleteCallbackHandler;
+[e = _SPI1_TxCompleteCallback _txCompleteCallbackHandler ]
+"345
+[; ;mcc_generated_files/spi/src/spi1.c: 345: }
 [e :UE 2451 ]
 }
-"345
-[; ;mcc_generated_files/spi/src/spi1.c: 345: void SPI1_Receive_ISR(void)
+"347
+[; ;mcc_generated_files/spi/src/spi1.c: 347: void SPI1_Receive_ISR(void)
 [v _SPI1_Receive_ISR `(v ~T0 @X0 1 ef ]
-"346
-[; ;mcc_generated_files/spi/src/spi1.c: 346: {
+"348
+[; ;mcc_generated_files/spi/src/spi1.c: 348: {
 {
 [e :U _SPI1_Receive_ISR ]
 [f ]
-"347
-[; ;mcc_generated_files/spi/src/spi1.c: 347:  if(spi1_descriptor.bytesToReceive > (size_t)0)
+"349
+[; ;mcc_generated_files/spi/src/spi1.c: 349:  if(spi1_descriptor.bytesToReceive > (size_t)0)
 [e $ ! > . _spi1_descriptor 3 -> -> 0 `i `ui 2453  ]
-"348
-[; ;mcc_generated_files/spi/src/spi1.c: 348:  {
-{
 "350
-[; ;mcc_generated_files/spi/src/spi1.c: 350:   *spi1_descriptor.receiveBuffer = SPI1RXB;
-[e = *U . _spi1_descriptor 1 _SPI1RXB ]
-"351
-[; ;mcc_generated_files/spi/src/spi1.c: 351:   spi1_descriptor.receiveBuffer++;
-[e ++ . _spi1_descriptor 1 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 1 `i `x ]
+[; ;mcc_generated_files/spi/src/spi1.c: 350:  {
+{
 "352
-[; ;mcc_generated_files/spi/src/spi1.c: 352:   spi1_descriptor.bytesToReceive = spi1_descriptor.bytesToReceive - 1U;
-[e = . _spi1_descriptor 3 - . _spi1_descriptor 3 -> 1 `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 352:   *spi1_descriptor.receiveBuffer = SPI1RXB;
+[e = *U . _spi1_descriptor 1 _SPI1RXB ]
 "353
-[; ;mcc_generated_files/spi/src/spi1.c: 353:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 353:   spi1_descriptor.receiveBuffer++;
+[e ++ . _spi1_descriptor 1 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 1 `i `x ]
+"354
+[; ;mcc_generated_files/spi/src/spi1.c: 354:   spi1_descriptor.bytesToReceive = spi1_descriptor.bytesToReceive - 1U;
+[e = . _spi1_descriptor 3 - . _spi1_descriptor 3 -> 1 `ui ]
+"355
+[; ;mcc_generated_files/spi/src/spi1.c: 355:  }
 }
 [e $U 2454  ]
-"354
-[; ;mcc_generated_files/spi/src/spi1.c: 354:  else
+"356
+[; ;mcc_generated_files/spi/src/spi1.c: 356:  else
 [e :U 2453 ]
-"355
-[; ;mcc_generated_files/spi/src/spi1.c: 355:     {
+"357
+[; ;mcc_generated_files/spi/src/spi1.c: 357:     {
 {
-"358
-[; ;mcc_generated_files/spi/src/spi1.c: 358:         (void)SPI1RXB;
+"360
+[; ;mcc_generated_files/spi/src/spi1.c: 360:         (void)SPI1RXB;
 [e _SPI1RXB ]
-"359
-[; ;mcc_generated_files/spi/src/spi1.c: 359:     }
+"361
+[; ;mcc_generated_files/spi/src/spi1.c: 361:     }
 }
 [e :U 2454 ]
-"361
-[; ;mcc_generated_files/spi/src/spi1.c: 361:  if((size_t)0 == spi1_descriptor.bytesToReceive)
+"363
+[; ;mcc_generated_files/spi/src/spi1.c: 363:  if((size_t)0 == spi1_descriptor.bytesToReceive)
 [e $ ! == -> -> 0 `i `ui . _spi1_descriptor 3 2455  ]
-"362
-[; ;mcc_generated_files/spi/src/spi1.c: 362:  {
-{
 "364
-[; ;mcc_generated_files/spi/src/spi1.c: 364:   PIE3bits.SPI1RXIE = 0U;
-[e = . . _PIE3bits 0 0 -> -> 0 `ui `uc ]
-"370
-[; ;mcc_generated_files/spi/src/spi1.c: 370:         if((size_t)0 == spi1_descriptor.bytesToTransmit)
-[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 2 2456  ]
-"371
-[; ;mcc_generated_files/spi/src/spi1.c: 371:         {
+[; ;mcc_generated_files/spi/src/spi1.c: 364:  {
 {
+"366
+[; ;mcc_generated_files/spi/src/spi1.c: 366:   PIE3bits.SPI1RXIE = 0U;
+[e = . . _PIE3bits 0 0 -> -> 0 `ui `uc ]
 "372
-[; ;mcc_generated_files/spi/src/spi1.c: 372:       spi1_descriptor.status = SPI_IDLE;
-[e = . _spi1_descriptor 4 . `E17197 1 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 372:         if((size_t)0 == spi1_descriptor.bytesToTransmit)
+[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 2 2456  ]
 "373
-[; ;mcc_generated_files/spi/src/spi1.c: 373:      }
+[; ;mcc_generated_files/spi/src/spi1.c: 373:         {
+{
+"374
+[; ;mcc_generated_files/spi/src/spi1.c: 374:       spi1_descriptor.status = SPI_IDLE;
+[e = . _spi1_descriptor 4 . `E17197 1 ]
+"375
+[; ;mcc_generated_files/spi/src/spi1.c: 375:      }
 }
 [e $U 2457  ]
-"374
-[; ;mcc_generated_files/spi/src/spi1.c: 374:   else
+"376
+[; ;mcc_generated_files/spi/src/spi1.c: 376:   else
 [e :U 2456 ]
-"375
-[; ;mcc_generated_files/spi/src/spi1.c: 375:   {
-{
 "377
-[; ;mcc_generated_files/spi/src/spi1.c: 377:   }
+[; ;mcc_generated_files/spi/src/spi1.c: 377:   {
+{
+"379
+[; ;mcc_generated_files/spi/src/spi1.c: 379:   }
 }
 [e :U 2457 ]
-"378
-[; ;mcc_generated_files/spi/src/spi1.c: 378:   if (SPI1_RxCompleteCallback != ((void*)0))
-[e $ ! != _SPI1_RxCompleteCallback -> -> -> 0 `i `*v `*F17292 2458  ]
-"379
-[; ;mcc_generated_files/spi/src/spi1.c: 379:         {
-{
 "380
-[; ;mcc_generated_files/spi/src/spi1.c: 380:          SPI1_RxCompleteCallback();
-[e ( *U _SPI1_RxCompleteCallback ..  ]
+[; ;mcc_generated_files/spi/src/spi1.c: 380:   if (SPI1_RxCompleteCallback != ((void*)0))
+[e $ ! != _SPI1_RxCompleteCallback -> -> -> 0 `i `*v `*F17293 2458  ]
 "381
-[; ;mcc_generated_files/spi/src/spi1.c: 381:         }
+[; ;mcc_generated_files/spi/src/spi1.c: 381:         {
+{
+"382
+[; ;mcc_generated_files/spi/src/spi1.c: 382:          SPI1_RxCompleteCallback();
+[e ( *U _SPI1_RxCompleteCallback ..  ]
+"383
+[; ;mcc_generated_files/spi/src/spi1.c: 383:         }
 }
 [e $U 2459  ]
-"382
-[; ;mcc_generated_files/spi/src/spi1.c: 382:         else
+"384
+[; ;mcc_generated_files/spi/src/spi1.c: 384:         else
 [e :U 2458 ]
-"383
-[; ;mcc_generated_files/spi/src/spi1.c: 383:         {
-{
 "385
-[; ;mcc_generated_files/spi/src/spi1.c: 385:         }
+[; ;mcc_generated_files/spi/src/spi1.c: 385:         {
+{
+"387
+[; ;mcc_generated_files/spi/src/spi1.c: 387:         }
 }
 [e :U 2459 ]
-"386
-[; ;mcc_generated_files/spi/src/spi1.c: 386:  }
+"388
+[; ;mcc_generated_files/spi/src/spi1.c: 388:  }
 }
 [e $U 2460  ]
-"387
-[; ;mcc_generated_files/spi/src/spi1.c: 387:  else
+"389
+[; ;mcc_generated_files/spi/src/spi1.c: 389:  else
 [e :U 2455 ]
-"388
-[; ;mcc_generated_files/spi/src/spi1.c: 388:  {
-{
 "390
-[; ;mcc_generated_files/spi/src/spi1.c: 390:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 390:  {
+{
+"392
+[; ;mcc_generated_files/spi/src/spi1.c: 392:  }
 }
 [e :U 2460 ]
-"391
-[; ;mcc_generated_files/spi/src/spi1.c: 391: }
+"393
+[; ;mcc_generated_files/spi/src/spi1.c: 393: }
 [e :UE 2452 ]
 }
-"393
-[; ;mcc_generated_files/spi/src/spi1.c: 393: void SPI1_Transmit_ISR(void)
+"395
+[; ;mcc_generated_files/spi/src/spi1.c: 395: void SPI1_Transmit_ISR(void)
 [v _SPI1_Transmit_ISR `(v ~T0 @X0 1 ef ]
-"394
-[; ;mcc_generated_files/spi/src/spi1.c: 394: {
+"396
+[; ;mcc_generated_files/spi/src/spi1.c: 396: {
 {
 [e :U _SPI1_Transmit_ISR ]
 [f ]
-"396
-[; ;mcc_generated_files/spi/src/spi1.c: 396:  if(spi1_descriptor.bytesToTransmit > (size_t)0)
+"398
+[; ;mcc_generated_files/spi/src/spi1.c: 398:  if(spi1_descriptor.bytesToTransmit > (size_t)0)
 [e $ ! > . _spi1_descriptor 2 -> -> 0 `i `ui 2462  ]
-"397
-[; ;mcc_generated_files/spi/src/spi1.c: 397:  {
-{
 "399
-[; ;mcc_generated_files/spi/src/spi1.c: 399:   SPI1TXB = *spi1_descriptor.transmitBuffer;
-[e = _SPI1TXB *U . _spi1_descriptor 0 ]
-"400
-[; ;mcc_generated_files/spi/src/spi1.c: 400:   spi1_descriptor.transmitBuffer++;
-[e ++ . _spi1_descriptor 0 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 0 `i `x ]
+[; ;mcc_generated_files/spi/src/spi1.c: 399:  {
+{
 "401
-[; ;mcc_generated_files/spi/src/spi1.c: 401:   spi1_descriptor.bytesToTransmit = spi1_descriptor.bytesToTransmit - 1U;
-[e = . _spi1_descriptor 2 - . _spi1_descriptor 2 -> 1 `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 401:   SPI1TXB = *spi1_descriptor.transmitBuffer;
+[e = _SPI1TXB *U . _spi1_descriptor 0 ]
 "402
-[; ;mcc_generated_files/spi/src/spi1.c: 402:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 402:   spi1_descriptor.transmitBuffer++;
+[e ++ . _spi1_descriptor 0 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 0 `i `x ]
+"403
+[; ;mcc_generated_files/spi/src/spi1.c: 403:   spi1_descriptor.bytesToTransmit = spi1_descriptor.bytesToTransmit - 1U;
+[e = . _spi1_descriptor 2 - . _spi1_descriptor 2 -> 1 `ui ]
+"404
+[; ;mcc_generated_files/spi/src/spi1.c: 404:  }
 }
 [e $U 2463  ]
-"403
-[; ;mcc_generated_files/spi/src/spi1.c: 403:  else
+"405
+[; ;mcc_generated_files/spi/src/spi1.c: 405:  else
 [e :U 2462 ]
-"404
-[; ;mcc_generated_files/spi/src/spi1.c: 404:  {
-{
 "406
-[; ;mcc_generated_files/spi/src/spi1.c: 406:  }
+[; ;mcc_generated_files/spi/src/spi1.c: 406:  {
+{
+"408
+[; ;mcc_generated_files/spi/src/spi1.c: 408:  }
 }
 [e :U 2463 ]
-"410
-[; ;mcc_generated_files/spi/src/spi1.c: 410:  if((size_t)0 == spi1_descriptor.bytesToTransmit)
-[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 2 2464  ]
-"411
-[; ;mcc_generated_files/spi/src/spi1.c: 411:  {
-{
 "412
-[; ;mcc_generated_files/spi/src/spi1.c: 412:   PIE3bits.SPI1TXIE = 0U;
-[e = . . _PIE3bits 0 1 -> -> 0 `ui `uc ]
-"418
-[; ;mcc_generated_files/spi/src/spi1.c: 418:         if((size_t)0 == spi1_descriptor.bytesToReceive)
-[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 3 2465  ]
-"419
-[; ;mcc_generated_files/spi/src/spi1.c: 419:   {
+[; ;mcc_generated_files/spi/src/spi1.c: 412:  if((size_t)0 == spi1_descriptor.bytesToTransmit)
+[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 2 2464  ]
+"413
+[; ;mcc_generated_files/spi/src/spi1.c: 413:  {
 {
+"414
+[; ;mcc_generated_files/spi/src/spi1.c: 414:   PIE3bits.SPI1TXIE = 0U;
+[e = . . _PIE3bits 0 1 -> -> 0 `ui `uc ]
 "420
-[; ;mcc_generated_files/spi/src/spi1.c: 420:    spi1_descriptor.status = SPI_IDLE;
-[e = . _spi1_descriptor 4 . `E17197 1 ]
+[; ;mcc_generated_files/spi/src/spi1.c: 420:         if((size_t)0 == spi1_descriptor.bytesToReceive)
+[e $ ! == -> -> 0 `i `ui . _spi1_descriptor 3 2465  ]
 "421
-[; ;mcc_generated_files/spi/src/spi1.c: 421:   }
+[; ;mcc_generated_files/spi/src/spi1.c: 421:   {
+{
+"422
+[; ;mcc_generated_files/spi/src/spi1.c: 422:    spi1_descriptor.status = SPI_IDLE;
+[e = . _spi1_descriptor 4 . `E17197 1 ]
+"423
+[; ;mcc_generated_files/spi/src/spi1.c: 423:   }
 }
 [e $U 2466  ]
-"422
-[; ;mcc_generated_files/spi/src/spi1.c: 422:   else
+"424
+[; ;mcc_generated_files/spi/src/spi1.c: 424:   else
 [e :U 2465 ]
-"423
-[; ;mcc_generated_files/spi/src/spi1.c: 423:   {
-{
 "425
-[; ;mcc_generated_files/spi/src/spi1.c: 425:   }
+[; ;mcc_generated_files/spi/src/spi1.c: 425:   {
+{
+"427
+[; ;mcc_generated_files/spi/src/spi1.c: 427:   }
 }
 [e :U 2466 ]
-"426
-[; ;mcc_generated_files/spi/src/spi1.c: 426:   if (SPI1_TxCompleteCallback != ((void*)0))
-[e $ ! != _SPI1_TxCompleteCallback -> -> -> 0 `i `*v `*F17294 2467  ]
-"427
-[; ;mcc_generated_files/spi/src/spi1.c: 427:      {
-{
 "428
-[; ;mcc_generated_files/spi/src/spi1.c: 428:          SPI1_TxCompleteCallback();
-[e ( *U _SPI1_TxCompleteCallback ..  ]
+[; ;mcc_generated_files/spi/src/spi1.c: 428:   if (SPI1_TxCompleteCallback != ((void*)0))
+[e $ ! != _SPI1_TxCompleteCallback -> -> -> 0 `i `*v `*F17295 2467  ]
 "429
-[; ;mcc_generated_files/spi/src/spi1.c: 429:      }
+[; ;mcc_generated_files/spi/src/spi1.c: 429:      {
+{
+"430
+[; ;mcc_generated_files/spi/src/spi1.c: 430:          SPI1_TxCompleteCallback();
+[e ( *U _SPI1_TxCompleteCallback ..  ]
+"431
+[; ;mcc_generated_files/spi/src/spi1.c: 431:      }
 }
 [e $U 2468  ]
-"430
-[; ;mcc_generated_files/spi/src/spi1.c: 430:      else
+"432
+[; ;mcc_generated_files/spi/src/spi1.c: 432:      else
 [e :U 2467 ]
-"431
-[; ;mcc_generated_files/spi/src/spi1.c: 431:      {
-{
 "433
-[; ;mcc_generated_files/spi/src/spi1.c: 433:      }
+[; ;mcc_generated_files/spi/src/spi1.c: 433:      {
+{
+"435
+[; ;mcc_generated_files/spi/src/spi1.c: 435:      }
 }
 [e :U 2468 ]
-"434
-[; ;mcc_generated_files/spi/src/spi1.c: 434:  }
+"436
+[; ;mcc_generated_files/spi/src/spi1.c: 436:  }
 }
 [e :U 2464 ]
-"435
-[; ;mcc_generated_files/spi/src/spi1.c: 435: }
+"437
+[; ;mcc_generated_files/spi/src/spi1.c: 437: }
 [e :UE 2461 ]
 }
-"436
-[; ;mcc_generated_files/spi/src/spi1.c: 436: void SPI1_ISR(void)
+"438
+[; ;mcc_generated_files/spi/src/spi1.c: 438: void SPI1_ISR(void)
 [v _SPI1_ISR `(v ~T0 @X0 1 ef ]
-"437
-[; ;mcc_generated_files/spi/src/spi1.c: 437: {
+"439
+[; ;mcc_generated_files/spi/src/spi1.c: 439: {
 {
 [e :U _SPI1_ISR ]
 [f ]
-"439
-[; ;mcc_generated_files/spi/src/spi1.c: 439:     if (PIR3bits.SPI1RXIF) {
+"441
+[; ;mcc_generated_files/spi/src/spi1.c: 441:     if (PIR3bits.SPI1RXIF) {
 [e $ ! != -> . . _PIR3bits 0 0 `i -> 0 `i 2470  ]
 {
-"440
-[; ;mcc_generated_files/spi/src/spi1.c: 440:             PIR3bits.SPI1RXIF = 0;
+"442
+[; ;mcc_generated_files/spi/src/spi1.c: 442:             PIR3bits.SPI1RXIF = 0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"441
-[; ;mcc_generated_files/spi/src/spi1.c: 441:             if (spi1_descriptor.bytesToReceive > 0) {
+"443
+[; ;mcc_generated_files/spi/src/spi1.c: 443:             if (spi1_descriptor.bytesToReceive > 0) {
 [e $ ! > . _spi1_descriptor 3 -> -> 0 `i `ui 2471  ]
 {
-"442
-[; ;mcc_generated_files/spi/src/spi1.c: 442:                 *spi1_descriptor.receiveBuffer = SPI1RXB;
-[e = *U . _spi1_descriptor 1 _SPI1RXB ]
-"443
-[; ;mcc_generated_files/spi/src/spi1.c: 443:                 spi1_descriptor.receiveBuffer++;
-[e ++ . _spi1_descriptor 1 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 1 `i `x ]
 "444
-[; ;mcc_generated_files/spi/src/spi1.c: 444:                 spi1_descriptor.bytesToReceive--;
-[e -- . _spi1_descriptor 3 -> -> 1 `i `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 444:                 *spi1_descriptor.receiveBuffer = SPI1RXB;
+[e = *U . _spi1_descriptor 1 _SPI1RXB ]
 "445
-[; ;mcc_generated_files/spi/src/spi1.c: 445:             }
+[; ;mcc_generated_files/spi/src/spi1.c: 445:                 spi1_descriptor.receiveBuffer++;
+[e ++ . _spi1_descriptor 1 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 1 `i `x ]
+"446
+[; ;mcc_generated_files/spi/src/spi1.c: 446:                 spi1_descriptor.bytesToReceive--;
+[e -- . _spi1_descriptor 3 -> -> 1 `i `ui ]
+"447
+[; ;mcc_generated_files/spi/src/spi1.c: 447:             }
 }
 [e :U 2471 ]
-"446
-[; ;mcc_generated_files/spi/src/spi1.c: 446:         }
+"448
+[; ;mcc_generated_files/spi/src/spi1.c: 448:         }
 }
 [e :U 2470 ]
-"448
-[; ;mcc_generated_files/spi/src/spi1.c: 448:         if (PIR3bits.SPI1TXIF) {
+"450
+[; ;mcc_generated_files/spi/src/spi1.c: 450:         if (PIR3bits.SPI1TXIF) {
 [e $ ! != -> . . _PIR3bits 0 1 `i -> 0 `i 2472  ]
 {
-"449
-[; ;mcc_generated_files/spi/src/spi1.c: 449:             PIR3bits.SPI1TXIF = 0;
+"451
+[; ;mcc_generated_files/spi/src/spi1.c: 451:             PIR3bits.SPI1TXIF = 0;
 [e = . . _PIR3bits 0 1 -> -> 0 `i `uc ]
-"450
-[; ;mcc_generated_files/spi/src/spi1.c: 450:             if (spi1_descriptor.bytesToTransmit > 0) {
+"452
+[; ;mcc_generated_files/spi/src/spi1.c: 452:             if (spi1_descriptor.bytesToTransmit > 0) {
 [e $ ! > . _spi1_descriptor 2 -> -> 0 `i `ui 2473  ]
 {
-"451
-[; ;mcc_generated_files/spi/src/spi1.c: 451:                 SPI1TXB = *spi1_descriptor.transmitBuffer;
-[e = _SPI1TXB *U . _spi1_descriptor 0 ]
-"452
-[; ;mcc_generated_files/spi/src/spi1.c: 452:                 spi1_descriptor.transmitBuffer++;
-[e ++ . _spi1_descriptor 0 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 0 `i `x ]
 "453
-[; ;mcc_generated_files/spi/src/spi1.c: 453:                 spi1_descriptor.bytesToTransmit--;
-[e -- . _spi1_descriptor 2 -> -> 1 `i `ui ]
+[; ;mcc_generated_files/spi/src/spi1.c: 453:                 SPI1TXB = *spi1_descriptor.transmitBuffer;
+[e = _SPI1TXB *U . _spi1_descriptor 0 ]
 "454
-[; ;mcc_generated_files/spi/src/spi1.c: 454:             }
+[; ;mcc_generated_files/spi/src/spi1.c: 454:                 spi1_descriptor.transmitBuffer++;
+[e ++ . _spi1_descriptor 0 * -> -> 1 `i `x -> -> # *U . _spi1_descriptor 0 `i `x ]
+"455
+[; ;mcc_generated_files/spi/src/spi1.c: 455:                 spi1_descriptor.bytesToTransmit--;
+[e -- . _spi1_descriptor 2 -> -> 1 `i `ui ]
+"456
+[; ;mcc_generated_files/spi/src/spi1.c: 456:             }
 }
 [e :U 2473 ]
-"455
-[; ;mcc_generated_files/spi/src/spi1.c: 455:         }
+"457
+[; ;mcc_generated_files/spi/src/spi1.c: 457:         }
 }
 [e :U 2472 ]
-"457
-[; ;mcc_generated_files/spi/src/spi1.c: 457:         if ((spi1_descriptor.bytesToTransmit == 0) && (spi1_descriptor.bytesToReceive == 0)) {
+"459
+[; ;mcc_generated_files/spi/src/spi1.c: 459:         if ((spi1_descriptor.bytesToTransmit == 0) && (spi1_descriptor.bytesToReceive == 0)) {
 [e $ ! && == . _spi1_descriptor 2 -> -> 0 `i `ui == . _spi1_descriptor 3 -> -> 0 `i `ui 2474  ]
 {
-"458
-[; ;mcc_generated_files/spi/src/spi1.c: 458:             spi1_descriptor.status = SPI_IDLE;
+"460
+[; ;mcc_generated_files/spi/src/spi1.c: 460:             spi1_descriptor.status = SPI_IDLE;
 [e = . _spi1_descriptor 4 . `E17197 1 ]
-"459
-[; ;mcc_generated_files/spi/src/spi1.c: 459:         }
+"461
+[; ;mcc_generated_files/spi/src/spi1.c: 461:         }
 }
 [e :U 2474 ]
-"460
-[; ;mcc_generated_files/spi/src/spi1.c: 460: }
+"462
+[; ;mcc_generated_files/spi/src/spi1.c: 462: }
 [e :UE 2469 ]
 }
-"462
-[; ;mcc_generated_files/spi/src/spi1.c: 462: void SPI1_SimpleWrite(uint8_t byteData) {
+"464
+[; ;mcc_generated_files/spi/src/spi1.c: 464: void SPI1_SimpleWrite(uint8_t byteData) {
 [v _SPI1_SimpleWrite `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _SPI1_SimpleWrite ]
 [v _byteData `uc ~T0 @X0 1 r1 ]
 [f ]
-"463
-[; ;mcc_generated_files/spi/src/spi1.c: 463:     SPI1CON0 = 0x82;
-[e = _SPI1CON0 -> -> 130 `i `uc ]
-"464
-[; ;mcc_generated_files/spi/src/spi1.c: 464:     SPI1CON1 = 0x40;
-[e = _SPI1CON1 -> -> 64 `i `uc ]
 "465
-[; ;mcc_generated_files/spi/src/spi1.c: 465:     SPI1BAUD = 0x20;
-[e = _SPI1BAUD -> -> 32 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 465:     SPI1CON0 = 0x82;
+[e = _SPI1CON0 -> -> 130 `i `uc ]
 "466
-[; ;mcc_generated_files/spi/src/spi1.c: 466:     SPI1CON0bits.EN = 1;
-[e = . . _SPI1CON0bits 0 4 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/spi/src/spi1.c: 466:     SPI1CON1 = 0x40;
+[e = _SPI1CON1 -> -> 64 `i `uc ]
+"467
+[; ;mcc_generated_files/spi/src/spi1.c: 467:     SPI1BAUD = 0x20;
+[e = _SPI1BAUD -> -> 32 `i `uc ]
 "468
-[; ;mcc_generated_files/spi/src/spi1.c: 468:     while (!SPI1STATUSbits.TXBE);
+[; ;mcc_generated_files/spi/src/spi1.c: 468:     SPI1CON0bits.EN = 1;
+[e = . . _SPI1CON0bits 0 4 -> -> 1 `i `uc ]
+"470
+[; ;mcc_generated_files/spi/src/spi1.c: 470:     while (!SPI1STATUSbits.TXBE);
 [e $U 2476  ]
 [e :U 2477 ]
 [e :U 2476 ]
 [e $ ! != -> . . _SPI1STATUSbits 0 5 `i -> 0 `i 2477  ]
 [e :U 2478 ]
-"469
-[; ;mcc_generated_files/spi/src/spi1.c: 469:     SPI1TXB = byteData;
+"471
+[; ;mcc_generated_files/spi/src/spi1.c: 471:     SPI1TXB = byteData;
 [e = _SPI1TXB _byteData ]
-"470
-[; ;mcc_generated_files/spi/src/spi1.c: 470:     while (spi1_descriptor.status == SPI_BUSY);
+"472
+[; ;mcc_generated_files/spi/src/spi1.c: 472:     while (spi1_descriptor.status == SPI_BUSY);
 [e $U 2479  ]
 [e :U 2480 ]
 [e :U 2479 ]
 [e $ == -> . _spi1_descriptor 4 `ui -> . `E17197 2 `ui 2480  ]
 [e :U 2481 ]
-"471
-[; ;mcc_generated_files/spi/src/spi1.c: 471: }
+"473
+[; ;mcc_generated_files/spi/src/spi1.c: 473: }
 [e :UE 2475 ]
 }

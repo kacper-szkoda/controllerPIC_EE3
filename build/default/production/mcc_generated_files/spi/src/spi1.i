@@ -29451,6 +29451,8 @@ typedef struct
 
 
 
+extern uint8_t ready;
+
 
 
 const struct SPI_INTERFACE SPI1_Host = {

@@ -58,6 +58,11 @@
 #define TMR0_CLOCK_FREQ (64000000UL)
 /**
  * @ingroup tmr08bit
+ * @brief Defines the timer interrupt ticker factor.
+ */
+#define TMR0_INTERRUPT_TICKER_FACTOR (1U)
+/**
+ * @ingroup tmr08bit
  * @brief Defines the Custom Name for the \ref TMR0_MAX_COUNT.
  */
 /* cppcheck-suppress misra-c2012-2.5 */ 
@@ -124,28 +129,28 @@
 #define Timer0_MaxCountGet TMR0_MaxCountGet
 /**
  * @ingroup tmr08bit
- * @brief Defines the Custom Name for the \ref TMR0_PeriodMatchStatusGet API.
+ * @brief Defines the Custom Name for the \ref TMR0_TMRInterruptEnable API.
  */
 /* cppcheck-suppress misra-c2012-2.5 */  
-#define Timer0_PeriodMatchStatusGet TMR0_PeriodMatchStatusGet
+#define Timer0_TMRInterruptEnable TMR0_TMRInterruptEnable
 /**
  * @ingroup tmr08bit
- * @brief Defines the Custom Name for the \ref TMR0_PeriodMatchStatusClear API.
+ * @brief Defines the Custom Name for the \ref TMR0_TMRInterruptDisable API.
  */
 /* cppcheck-suppress misra-c2012-2.5 */  
-#define Timer0_PeriodMatchStatusClear TMR0_PeriodMatchStatusClear
+#define Timer0_TMRInterruptDisable TMR0_TMRInterruptDisable
+/**
+ * @ingroup tmr08bit
+ * @brief Defines the Custom Name for the \ref TMR0_ISR API.
+ */
+/* cppcheck-suppress misra-c2012-2.5 */  
+#define Timer0_ISR TMR0_ISR
 /**
  * @ingroup tmr08bit
  * @brief Defines the Custom Name for the \ref TMR0_PeriodMatchCallbackRegister API.
  */
 /* cppcheck-suppress misra-c2012-2.5 */  
 #define Timer0_PeriodMatchCallbackRegister TMR0_PeriodMatchCallbackRegister
-/**
- * @ingroup tmr08bit
- * @brief Defines the Custom Name for the \ref TMR0_Tasks API.
- */
-/* cppcheck-suppress misra-c2012-2.5 */  
-#define Timer0_Tasks TMR0_Tasks
 
 /**
  * @ingroup tmr08bit
@@ -228,27 +233,27 @@ uint8_t TMR0_MaxCountGet(void);
 
 /**
  * @ingroup tmr08bit
- * @brief Returns the status of the TMR0 interrupt flag.
- * @param None.
- * @return Interrupt flag status
- */
-bool TMR0_PeriodMatchStatusGet(void);
-
-/**
- * @ingroup tmr08bit
- * @brief Clears the TMR0 interrupt flag.
+ * @brief Enables the TMR0 interrupt.
  * @param None.
  * @return None.
  */
-void TMR0_PeriodMatchStatusClear(void);
+void TMR0_TMRInterruptEnable(void);
 
 /**
  * @ingroup tmr08bit
- * @brief Performs tasks to be executed during the timer interrupt event.
+ * @brief Disables the TMR0 interrupt.
  * @param None.
  * @return None.
  */
-void TMR0_Tasks(void);
+void TMR0_TMRInterruptDisable(void);
+
+/**
+ * @ingroup tmr08bit
+ * @brief Interrupt Service Routine (ISR) for the TMR0 overflow or period match interrupt.
+ * @param None.
+ * @return None.
+ */
+void TMR0_ISR(void);
 
 /**
  * @ingroup tmr08bit

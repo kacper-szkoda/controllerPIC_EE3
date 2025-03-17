@@ -37,6 +37,9 @@
 #include "mcc_generated_files/system/system.h"
 #include "mcc_generated_files/system/pins.h"
 #include "nrf24.h"
+#include "mcc_generated_files/timer/tmr0.h"
+
+extern uint8_t ready;
 
 /*
     Main application
@@ -89,34 +92,12 @@ int main(void)
 
     while(1)
     {
-        
-        nrf24_WriteRegister(0x07, (1 << 4)); 
-//        uint8_t stat = nrf24_ReadRegister(0x07);
-//        uint8_t fifo_stat = nrf24_ReadRegister(FIFO_STATUS);  // FIFO_STATUS is 0x17
-//        uint8_t rf = nrf24_ReadRegister(0x06);
-//        uint8_t txadrr = nrf24_ReadRegister(0x10);
-        uint8_t carr = nrf24_ReadRegister(0x05);
-//        uint8_t conf = nrf24_ReadRegister(0x00);
+        TMR0_Stop();
+//        nrf24_WriteRegister(0x07, (1 << 4)); 
 
         nrf24_WritePayload(dataToSend2, 32);
         
-        uint8_t status = nrf24_ReadRegister(STATUS);
-//        fifo_stat = nrf24_ReadRegister(FIFO_STATUS);
-
-        __delay_us(100);
-//        fifo_stat = nrf24_ReadRegister(FIFO_STATUS);
-        // Pulse CE pin to send the payload
-        CE = 1;         // Set CE high
-        __delay_us(300);           // Minimum 10 µs pulse width
-        CE = 0;         // Set CE low
-        
-        status = nrf24_ReadRegister(STATUS);
-//        fifo_stat = nrf24_ReadRegister(FIFO_STATUS);
-        if (status & (1 << 5)) {          // if TX_DS bit set
-            // Clear it by writing a ?1? to that bit
-            nrf24_WriteRegister(STATUS, (1 << 5));
-        }
-        status = nrf24_ReadRegister(STATUS);
+        CE = 1;         // Set CE high, should be handled by the interrupt of irq
         
         if (counter > 41){
             counter =0;

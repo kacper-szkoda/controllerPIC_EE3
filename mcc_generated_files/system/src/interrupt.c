@@ -47,7 +47,7 @@ void  INTERRUPT_Initialize (void)
     // Clear the interrupt flag
     // Set the external interrupt edge detect
     EXT_INT0_InterruptFlagClear();   
-    EXT_INT0_risingEdgeSet();    
+    EXT_INT0_fallingEdgeSet();    
     // Set Default Interrupt Handler
     INT0_SetInterruptHandler(INT0_DefaultInterruptHandler);
     // EXT_INT0_InterruptEnable();
@@ -80,7 +80,15 @@ void  INTERRUPT_Initialize (void)
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-    if(PIE3bits.SPI1TXIE == 1 && PIR3bits.SPI1TXIF == 1)
+    if(PIE0bits.IOCIE == 1 && PIR0bits.IOCIF == 1)
+    {
+        PIN_MANAGER_IOC();
+    }
+    else if(PIE3bits.TMR0IE == 1 && PIR3bits.TMR0IF == 1)
+    {
+        TMR0_ISR();
+    }
+    else if(PIE3bits.SPI1TXIE == 1 && PIR3bits.SPI1TXIF == 1)
     {
         SPI1_Transmit_ISR();
     }

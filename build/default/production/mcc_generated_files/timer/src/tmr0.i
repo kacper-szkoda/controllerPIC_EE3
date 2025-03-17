@@ -29267,7 +29267,7 @@ unsigned char __t3rd16on(void);
 
 # 1 "mcc_generated_files/timer/src/../tmr0_deprecated.h" 1
 # 40 "mcc_generated_files/timer/src/../tmr0.h" 2
-# 157 "mcc_generated_files/timer/src/../tmr0.h"
+# 162 "mcc_generated_files/timer/src/../tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29277,17 +29277,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 174 "mcc_generated_files/timer/src/../tmr0.h"
+# 179 "mcc_generated_files/timer/src/../tmr0.h"
 void TMR0_Start(void);
-# 183 "mcc_generated_files/timer/src/../tmr0.h"
+# 188 "mcc_generated_files/timer/src/../tmr0.h"
 void TMR0_Stop(void);
-# 192 "mcc_generated_files/timer/src/../tmr0.h"
+# 197 "mcc_generated_files/timer/src/../tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 201 "mcc_generated_files/timer/src/../tmr0.h"
+# 206 "mcc_generated_files/timer/src/../tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 210 "mcc_generated_files/timer/src/../tmr0.h"
+# 215 "mcc_generated_files/timer/src/../tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 219 "mcc_generated_files/timer/src/../tmr0.h"
+# 224 "mcc_generated_files/timer/src/../tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 
@@ -29304,7 +29304,7 @@ uint8_t TMR0_MaxCountGet(void);
 
 
 
-_Bool TMR0_PeriodMatchStatusGet(void);
+void TMR0_TMRInterruptEnable(void);
 
 
 
@@ -29312,7 +29312,7 @@ _Bool TMR0_PeriodMatchStatusGet(void);
 
 
 
-void TMR0_PeriodMatchStatusClear(void);
+void TMR0_TMRInterruptDisable(void);
 
 
 
@@ -29320,7 +29320,7 @@ void TMR0_PeriodMatchStatusClear(void);
 
 
 
-void TMR0_Tasks(void);
+void TMR0_ISR(void);
 
 
 
@@ -29351,6 +29351,7 @@ void TMR0_Initialize(void)
     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
 
     PIR3bits.TMR0IF = 0;
+    PIE3bits.TMR0IE = 1;
 
     T0CON0 = (0 << 0x0)
         | (1 << 0x7)
@@ -29409,27 +29410,24 @@ uint8_t TMR0_MaxCountGet(void)
     return (255U);
 }
 
-_Bool TMR0_PeriodMatchStatusGet(void)
+void TMR0_TMRInterruptEnable(void)
 {
-    return PIR3bits.TMR0IF;
+    PIE3bits.TMR0IE = 1;
 }
 
-void TMR0_PeriodMatchStatusClear(void)
+void TMR0_TMRInterruptDisable(void)
 {
-    PIR3bits.TMR0IF = 0;
+    PIE3bits.TMR0IE = 0;
 }
 
-void TMR0_Tasks(void)
+void TMR0_ISR(void)
 {
-    if(1U == PIR3bits.TMR0IF)
-    {
         if(((void*)0) != TMR0_PeriodMatchCallback)
         {
             TMR0_PeriodMatchCallback();
         }
         PIR3bits.TMR0IF = 0;
     }
-}
 
 void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
 {
@@ -29438,5 +29436,6 @@ void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
 
 static void TMR0_DefaultCallback(void)
 {
+
 
 }

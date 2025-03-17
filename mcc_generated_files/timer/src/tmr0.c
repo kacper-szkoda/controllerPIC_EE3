@@ -54,6 +54,7 @@ void TMR0_Initialize(void)
     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
 
     PIR3bits.TMR0IF = 0;
+    PIE3bits.TMR0IE = 1;	
 
     T0CON0 = (0 << _T0CON0_T0OUTPS_POSN)   // T0OUTPS 1:1
         | (1 << _T0CON0_T0EN_POSN)   // T0EN enabled
@@ -112,27 +113,24 @@ uint8_t TMR0_MaxCountGet(void)
     return TMR0_MAX_COUNT;
 }
 
-bool TMR0_PeriodMatchStatusGet(void)
+void TMR0_TMRInterruptEnable(void)
 {
-    return PIR3bits.TMR0IF;
+    PIE3bits.TMR0IE = 1;
 }
 
-void TMR0_PeriodMatchStatusClear(void)
+void TMR0_TMRInterruptDisable(void)
 {
-    PIR3bits.TMR0IF = 0;
+    PIE3bits.TMR0IE = 0;
 }
 
-void TMR0_Tasks(void)
+void TMR0_ISR(void)
 {
-    if(1U == PIR3bits.TMR0IF)
-    {
         if(NULL != TMR0_PeriodMatchCallback)
         {
             TMR0_PeriodMatchCallback();
         }
         PIR3bits.TMR0IF = 0;
     }
-}
 
 void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
 {
@@ -142,4 +140,5 @@ void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
 static void TMR0_DefaultCallback(void)
 {
     // Default callback
+//    TMR0_Stop();
 }

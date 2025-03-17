@@ -33,6 +33,7 @@
 */
 
 #include "../pins.h"
+#include "../../../nrf24.h"
 
 
 void PIN_MANAGER_Initialize(void)
@@ -138,11 +139,14 @@ void PIN_MANAGER_Initialize(void)
     IOCEN = 0x0;
     IOCEF = 0x0;
     
+    IOCBNbits.IOCBN2 = 1;
 
 }
   
 void PIN_MANAGER_IOC(void)
 {
+    nrf24_WriteRegister(STATUS, (1 << 5));
+    CE = 0;
 }
 /**
  End of File
