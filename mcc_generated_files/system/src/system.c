@@ -39,6 +39,7 @@ void SYSTEM_Initialize(void)
 {
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
+    ADC_Initialize();
     TMR0_Initialize();
     //SPI1_Host_Initialize();
     INTERRUPT_Initialize();

@@ -7,5 +7,7 @@ mcc_generated_files/system/src/../../system/../system/clock.h  \
 mcc_generated_files/system/src/../../system/../system/pins.h  \
 mcc_generated_files/system/src/../../system/../spi/spi1.h  \
 mcc_generated_files/system/src/../../system/../spi/spi_interface.h  \
+mcc_generated_files/system/src/../../system/../adc/adc.h  \
+mcc_generated_files/system/src/../../system/../adc/./adc_types.h  \
 mcc_generated_files/system/src/../../system/../timer/tmr0.h  \
 mcc_generated_files/system/src/../../system/../timer/tmr0_deprecated.h 

@@ -2,11 +2,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56 mcc_generated_files/system/src/../../system/clock.h
 [; ;mcc_generated_files/system/src/../../system/clock.h: 56: void CLOCK_Initialize(void);
 [v _CLOCK_Initialize `(v ~T0 @X0 0 ef ]
-"239 mcc_generated_files/system/src/../../system/pins.h
-[; ;mcc_generated_files/system/src/../../system/pins.h: 239: void PIN_MANAGER_Initialize (void);
+"259 mcc_generated_files/system/src/../../system/pins.h
+[; ;mcc_generated_files/system/src/../../system/pins.h: 259: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"164 mcc_generated_files/system/src/../../timer/tmr0.h
-[; ;mcc_generated_files/system/src/../../timer/tmr0.h: 164: void TMR0_Initialize(void);
+"56 mcc_generated_files/system/src/../../adc/adc.h
+[; ;mcc_generated_files/system/src/../../adc/adc.h: 56: void ADC_Initialize(void);
+[v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"162 mcc_generated_files/system/src/../../timer/tmr0.h
+[; ;mcc_generated_files/system/src/../../timer/tmr0.h: 162: void TMR0_Initialize(void);
 [v _TMR0_Initialize `(v ~T0 @X0 0 ef ]
 "69 mcc_generated_files/system/src/../../system/interrupt.h
 [; ;mcc_generated_files/system/src/../../system/interrupt.h: 69: void INTERRUPT_Initialize (void);
@@ -2582,9 +2585,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51171
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 51171: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"42 mcc_generated_files/system/src/../../timer/tmr0.h
-[; ;mcc_generated_files/system/src/../../timer/tmr0.h: 42: uint8_t tmr_done;
-[v _tmr_done `uc ~T0 @X0 1 e ]
 "38 mcc_generated_files/system/src/system.c
 [; ;mcc_generated_files/system/src/system.c: 38: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -2600,12 +2600,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/system.c: 41:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
 "42
-[; ;mcc_generated_files/system/src/system.c: 42:     TMR0_Initialize();
+[; ;mcc_generated_files/system/src/system.c: 42:     ADC_Initialize();
+[e ( _ADC_Initialize ..  ]
+"43
+[; ;mcc_generated_files/system/src/system.c: 43:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
-"44
-[; ;mcc_generated_files/system/src/system.c: 44:     INTERRUPT_Initialize();
-[e ( _INTERRUPT_Initialize ..  ]
 "45
-[; ;mcc_generated_files/system/src/system.c: 45: }
+[; ;mcc_generated_files/system/src/system.c: 45:     INTERRUPT_Initialize();
+[e ( _INTERRUPT_Initialize ..  ]
+"46
+[; ;mcc_generated_files/system/src/system.c: 46: }
 [e :UE 2414 ]
 }

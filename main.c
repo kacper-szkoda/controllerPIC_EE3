@@ -38,6 +38,7 @@
 #include "mcc_generated_files/system/pins.h"
 #include "nrf24.h"
 #include "mcc_generated_files/timer/tmr0.h"
+#include "mcc_generated_files/adc/adc.h"
 
 extern uint8_t ready;
 
@@ -85,58 +86,51 @@ int main(void)
     
     NRF24_INIT_STATUS init = nrf24_Initialize();
     
-    uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
+//    uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
     
     nrf24_WriteRegister(0x07, (1 << 5));
     
+    ADC_Enable();
     TMR0_Start();
 
-    static uint8_t counter;
+    static uint8_t index = 0;
 
     while(1)
     {
         extern uint8_t irq_ready;
         extern uint8_t ready;
+        extern uint8_t done;
+        extern uint8_t transmitted;
         if (ready == 1){
-            //        TMR0_Stop();
-//            nrf24_WriteRegister(0x07, (1 << 4)); 
 
-            nrf24_WritePayload(dataToSend2, 32);
-
+            extern uint8_t micData [AUDIO_SIZE]; //Something wrong with accesing array, array has values but 0s received
+            
+            //passing a pointer so just increment it like 32*i and pass that to write payload
+            //TODO write loop to wrire all 2k bytes and also write logic to only do the restart in the pin manager, do some counter with modulo
+            
+            
+            nrf24_WritePayload(&micData[index*32], 32);
+            index ++;
             CE = 1;         // Set CE high, should be handled by the interrupt of irq
             ready = 0;
-
-            if (counter > 41){
-                counter =0;
-            }
-            counter += 1;
-            for (uint8_t i = 0; i < 32; i++){
-                dataToSend2[i] = counter;
-            };
         }
+//        else {if payload_ready == 1}
         else {if (irq_ready == 1){
             CE = 0;
             nrf24_WriteRegister(STATUS, (1 << 5));
             irq_ready = 0;
-            TMR0_Start();
+            
+            if (done == 1){
+                ready = 0;
+                done = 0;
+                TMR0_Start();
+                index = 0;
+            }
+            else {
+                ready = 1;
+            }
         }
         }
-//        TMR0_Stop();
-//        nrf24_WriteRegister(0x07, (1 << 4)); 
-//
-//        nrf24_WritePayload(dataToSend2, 32);
-//        
-//        CE = 1;         // Set CE high, should be handled by the interrupt of irq
-//        
-//        if (counter > 41){
-//            counter =0;
-//        }
-//        counter += 1;
-//        for (uint8_t i = 0; i < 32; i++){
-//            dataToSend2[i] = counter;
-//        };
-//        
-//        // Delay to avoid continuous retransmissions
-//        __delay_ms(3000);
+        /// maybe act dont stop the timer??? for smoother audio, 
     }    
 }

@@ -35,6 +35,7 @@
 #include <xc.h>
 #include "../tmr0.h"
 #include "../../../nrf24.h"
+#include "../../adc/adc.h"
 
 static void (*TMR0_PeriodMatchCallback)(void);
 static void TMR0_DefaultCallback(void);
@@ -45,11 +46,11 @@ static void TMR0_DefaultCallback(void);
 
 void TMR0_Initialize(void)
 {
-    TMR0H = 0xF3;                    // Period 249.856ms; Frequency 1953 Hz; Count 243
+    TMR0H = 0xA5;                    // Period 83us; Frequency 2000000 Hz; Count 165
     TMR0L = 0x0;
     
     T0CON1 = (3 << _T0CON1_T0CS_POSN)   // T0CS HFINTOSC
-        | (15 << _T0CON1_T0CKPS_POSN)   // T0CKPS 1:32768
+        | (5 << _T0CON1_T0CKPS_POSN)   // T0CKPS 1:32
         | (1 << _T0CON1_T0ASYNC_POSN);  // T0ASYNC not_synchronised
     
     TMR0_PeriodMatchCallback = TMR0_DefaultCallback;
@@ -57,7 +58,7 @@ void TMR0_Initialize(void)
     PIR3bits.TMR0IF = 0;
     PIE3bits.TMR0IE = 1;	
 
-    T0CON0 = (1 << _T0CON0_T0OUTPS_POSN)   // T0OUTPS 1:2
+    T0CON0 = (0 << _T0CON0_T0OUTPS_POSN)   // T0OUTPS 1:1
         | (1 << _T0CON0_T0EN_POSN)   // T0EN enabled
         | (0 << _T0CON0_T0MD16_POSN);  // T0MD16 8-bit
 }
@@ -142,21 +143,6 @@ static void TMR0_DefaultCallback(void)
 {
     // Default callback
     
-    extern uint8_t ready;
-    ready = 1;
-
     TMR0_Stop();
-//    uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
-//    static uint8_t counter;
-//    nrf24_WritePayload(dataToSend2, 32);
-//        
-//        CE = 1;         // Set CE high, should be handled by the interrupt of irq
-//        
-//        if (counter > 41){
-//            counter =0;
-//        }
-//        counter += 1;
-//        for (uint8_t i = 0; i < 32; i++){
-//            dataToSend2[i] = counter;
-//        };
+    ADC_ConversionStart();
 }

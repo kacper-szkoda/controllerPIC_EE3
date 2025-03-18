@@ -150,11 +150,21 @@ void PIN_MANAGER_Initialize(void)
   
 void PIN_MANAGER_IOC(void)
 {
+    extern uint8_t transmitted;
+    extern uint8_t done;
     uint8_t temp = IOCBF;  // Read the current IOC flags
     IOCBF &= ~temp;        // Clear only the bits that were set
-        //    PIR0bits.IOCIF = 0;
+    
     extern uint8_t irq_ready;
     irq_ready = 1;
+    if (transmitted == 63){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
+        transmitted = 0;
+        done = 1;
+        ready = 0;
+    }
+    else {
+        transmitted ++;
+    }
 }
 /**
  End of File

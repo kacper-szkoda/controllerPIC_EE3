@@ -24,6 +24,7 @@
 
 /******************************************************************************/
 #define PAYLOAD_SIZE      32 // Sets the bytes to send or read.
+#define AUDIO_SIZE        2016 //to not overflow, last 16 will be empty tho
 
 // This data type sets the address data pipe 0.
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
@@ -31,6 +32,9 @@ unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 
 uint8_t ready = 0;
 uint8_t irq_ready = 0;
+uint8_t done;
+uint8_t micData [AUDIO_SIZE];
+uint8_t transmitted = 0;
 
 // nrf24 status 
 typedef enum{

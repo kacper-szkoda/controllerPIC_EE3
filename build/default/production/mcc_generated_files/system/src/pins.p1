@@ -207,9 +207,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47130
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 47130: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x49E)));
 [v _PIE0bits `VS2217 ~T0 @X0 0 e@1182 ]
-"156 mcc_generated_files/system/src/pins.c
-[; ;mcc_generated_files/system/src/pins.c: 156:     extern uint8_t irq_ready;
+"158 mcc_generated_files/system/src/pins.c
+[; ;mcc_generated_files/system/src/pins.c: 158:     extern uint8_t irq_ready;
 [v _irq_ready `uc ~T0 @X0 0 e ]
+"153
+[; ;mcc_generated_files/system/src/pins.c: 153:     extern uint8_t transmitted;
+[v _transmitted `uc ~T0 @X0 0 e ]
+"154
+[; ;mcc_generated_files/system/src/pins.c: 154:     extern uint8_t done;
+[v _done `uc ~T0 @X0 0 e ]
 "328 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2781,11 +2787,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "51171
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 51171: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"42 mcc_generated_files/system/src/../../timer/tmr0.h
-[; ;mcc_generated_files/system/src/../../timer/tmr0.h: 42: uint8_t tmr_done;
-[v _tmr_done `uc ~T0 @X0 1 e ]
-"29 mcc_generated_files/system/src/../../../nrf24.h
-[; ;mcc_generated_files/system/src/../../../nrf24.h: 29: unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+"30 mcc_generated_files/system/src/../../../nrf24.h
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 30: unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 [v _RXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
 [i _RXPIPE0
 :U ..
@@ -2796,8 +2799,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 231 `i `uc
 ..
 ]
-"30
-[; ;mcc_generated_files/system/src/../../../nrf24.h: 30: unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
+"31
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 31: unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 [v _TXPIPE0 `uc ~T0 @X0 -> 5 `i e ]
 [i _TXPIPE0
 :U ..
@@ -2808,16 +2811,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 231 `i `uc
 ..
 ]
-"32
-[; ;mcc_generated_files/system/src/../../../nrf24.h: 32: uint8_t ready = 0;
+"33
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 33: uint8_t ready = 0;
 [v _ready `uc ~T0 @X0 1 e ]
 [i _ready
 -> -> 0 `i `uc
 ]
-"33
-[; ;mcc_generated_files/system/src/../../../nrf24.h: 33: uint8_t irq_ready = 0;
+"34
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 34: uint8_t irq_ready = 0;
 [v _irq_ready `uc ~T0 @X0 1 e ]
 [i _irq_ready
+-> -> 0 `i `uc
+]
+"35
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 35: uint8_t done;
+[v _done `uc ~T0 @X0 1 e ]
+"36
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 36: uint8_t micData [2016];
+[v _micData `uc ~T0 @X0 -> 2016 `i e ]
+"37
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 37: uint8_t transmitted = 0;
+[v _transmitted `uc ~T0 @X0 1 e ]
+[i _transmitted
 -> -> 0 `i `uc
 ]
 "40 mcc_generated_files/system/src/pins.c
@@ -3032,17 +3047,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"153
-[; ;mcc_generated_files/system/src/pins.c: 153:     uint8_t temp = IOCBF;
+"155
+[; ;mcc_generated_files/system/src/pins.c: 155:     uint8_t temp = IOCBF;
 [v _temp `uc ~T0 @X0 1 a ]
 [e = _temp _IOCBF ]
-"154
-[; ;mcc_generated_files/system/src/pins.c: 154:     IOCBF &= ~temp;
+"156
+[; ;mcc_generated_files/system/src/pins.c: 156:     IOCBF &= ~temp;
 [e =& _IOCBF -> ~ -> _temp `i `Vuc ]
-"157
-[; ;mcc_generated_files/system/src/pins.c: 157:     irq_ready = 1;
+"159
+[; ;mcc_generated_files/system/src/pins.c: 159:     irq_ready = 1;
 [e = _irq_ready -> -> 1 `i `uc ]
-"158
-[; ;mcc_generated_files/system/src/pins.c: 158: }
+"160
+[; ;mcc_generated_files/system/src/pins.c: 160:     if (transmitted == 63){
+[e $ ! == -> _transmitted `i -> 63 `i 2416  ]
+{
+"161
+[; ;mcc_generated_files/system/src/pins.c: 161:         transmitted = 0;
+[e = _transmitted -> -> 0 `i `uc ]
+"162
+[; ;mcc_generated_files/system/src/pins.c: 162:         done = 1;
+[e = _done -> -> 1 `i `uc ]
+"163
+[; ;mcc_generated_files/system/src/pins.c: 163:         ready = 0;
+[e = _ready -> -> 0 `i `uc ]
+"164
+[; ;mcc_generated_files/system/src/pins.c: 164:     }
+}
+[e $U 2417  ]
+"165
+[; ;mcc_generated_files/system/src/pins.c: 165:     else {
+[e :U 2416 ]
+{
+"166
+[; ;mcc_generated_files/system/src/pins.c: 166:         transmitted ++;
+[e ++ _transmitted -> -> 1 `i `uc ]
+"167
+[; ;mcc_generated_files/system/src/pins.c: 167:     }
+}
+[e :U 2417 ]
+"168
+[; ;mcc_generated_files/system/src/pins.c: 168: }
 [e :UE 2415 ]
 }

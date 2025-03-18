@@ -2,7 +2,7 @@
 
 manifest_file_version: 1.0.0
 project: nRF24_code
-creation_date: 2025-03-18T00:55:33.695+01:00[Europe/Paris]
+creation_date: 2025-03-18T13:39:46.013+01:00[Europe/Paris]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
@@ -22,6 +22,7 @@ modules:
 - {name: '@mchp-mcc/pic18-configuration-bits-v1', type: MELODY, version: 5.3.5}
 - {name: '@mchp-mcc/pic18-pin-manager', type: MELODY, version: 3.7.1}
 - {name: '@mchp-mcc/pin-content-processor', type: MELODY, version: 3.9.0}
+- {name: '@mchp-mcc/scf-pic8-adcc-v1', type: MELODY, version: 5.0.0}
 - {name: '@mchp-mcc/scf-pic8-interrupt-v1', type: MELODY, version: 5.2.11}
 - {name: '@mchp-mcc/scf-pic8-osc-v1', type: MELODY, version: 4.3.7}
 - {name: '@mchp-mcc/scf-pic8-spi-v1', type: MELODY, version: 5.1.1}
