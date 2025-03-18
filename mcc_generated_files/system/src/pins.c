@@ -34,6 +34,7 @@
 
 #include "../pins.h"
 #include "../../../nrf24.h"
+#include "../../timer/tmr0.h"
 
 
 void PIN_MANAGER_Initialize(void)
@@ -140,13 +141,20 @@ void PIN_MANAGER_Initialize(void)
     IOCEF = 0x0;
     
     IOCBNbits.IOCBN2 = 1;
+    
+    
+
+    PIE0bits.IOCIE = 1;      
 
 }
   
 void PIN_MANAGER_IOC(void)
 {
-    nrf24_WriteRegister(STATUS, (1 << 5));
-    CE = 0;
+    uint8_t temp = IOCBF;  // Read the current IOC flags
+    IOCBF &= ~temp;        // Clear only the bits that were set
+        //    PIR0bits.IOCIF = 0;
+    extern uint8_t irq_ready;
+    irq_ready = 1;
 }
 /**
  End of File

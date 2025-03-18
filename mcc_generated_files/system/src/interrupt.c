@@ -67,6 +67,9 @@ void  INTERRUPT_Initialize (void)
     // Set Default Interrupt Handler
     INT2_SetInterruptHandler(INT2_DefaultInterruptHandler);
     // EXT_INT2_InterruptEnable();
+    
+    INTCON0bits.GIE = 1;    // Enable global interrupts
+    PIE0bits.IOCIE = 1;     // Enable interrupt-on-change interrupts
 
 }
 

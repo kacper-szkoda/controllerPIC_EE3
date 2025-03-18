@@ -29,7 +29,8 @@
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 
-uint8_t ready = 1;
+uint8_t ready = 0;
+uint8_t irq_ready = 0;
 
 // nrf24 status 
 typedef enum{

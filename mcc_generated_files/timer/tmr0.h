@@ -39,6 +39,8 @@
 #include <stdbool.h>
 #include "tmr0_deprecated.h"
 
+uint8_t tmr_done;
+
 /**
  * @misradeviation{@advisory,2.5}
  * MCC Melody drivers provide macros that can be added to an application. 
@@ -55,7 +57,7 @@
  * @brief Defines the timer prescaled clock frequency in hertz.
  */
 /* cppcheck-suppress misra-c2012-2.5 */ 
-#define TMR0_CLOCK_FREQ (64000000UL)
+#define TMR0_CLOCK_FREQ (1953UL)
 /**
  * @ingroup tmr08bit
  * @brief Defines the timer interrupt ticker factor.

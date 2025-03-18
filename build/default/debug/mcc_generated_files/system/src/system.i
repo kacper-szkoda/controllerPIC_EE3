@@ -29495,7 +29495,10 @@ void INT2_DefaultInterruptHandler(void);
 # 40 "mcc_generated_files/system/src/../../timer/tmr0.h"
 # 1 "mcc_generated_files/system/src/../../timer/tmr0_deprecated.h" 1
 # 40 "mcc_generated_files/system/src/../../timer/tmr0.h" 2
-# 162 "mcc_generated_files/system/src/../../timer/tmr0.h"
+
+
+uint8_t tmr_done;
+# 164 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29505,17 +29508,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 179 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 181 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Start(void);
-# 188 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 190 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Stop(void);
-# 197 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 199 "mcc_generated_files/system/src/../../timer/tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 206 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 208 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 215 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 217 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 224 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 226 "mcc_generated_files/system/src/../../timer/tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 

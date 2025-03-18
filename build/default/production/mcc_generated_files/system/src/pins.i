@@ -29504,7 +29504,10 @@ void INT2_DefaultInterruptHandler(void);
 # 40 "mcc_generated_files/system/src/../../timer/tmr0.h"
 # 1 "mcc_generated_files/system/src/../../timer/tmr0_deprecated.h" 1
 # 40 "mcc_generated_files/system/src/../../timer/tmr0.h" 2
-# 162 "mcc_generated_files/system/src/../../timer/tmr0.h"
+
+
+uint8_t tmr_done;
+# 164 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29514,17 +29517,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 179 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 181 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Start(void);
-# 188 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 190 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_Stop(void);
-# 197 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 199 "mcc_generated_files/system/src/../../timer/tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 206 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 208 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 215 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 217 "mcc_generated_files/system/src/../../timer/tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 224 "mcc_generated_files/system/src/../../timer/tmr0.h"
+# 226 "mcc_generated_files/system/src/../../timer/tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 
@@ -29574,7 +29577,8 @@ void SYSTEM_Initialize(void);
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 
-uint8_t ready = 1;
+uint8_t ready = 0;
+uint8_t irq_ready = 0;
 
 
 typedef enum{
@@ -29587,7 +29591,7 @@ typedef enum {
     RX_MODE = 1,
     TX_MODE = 2
 }NRF24_OPERATION_MODE;
-# 91 "mcc_generated_files/system/src/../../../nrf24.h"
+# 92 "mcc_generated_files/system/src/../../../nrf24.h"
 void nrf24_WritePayload(unsigned char *, unsigned char);
 
 
@@ -29621,6 +29625,7 @@ void nrf24_ReadData(unsigned char *buffer);
 
 void nrf24_printf_rf_config(void);
 # 36 "mcc_generated_files/system/src/pins.c" 2
+
 
 
 
@@ -29729,10 +29734,17 @@ void PIN_MANAGER_Initialize(void)
 
     IOCBNbits.IOCBN2 = 1;
 
+
+
+    PIE0bits.IOCIE = 1;
+
 }
 
 void PIN_MANAGER_IOC(void)
 {
-    nrf24_WriteRegister(0x07, (1 << 5));
-    LATAbits.LATA6 = 0;
+    uint8_t temp = IOCBF;
+    IOCBF &= ~temp;
+
+    extern uint8_t irq_ready;
+    irq_ready = 1;
 }

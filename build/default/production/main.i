@@ -29495,7 +29495,10 @@ void INT2_DefaultInterruptHandler(void);
 # 40 "./mcc_generated_files/system/../timer/tmr0.h"
 # 1 "./mcc_generated_files/system/../timer/tmr0_deprecated.h" 1
 # 40 "./mcc_generated_files/system/../timer/tmr0.h" 2
-# 162 "./mcc_generated_files/system/../timer/tmr0.h"
+
+
+uint8_t tmr_done;
+# 164 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29505,17 +29508,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 179 "./mcc_generated_files/system/../timer/tmr0.h"
+# 181 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Start(void);
-# 188 "./mcc_generated_files/system/../timer/tmr0.h"
+# 190 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_Stop(void);
-# 197 "./mcc_generated_files/system/../timer/tmr0.h"
+# 199 "./mcc_generated_files/system/../timer/tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 206 "./mcc_generated_files/system/../timer/tmr0.h"
+# 208 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 215 "./mcc_generated_files/system/../timer/tmr0.h"
+# 217 "./mcc_generated_files/system/../timer/tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 224 "./mcc_generated_files/system/../timer/tmr0.h"
+# 226 "./mcc_generated_files/system/../timer/tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 
@@ -29568,7 +29571,8 @@ void SYSTEM_Initialize(void);
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 
-uint8_t ready = 1;
+uint8_t ready = 0;
+uint8_t irq_ready = 0;
 
 
 typedef enum{
@@ -29581,7 +29585,7 @@ typedef enum {
     RX_MODE = 1,
     TX_MODE = 2
 }NRF24_OPERATION_MODE;
-# 91 "./nrf24.h"
+# 92 "./nrf24.h"
 void nrf24_WritePayload(unsigned char *, unsigned char);
 
 
@@ -29667,26 +29671,39 @@ int main(void)
     uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
 
     nrf24_WriteRegister(0x07, (1 << 5));
+
+    TMR0_Start();
+
     static uint8_t counter;
 
     while(1)
     {
-        TMR0_Stop();
+        extern uint8_t irq_ready;
+        extern uint8_t ready;
+        if (ready == 1){
 
 
-        nrf24_WritePayload(dataToSend2, 32);
 
-        LATAbits.LATA6 = 1;
+            nrf24_WritePayload(dataToSend2, 32);
 
-        if (counter > 41){
-            counter =0;
+            LATAbits.LATA6 = 1;
+            ready = 0;
+
+            if (counter > 41){
+                counter =0;
+            }
+            counter += 1;
+            for (uint8_t i = 0; i < 32; i++){
+                dataToSend2[i] = counter;
+            };
         }
-        counter += 1;
-        for (uint8_t i = 0; i < 32; i++){
-            dataToSend2[i] = counter;
-        };
-
-
-        _delay((unsigned long)((3000)*(64000000U/4000.0)));
+        else {if (irq_ready == 1){
+            LATAbits.LATA6 = 0;
+            nrf24_WriteRegister(0x07, (1 << 5));
+            irq_ready = 0;
+            TMR0_Start();
+        }
+        }
+# 141 "main.c"
     }
 }

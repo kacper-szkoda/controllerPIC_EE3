@@ -29496,7 +29496,10 @@ void SPI1_SimpleWrite(uint8_t byteData);
 # 40 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 # 1 "mcc_generated_files/system/src/../../system/../timer/tmr0_deprecated.h" 1
 # 40 "mcc_generated_files/system/src/../../system/../timer/tmr0.h" 2
-# 162 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+
+
+uint8_t tmr_done;
+# 164 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 void TMR0_Initialize(void);
 
 
@@ -29506,17 +29509,17 @@ void TMR0_Initialize(void);
 
 
 void TMR0_Deinitialize(void);
-# 179 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 181 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 void TMR0_Start(void);
-# 188 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 190 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 void TMR0_Stop(void);
-# 197 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 199 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 uint8_t TMR0_CounterGet(void);
-# 206 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 208 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 void TMR0_CounterSet(uint8_t counterValue);
-# 215 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 217 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 void TMR0_PeriodSet(uint8_t periodCount);
-# 224 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
+# 226 "mcc_generated_files/system/src/../../system/../timer/tmr0.h"
 uint8_t TMR0_PeriodGet(void);
 
 
@@ -29598,8 +29601,11 @@ void INTERRUPT_Initialize (void)
     INT2_SetInterruptHandler(INT2_DefaultInterruptHandler);
 
 
+    INTCON0bits.GIE = 1;
+    PIE0bits.IOCIE = 1;
+
 }
-# 80 "mcc_generated_files/system/src/interrupt.c"
+# 83 "mcc_generated_files/system/src/interrupt.c"
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
 
@@ -29611,18 +29617,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     {
         TMR0_ISR();
     }
-    else if(PIE3bits.SPI1TXIE == 1 && PIR3bits.SPI1TXIF == 1)
-    {
-        SPI1_Transmit_ISR();
-    }
-
-
-
-
-    else if(PIE3bits.SPI1RXIE == 1 && PIR3bits.SPI1RXIF == 1)
-    {
-        SPI1_Receive_ISR();
-    }
+# 106 "mcc_generated_files/system/src/interrupt.c"
     else
     {
 

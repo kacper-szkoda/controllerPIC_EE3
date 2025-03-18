@@ -88,26 +88,55 @@ int main(void)
     uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
     
     nrf24_WriteRegister(0x07, (1 << 5));
+    
+    TMR0_Start();
+
     static uint8_t counter;
 
     while(1)
     {
-        TMR0_Stop();
-//        nrf24_WriteRegister(0x07, (1 << 4)); 
+        extern uint8_t irq_ready;
+        extern uint8_t ready;
+        if (ready == 1){
+            //        TMR0_Stop();
+//            nrf24_WriteRegister(0x07, (1 << 4)); 
 
-        nrf24_WritePayload(dataToSend2, 32);
-        
-        CE = 1;         // Set CE high, should be handled by the interrupt of irq
-        
-        if (counter > 41){
-            counter =0;
+            nrf24_WritePayload(dataToSend2, 32);
+
+            CE = 1;         // Set CE high, should be handled by the interrupt of irq
+            ready = 0;
+
+            if (counter > 41){
+                counter =0;
+            }
+            counter += 1;
+            for (uint8_t i = 0; i < 32; i++){
+                dataToSend2[i] = counter;
+            };
         }
-        counter += 1;
-        for (uint8_t i = 0; i < 32; i++){
-            dataToSend2[i] = counter;
-        };
-        
-        // Delay to avoid continuous retransmissions
-        __delay_ms(3000);
+        else {if (irq_ready == 1){
+            CE = 0;
+            nrf24_WriteRegister(STATUS, (1 << 5));
+            irq_ready = 0;
+            TMR0_Start();
+        }
+        }
+//        TMR0_Stop();
+//        nrf24_WriteRegister(0x07, (1 << 4)); 
+//
+//        nrf24_WritePayload(dataToSend2, 32);
+//        
+//        CE = 1;         // Set CE high, should be handled by the interrupt of irq
+//        
+//        if (counter > 41){
+//            counter =0;
+//        }
+//        counter += 1;
+//        for (uint8_t i = 0; i < 32; i++){
+//            dataToSend2[i] = counter;
+//        };
+//        
+//        // Delay to avoid continuous retransmissions
+//        __delay_ms(3000);
     }    
 }
