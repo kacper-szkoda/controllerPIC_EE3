@@ -75,7 +75,7 @@ void ADC_Initialize(void)
     ADSTPTH = (0 << _ADSTPTH_ADSTPT_POSITION);	/* ADSTPT 0x0(0) */
     ADACCU = (0 << _ADACCU_ADACC_POSITION);	/* ADACC 0x0(0) */
     ADRPT = (0 << _ADRPT_ADRPT_POSITION);	/* ADRPT 0x0(0) */
-    ADPCH = (0 << _ADPCH_PCH_POSITION);	/* PCH ANA0(0) */
+    ADPCH = (1 << _ADPCH_PCH_POSITION);	/* PCH ANA1(1) */
     ADACQL = (0 << _ADACQL_ADACQ_POSITION);	/* ADACQ 0x0(0) */
     ADACQH = (0 << _ADACQH_ADACQ_POSITION);	/* ADACQ 0x0(0) */
     ADCP = (0 << _ADCP_CPON_POSITION);	/* CPON Charge pump Off(0) */

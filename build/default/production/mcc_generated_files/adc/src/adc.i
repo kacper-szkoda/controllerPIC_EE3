@@ -29302,7 +29302,7 @@ typedef enum
     ADC_CHANNEL_DAC1 = 0x3d,
     ADC_CHANNEL_FVR_BUFFER1 = 0x3e,
     ADC_CHANNEL_FVR_BUFFER2 = 0x3f,
-    ADC_CHANNEL_ANA0 = 0x0
+    ADC_CHANNEL_ANA1 = 0x1
 } adc_channel_t;
 
 
@@ -30192,7 +30192,7 @@ void ADC_Initialize(void)
     ADSTPTH = (0 << 0x0);
     ADACCU = (0 << 0x0);
     ADRPT = (0 << 0x0);
-    ADPCH = (0 << 0x0);
+    ADPCH = (1 << 0x0);
     ADACQL = (0 << 0x0);
     ADACQH = (0 << 0x0);
     ADCP = (0 << 0x7);

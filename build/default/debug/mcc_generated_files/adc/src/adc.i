@@ -30192,7 +30192,7 @@ void ADC_Initialize(void)
     ADSTPTH = (0 << 0x0);
     ADACCU = (0 << 0x0);
     ADRPT = (0 << 0x0);
-    ADPCH = (0 << 0x0);
+    ADPCH = (1 << 0x0);
     ADACQL = (0 << 0x0);
     ADACQH = (0 << 0x0);
     ADCP = (0 << 0x7);

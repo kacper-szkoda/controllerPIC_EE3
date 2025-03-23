@@ -30219,7 +30219,9 @@ int main(void)
 
 
 
-            nrf24_WritePayload(micData[index*32], 32);
+
+
+            nrf24_WritePayload(&micData[index*32], 32);
             index ++;
             LATAbits.LATA6 = 1;
             ready = 0;

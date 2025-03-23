@@ -3,27 +3,6 @@
 [d edition pro ]
 [d chip 18F57Q43 ]
 [d frameptr 1249 ]
-"64 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
-[e E17197 . `uc
-SPI_RESET 0
-SPI_IDLE 129
-SPI_BUSY 66
-]
-"87 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
-[e E17423 . `uc
-NRF24_INIT_OK 0
-NRF24_INIT_FAILED 1
-]
-"65 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
-[e E17744 . `uc
-NRF24_INIT_OK 0
-NRF24_INIT_FAILED 1
-]
-"101
-[e E17748 . `uc
-RX_MODE 1
-TX_MODE 2
-]
 "159 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/adc/src/adc.c
 [e E17119 . `uc
 ADC_CHANNEL_VSS 59
@@ -31,7 +10,7 @@ ADC_CHANNEL_TEMP 60
 ADC_CHANNEL_DAC1 61
 ADC_CHANNEL_FVR_BUFFER1 62
 ADC_CHANNEL_FVR_BUFFER2 63
-ADC_CHANNEL_ANA0 0
+ADC_CHANNEL_ANA1 1
 ]
 "184
 [e E17127 . `uc
@@ -109,6 +88,27 @@ ADC_ACTUAL_RESULT_VS_SETPOINT 1
 ADC_ACTUAL_RESULT_VS_FILTERED_VALUE 2
 ADC_FIRST_DERIVATIVE_OF_FILTERED_VALUE 4
 ADC_FILTERED_VALUE_VS_SETPOINT 5
+]
+"64 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/spi/src/spi1.c
+[e E17197 . `uc
+SPI_RESET 0
+SPI_IDLE 129
+SPI_BUSY 66
+]
+"87 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\main.c
+[e E17423 . `uc
+NRF24_INIT_OK 0
+NRF24_INIT_FAILED 1
+]
+"65 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\nrf24.c
+[e E17744 . `uc
+NRF24_INIT_OK 0
+NRF24_INIT_FAILED 1
+]
+"101
+[e E17748 . `uc
+RX_MODE 1
+TX_MODE 2
 ]
 "4 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -237,6 +237,18 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _nrf24_Initialize nrf24_Initialize `(E17423  1 e 1 0 ]
 "101
 [v _nrf24_SetMode nrf24_SetMode `(v  1 e 1 0 ]
+"31 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X/nrf24.h
+[v _TXPIPE0 TXPIPE0 `[5]uc  1 e 5 0 ]
+"33
+[v _ready ready `uc  1 e 1 0 ]
+"34
+[v _irq_ready irq_ready `uc  1 e 1 0 ]
+"35
+[v _done done `uc  1 e 1 0 ]
+"36
+[v _micData micData `[2016]uc  1 e 2016 0 ]
+"37
+[v _transmitted transmitted `uc  1 e 1 0 ]
 "3338 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [v _SPI1RXB SPI1RXB `VEuc  1 e 1 @128 ]
 "3408
@@ -247,24 +259,24 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _SPI1TCNTH SPI1TCNTH `VEuc  1 e 1 @131 ]
 "3525
 [v _SPI1CON0 SPI1CON0 `VEuc  1 e 1 @132 ]
-[s S245 . 1 `uc 1 BMODE 1 0 :1:0 
+[s S900 . 1 `uc 1 BMODE 1 0 :1:0 
 `uc 1 MST 1 0 :1:1 
 `uc 1 LSBF 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 EN 1 0 :1:7 
 ]
 "3546
-[s S251 . 1 `uc 1 SPI1BMODE 1 0 :1:0 
+[s S906 . 1 `uc 1 SPI1BMODE 1 0 :1:0 
 `uc 1 SPI1MST 1 0 :1:1 
 `uc 1 SPI1LSBF 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 SPI1SPIEN 1 0 :1:7 
 ]
-[u S257 . 1 `S245 1 . 1 0 `S251 1 . 1 0 ]
-[v _SPI1CON0bits SPI1CON0bits `VES257  1 e 1 @132 ]
+[u S912 . 1 `S900 1 . 1 0 `S906 1 . 1 0 ]
+[v _SPI1CON0bits SPI1CON0bits `VES912  1 e 1 @132 ]
 "3591
 [v _SPI1CON1 SPI1CON1 `VEuc  1 e 1 @133 ]
-[s S294 . 1 `uc 1 SDOP 1 0 :1:0 
+[s S949 . 1 `uc 1 SDOP 1 0 :1:0 
 `uc 1 SDIP 1 0 :1:1 
 `uc 1 SSP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -274,7 +286,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 SMP 1 0 :1:7 
 ]
 "3618
-[s S303 . 1 `uc 1 SPI1SDOP 1 0 :1:0 
+[s S958 . 1 `uc 1 SPI1SDOP 1 0 :1:0 
 `uc 1 SPI1SDIP 1 0 :1:1 
 `uc 1 SPI1SSP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -283,11 +295,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 SPI1CKE 1 0 :1:6 
 `uc 1 SPI1SMP 1 0 :1:7 
 ]
-[u S312 . 1 `S294 1 . 1 0 `S303 1 . 1 0 ]
-[v _SPI1CON1bits SPI1CON1bits `VES312  1 e 1 @133 ]
+[u S967 . 1 `S949 1 . 1 0 `S958 1 . 1 0 ]
+[v _SPI1CON1bits SPI1CON1bits `VES967  1 e 1 @133 ]
 "3693
 [v _SPI1CON2 SPI1CON2 `VEuc  1 e 1 @134 ]
-[s S203 . 1 `uc 1 RXBF 1 0 :1:0 
+[s S858 . 1 `uc 1 RXBF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CLRBF 1 0 :1:2 
 `uc 1 RXRE 1 0 :1:3 
@@ -297,7 +309,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TXWE 1 0 :1:7 
 ]
 "3798
-[s S212 . 1 `uc 1 SPI1RXBF 1 0 :1:0 
+[s S867 . 1 `uc 1 SPI1RXBF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 SPI1CLRBF 1 0 :1:2 
 `uc 1 SPI1RXRE 1 0 :1:3 
@@ -306,8 +318,8 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 . 1 0 :1:6 
 `uc 1 SPI1TXWE 1 0 :1:7 
 ]
-[u S221 . 1 `S203 1 . 1 0 `S212 1 . 1 0 ]
-[v _SPI1STATUSbits SPI1STATUSbits `VES221  1 e 1 @135 ]
+[u S876 . 1 `S858 1 . 1 0 `S867 1 . 1 0 ]
+[v _SPI1STATUSbits SPI1STATUSbits `VES876  1 e 1 @135 ]
 "3893
 [v _SPI1BAUD SPI1BAUD `VEuc  1 e 1 @137 ]
 "4147
@@ -346,54 +358,54 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
 "23690
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
-[s S1035 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S1623 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "23724
-[s S1041 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S1629 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
-[s S1047 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1635 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
-[s S1053 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+[s S1641 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
 `uc 1 T0OUTPS1 1 0 :1:1 
 `uc 1 T0OUTPS2 1 0 :1:2 
 `uc 1 T0OUTPS3 1 0 :1:3 
 ]
-[u S1058 . 1 `S1035 1 . 1 0 `S1041 1 . 1 0 `S1047 1 . 1 0 `S1053 1 . 1 0 ]
-[v _T0CON0bits T0CON0bits `VES1058  1 e 1 @794 ]
+[u S1646 . 1 `S1623 1 . 1 0 `S1629 1 . 1 0 `S1635 1 . 1 0 `S1641 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES1646  1 e 1 @794 ]
 "23814
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "35996
 [v _ADCP ADCP `VEuc  1 e 1 @984 ]
-[s S1888 . 1 `uc 1 CPRDY 1 0 :1:0 
+[s S479 . 1 `uc 1 CPRDY 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 ON 1 0 :1:7 
 ]
 "36061
-[s S1892 . 1 `uc 1 ADCPRDY 1 0 :1:0 
+[s S483 . 1 `uc 1 ADCPRDY 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 CPON 1 0 :1:7 
 ]
 "36061
-[s S1896 . 1 `uc 1 . 1 0 :7:0 
+[s S487 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCPON 1 0 :1:7 
 ]
 "36061
-[u S1899 . 1 `S1888 1 . 1 0 `S1892 1 . 1 0 `S1896 1 . 1 0 ]
+[u S490 . 1 `S479 1 . 1 0 `S483 1 . 1 0 `S487 1 . 1 0 ]
 "36061
 "36061
-[v _ADCPbits ADCPbits `VES1899  1 e 1 @984 ]
+[v _ADCPbits ADCPbits `VES490  1 e 1 @984 ]
 "36098
 [v _ADLTHL ADLTHL `VEuc  1 e 1 @985 ]
 "36226
@@ -446,7 +458,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _ADPREH ADPREH `VEuc  1 e 1 @1010 ]
 "39137
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @1011 ]
-[s S1477 . 1 `uc 1 GO 1 0 :1:0 
+[s S36 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -455,7 +467,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ON 1 0 :1:7 
 ]
 "39175
-[s S1485 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S44 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -464,52 +476,52 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ADON 1 0 :1:7 
 ]
 "39175
-[s S1493 . 1 `uc 1 DONE 1 0 :1:0 
+[s S52 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
 "39175
-[s S1497 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S56 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
 "39175
-[s S1499 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S58 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
 "39175
-[u S1503 . 1 `S1477 1 . 1 0 `S1485 1 . 1 0 `S1493 1 . 1 0 `S1497 1 . 1 0 `S1499 1 . 1 0 ]
+[u S62 . 1 `S36 1 . 1 0 `S44 1 . 1 0 `S52 1 . 1 0 `S56 1 . 1 0 `S58 1 . 1 0 ]
 "39175
 "39175
-[v _ADCON0bits ADCON0bits `VES1503  1 e 1 @1011 ]
+[v _ADCON0bits ADCON0bits `VES62  1 e 1 @1011 ]
 "39255
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @1012 ]
-[s S1808 . 1 `uc 1 DSEN 1 0 :1:0 
+[s S399 . 1 `uc 1 DSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 GPOL 1 0 :1:5 
 `uc 1 IPEN 1 0 :1:6 
 `uc 1 PPOL 1 0 :1:7 
 ]
 "39276
-[s S1814 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S405 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 ADGPOL 1 0 :1:5 
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
 "39276
-[u S1820 . 1 `S1808 1 . 1 0 `S1814 1 . 1 0 ]
+[u S411 . 1 `S399 1 . 1 0 `S405 1 . 1 0 ]
 "39276
 "39276
-[v _ADCON1bits ADCON1bits `VES1820  1 e 1 @1012 ]
+[v _ADCON1bits ADCON1bits `VES411  1 e 1 @1012 ]
 "39321
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @1013 ]
-[s S1620 . 1 `uc 1 MD 1 0 :3:0 
+[s S211 . 1 `uc 1 MD 1 0 :3:0 
 `uc 1 ACLR 1 0 :1:3 
 `uc 1 CRS 1 0 :3:4 
 `uc 1 PSIS 1 0 :1:7 
 ]
 "39358
-[s S1625 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S216 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 ADACLR 1 0 :1:3 
@@ -519,12 +531,12 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ADPSIS 1 0 :1:7 
 ]
 "39358
-[s S1634 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S225 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 ]
 "39358
-[s S1638 . 1 `uc 1 MD0 1 0 :1:0 
+[s S229 . 1 `uc 1 MD0 1 0 :1:0 
 `uc 1 MD1 1 0 :1:1 
 `uc 1 MD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -533,18 +545,18 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 CRS2 1 0 :1:6 
 ]
 "39358
-[u S1646 . 1 `S1620 1 . 1 0 `S1625 1 . 1 0 `S1634 1 . 1 0 `S1638 1 . 1 0 ]
+[u S237 . 1 `S211 1 . 1 0 `S216 1 . 1 0 `S225 1 . 1 0 `S229 1 . 1 0 ]
 "39358
 "39358
-[v _ADCON2bits ADCON2bits `VES1646  1 e 1 @1013 ]
+[v _ADCON2bits ADCON2bits `VES237  1 e 1 @1013 ]
 "39463
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @1014 ]
-[s S1687 . 1 `uc 1 TMD 1 0 :3:0 
+[s S278 . 1 `uc 1 TMD 1 0 :3:0 
 `uc 1 SOI 1 0 :1:3 
 `uc 1 CALC 1 0 :3:4 
 ]
 "39498
-[s S1691 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S282 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 ADSOI 1 0 :1:3 
@@ -553,12 +565,12 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ADCALC2 1 0 :1:6 
 ]
 "39498
-[s S1699 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S290 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
 "39498
-[s S1703 . 1 `uc 1 TMD0 1 0 :1:0 
+[s S294 . 1 `uc 1 TMD0 1 0 :1:0 
 `uc 1 TMD1 1 0 :1:1 
 `uc 1 TMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -567,13 +579,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 CALC2 1 0 :1:6 
 ]
 "39498
-[u S1711 . 1 `S1687 1 . 1 0 `S1691 1 . 1 0 `S1699 1 . 1 0 `S1703 1 . 1 0 ]
+[u S302 . 1 `S278 1 . 1 0 `S282 1 . 1 0 `S290 1 . 1 0 `S294 1 . 1 0 ]
 "39498
 "39498
-[v _ADCON3bits ADCON3bits `VES1711  1 e 1 @1014 ]
+[v _ADCON3bits ADCON3bits `VES302  1 e 1 @1014 ]
 "39593
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @1015 ]
-[s S1744 . 1 `uc 1 STAT 1 0 :3:0 
+[s S335 . 1 `uc 1 STAT 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 MATH 1 0 :1:4 
 `uc 1 LTHR 1 0 :1:5 
@@ -581,7 +593,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 AOV 1 0 :1:7 
 ]
 "39630
-[s S1751 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S342 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -591,22 +603,22 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ADAOV 1 0 :1:7 
 ]
 "39630
-[s S1760 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S351 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 ADOV 1 0 :1:7 
 ]
 "39630
-[s S1764 . 1 `uc 1 STAT0 1 0 :1:0 
+[s S355 . 1 `uc 1 STAT0 1 0 :1:0 
 `uc 1 STAT1 1 0 :1:1 
 `uc 1 STAT2 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 OV 1 0 :1:7 
 ]
 "39630
-[u S1770 . 1 `S1744 1 . 1 0 `S1751 1 . 1 0 `S1760 1 . 1 0 `S1764 1 . 1 0 ]
+[u S361 . 1 `S335 1 . 1 0 `S342 1 . 1 0 `S351 1 . 1 0 `S355 1 . 1 0 ]
 "39630
 "39630
-[v _ADSTATbits ADSTATbits `VES1770  1 e 1 @1015 ]
+[v _ADSTATbits ADSTATbits `VES361  1 e 1 @1015 ]
 "39725
 [v _ADREF ADREF `VEuc  1 e 1 @1016 ]
 "39807
@@ -615,7 +627,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _ADCLK ADCLK `VEuc  1 e 1 @1018 ]
 "40015
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
-[s S1254 . 1 `uc 1 ANSELA0 1 0 :1:0 
+[s S1840 . 1 `uc 1 ANSELA0 1 0 :1:0 
 `uc 1 ANSELA1 1 0 :1:1 
 `uc 1 ANSELA2 1 0 :1:2 
 `uc 1 ANSELA3 1 0 :1:3 
@@ -625,10 +637,10 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ANSELA7 1 0 :1:7 
 ]
 "40032
-[u S1263 . 1 `S1254 1 . 1 0 ]
+[u S1849 . 1 `S1840 1 . 1 0 ]
 "40032
 "40032
-[v _ANSELAbits ANSELAbits `VES1263  1 e 1 @1024 ]
+[v _ANSELAbits ANSELAbits `VES1849  1 e 1 @1024 ]
 "40077
 [v _WPUA WPUA `VEuc  1 e 1 @1025 ]
 "40139
@@ -645,7 +657,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _IOCAF IOCAF `VEuc  1 e 1 @1031 ]
 "40511
 [v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
-[s S1143 . 1 `uc 1 ANSELB0 1 0 :1:0 
+[s S1729 . 1 `uc 1 ANSELB0 1 0 :1:0 
 `uc 1 ANSELB1 1 0 :1:1 
 `uc 1 ANSELB2 1 0 :1:2 
 `uc 1 ANSELB3 1 0 :1:3 
@@ -655,13 +667,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 ANSELB7 1 0 :1:7 
 ]
 "40528
-[u S1152 . 1 `S1143 1 . 1 0 ]
+[u S1738 . 1 `S1729 1 . 1 0 ]
 "40528
 "40528
-[v _ANSELBbits ANSELBbits `VES1152  1 e 1 @1032 ]
+[v _ANSELBbits ANSELBbits `VES1738  1 e 1 @1032 ]
 "40573
 [v _WPUB WPUB `VEuc  1 e 1 @1033 ]
-[s S1185 . 1 `uc 1 WPUB0 1 0 :1:0 
+[s S1771 . 1 `uc 1 WPUB0 1 0 :1:0 
 `uc 1 WPUB1 1 0 :1:1 
 `uc 1 WPUB2 1 0 :1:2 
 `uc 1 WPUB3 1 0 :1:3 
@@ -671,10 +683,10 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 WPUB7 1 0 :1:7 
 ]
 "40590
-[u S1194 . 1 `S1185 1 . 1 0 ]
+[u S1780 . 1 `S1771 1 . 1 0 ]
 "40590
 "40590
-[v _WPUBbits WPUBbits `VES1194  1 e 1 @1033 ]
+[v _WPUBbits WPUBbits `VES1780  1 e 1 @1033 ]
 "40635
 [v _ODCONB ODCONB `VEuc  1 e 1 @1034 ]
 "40697
@@ -685,7 +697,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _IOCBP IOCBP `VEuc  1 e 1 @1037 ]
 "40883
 [v _IOCBN IOCBN `VEuc  1 e 1 @1038 ]
-[s S568 . 1 `uc 1 IOCBN0 1 0 :1:0 
+[s S1220 . 1 `uc 1 IOCBN0 1 0 :1:0 
 `uc 1 IOCBN1 1 0 :1:1 
 `uc 1 IOCBN2 1 0 :1:2 
 `uc 1 IOCBN3 1 0 :1:3 
@@ -695,10 +707,10 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 IOCBN7 1 0 :1:7 
 ]
 "40900
-[u S577 . 1 `S568 1 . 1 0 ]
+[u S1229 . 1 `S1220 1 . 1 0 ]
 "40900
 "40900
-[v _IOCBNbits IOCBNbits `VES577  1 e 1 @1038 ]
+[v _IOCBNbits IOCBNbits `VES1229  1 e 1 @1038 ]
 "40945
 [v _IOCBF IOCBF `VEuc  1 e 1 @1039 ]
 "41007
@@ -753,7 +765,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _SLRCONF SLRCONF `VEuc  1 e 1 @1067 ]
 "42296
 [v _INLVLF INLVLF `VEuc  1 e 1 @1068 ]
-[s S589 . 1 `uc 1 SWIE 1 0 :1:0 
+[s S1241 . 1 `uc 1 SWIE 1 0 :1:0 
 `uc 1 HLVDIE 1 0 :1:1 
 `uc 1 OSFIE 1 0 :1:2 
 `uc 1 CSWIE 1 0 :1:3 
@@ -763,11 +775,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 IOCIE 1 0 :1:7 
 ]
 "47130
-[u S598 . 1 `S589 1 . 1 0 ]
+[u S1250 . 1 `S1241 1 . 1 0 ]
 "47130
 "47130
-[v _PIE0bits PIE0bits `VES598  1 e 1 @1182 ]
-[s S795 . 1 `uc 1 INT0IE 1 0 :1:0 
+[v _PIE0bits PIE0bits `VES1250  1 e 1 @1182 ]
+[s S140 . 1 `uc 1 INT0IE 1 0 :1:0 
 `uc 1 ZCDIE 1 0 :1:1 
 `uc 1 ADIE 1 0 :1:2 
 `uc 1 ACTIE 1 0 :1:3 
@@ -777,11 +789,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 SMT1PWAIE 1 0 :1:7 
 ]
 "47182
-[u S804 . 1 `S795 1 . 1 0 ]
+[u S149 . 1 `S140 1 . 1 0 ]
 "47182
 "47182
-[v _PIE1bits PIE1bits `VES804  1 e 1 @1183 ]
-[s S820 . 1 `uc 1 ADTIE 1 0 :1:0 
+[v _PIE1bits PIE1bits `VES149  1 e 1 @1183 ]
+[s S178 . 1 `uc 1 ADTIE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 DMA1SCNTIE 1 0 :1:4 
 `uc 1 DMA1DCNTIE 1 0 :1:5 
@@ -789,11 +801,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 DMA1AIE 1 0 :1:7 
 ]
 "47242
-[u S827 . 1 `S820 1 . 1 0 ]
+[u S185 . 1 `S178 1 . 1 0 ]
 "47242
 "47242
-[v _PIE2bits PIE2bits `VES827  1 e 1 @1184 ]
-[s S177 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
+[v _PIE2bits PIE2bits `VES185  1 e 1 @1184 ]
+[s S832 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
 `uc 1 SPI1TXIE 1 0 :1:1 
 `uc 1 SPI1IE 1 0 :1:2 
 `uc 1 TMR2IE 1 0 :1:3 
@@ -803,11 +815,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TMR0IE 1 0 :1:7 
 ]
 "47289
-[u S186 . 1 `S177 1 . 1 0 ]
+[u S841 . 1 `S832 1 . 1 0 ]
 "47289
 "47289
-[v _PIE3bits PIE3bits `VES186  1 e 1 @1185 ]
-[s S773 . 1 `uc 1 SWIF 1 0 :1:0 
+[v _PIE3bits PIE3bits `VES841  1 e 1 @1185 ]
+[s S1416 . 1 `uc 1 SWIF 1 0 :1:0 
 `uc 1 HLVDIF 1 0 :1:1 
 `uc 1 OSFIF 1 0 :1:2 
 `uc 1 CSWIF 1 0 :1:3 
@@ -817,11 +829,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 IOCIF 1 0 :1:7 
 ]
 "48004
-[u S782 . 1 `S773 1 . 1 0 ]
+[u S1425 . 1 `S1416 1 . 1 0 ]
 "48004
 "48004
-[v _PIR0bits PIR0bits `VES782  1 e 1 @1198 ]
-[s S668 . 1 `uc 1 INT0IF 1 0 :1:0 
+[v _PIR0bits PIR0bits `VES1425  1 e 1 @1198 ]
+[s S119 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 ZCDIF 1 0 :1:1 
 `uc 1 ADIF 1 0 :1:2 
 `uc 1 ACTIF 1 0 :1:3 
@@ -831,11 +843,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 SMT1PWAIF 1 0 :1:7 
 ]
 "48056
-[u S677 . 1 `S668 1 . 1 0 ]
+[u S128 . 1 `S119 1 . 1 0 ]
 "48056
 "48056
-[v _PIR1bits PIR1bits `VES677  1 e 1 @1199 ]
-[s S837 . 1 `uc 1 ADTIF 1 0 :1:0 
+[v _PIR1bits PIR1bits `VES128  1 e 1 @1199 ]
+[s S161 . 1 `uc 1 ADTIF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 DMA1SCNTIF 1 0 :1:4 
 `uc 1 DMA1DCNTIF 1 0 :1:5 
@@ -843,11 +855,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 DMA1AIF 1 0 :1:7 
 ]
 "48116
-[u S844 . 1 `S837 1 . 1 0 ]
+[u S168 . 1 `S161 1 . 1 0 ]
 "48116
 "48116
-[v _PIR2bits PIR2bits `VES844  1 e 1 @1200 ]
-[s S338 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
+[v _PIR2bits PIR2bits `VES168  1 e 1 @1200 ]
+[s S993 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
 `uc 1 SPI1TXIF 1 0 :1:1 
 `uc 1 SPI1IF 1 0 :1:2 
 `uc 1 TMR2IF 1 0 :1:3 
@@ -857,11 +869,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TMR0IF 1 0 :1:7 
 ]
 "48163
-[u S347 . 1 `S338 1 . 1 0 ]
+[u S1002 . 1 `S993 1 . 1 0 ]
 "48163
 "48163
-[v _PIR3bits PIR3bits `VES347  1 e 1 @1201 ]
-[s S699 . 1 `uc 1 INT1IF 1 0 :1:0 
+[v _PIR3bits PIR3bits `VES1002  1 e 1 @1201 ]
+[s S1342 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 CLC2IF 1 0 :1:1 
 `uc 1 CWG1IF 1 0 :1:2 
 `uc 1 NCO1IF 1 0 :1:3 
@@ -871,11 +883,11 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 DMA2AIF 1 0 :1:7 
 ]
 "48333
-[u S708 . 1 `S699 1 . 1 0 ]
+[u S1351 . 1 `S1342 1 . 1 0 ]
 "48333
 "48333
-[v _PIR6bits PIR6bits `VES708  1 e 1 @1204 ]
-[s S730 . 1 `uc 1 INT2IF 1 0 :1:0 
+[v _PIR6bits PIR6bits `VES1351  1 e 1 @1204 ]
+[s S1373 . 1 `uc 1 INT2IF 1 0 :1:0 
 `uc 1 CLC5IF 1 0 :1:1 
 `uc 1 CWG2IF 1 0 :1:2 
 `uc 1 NCO2IF 1 0 :1:3 
@@ -885,13 +897,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 DMA3AIF 1 0 :1:7 
 ]
 "48559
-[u S739 . 1 `S730 1 . 1 0 ]
+[u S1382 . 1 `S1373 1 . 1 0 ]
 "48559
 "48559
-[v _PIR10bits PIR10bits `VES739  1 e 1 @1208 ]
+[v _PIR10bits PIR10bits `VES1382  1 e 1 @1208 ]
 "48861
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S1275 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1861 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -901,10 +913,10 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 LATA7 1 0 :1:7 
 ]
 "48878
-[u S1284 . 1 `S1275 1 . 1 0 ]
+[u S1870 . 1 `S1861 1 . 1 0 ]
 "48878
 "48878
-[v _LATAbits LATAbits `VES1284  1 e 1 @1214 ]
+[v _LATAbits LATAbits `VES1870  1 e 1 @1214 ]
 "48923
 [v _LATB LATB `VEuc  1 e 1 @1215 ]
 "48985
@@ -915,7 +927,7 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _LATE LATE `VEuc  1 e 1 @1218 ]
 "49141
 [v _LATF LATF `VEuc  1 e 1 @1219 ]
-[s S1206 . 1 `uc 1 LATF0 1 0 :1:0 
+[s S1792 . 1 `uc 1 LATF0 1 0 :1:0 
 `uc 1 LATF1 1 0 :1:1 
 `uc 1 LATF2 1 0 :1:2 
 `uc 1 LATF3 1 0 :1:3 
@@ -925,13 +937,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 LATF7 1 0 :1:7 
 ]
 "49158
-[u S1215 . 1 `S1206 1 . 1 0 ]
+[u S1801 . 1 `S1792 1 . 1 0 ]
 "49158
 "49158
-[v _LATFbits LATFbits `VES1215  1 e 1 @1219 ]
+[v _LATFbits LATFbits `VES1801  1 e 1 @1219 ]
 "49203
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S1233 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S1819 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -941,13 +953,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "49220
-[u S1242 . 1 `S1233 1 . 1 0 ]
+[u S1828 . 1 `S1819 1 . 1 0 ]
 "49220
 "49220
-[v _TRISAbits TRISAbits `VES1242  1 e 1 @1222 ]
+[v _TRISAbits TRISAbits `VES1828  1 e 1 @1222 ]
 "49265
 [v _TRISB TRISB `VEuc  1 e 1 @1223 ]
-[s S1164 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S1750 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -957,13 +969,13 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "49282
-[u S1173 . 1 `S1164 1 . 1 0 ]
+[u S1759 . 1 `S1750 1 . 1 0 ]
 "49282
 "49282
-[v _TRISBbits TRISBbits `VES1173  1 e 1 @1223 ]
+[v _TRISBbits TRISBbits `VES1759  1 e 1 @1223 ]
 "49327
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S273 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S928 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -973,17 +985,17 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "49344
-[u S282 . 1 `S273 1 . 1 0 ]
+[u S937 . 1 `S928 1 . 1 0 ]
 "49344
 "49344
-[v _TRISCbits TRISCbits `VES282  1 e 1 @1224 ]
+[v _TRISCbits TRISCbits `VES937  1 e 1 @1224 ]
 "49389
 [v _TRISD TRISD `VEuc  1 e 1 @1225 ]
 "49451
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
 "49483
 [v _TRISF TRISF `VEuc  1 e 1 @1227 ]
-[s S642 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[s S1294 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -992,26 +1004,14 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 `uc 1 GIE 1 0 :1:7 
 ]
 "49913
-[s S650 . 1 `uc 1 . 1 0 :7:0 
+[s S1302 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "49913
-[u S653 . 1 `S642 1 . 1 0 `S650 1 . 1 0 ]
+[u S1305 . 1 `S1294 1 . 1 0 `S1302 1 . 1 0 ]
 "49913
 "49913
-[v _INTCON0bits INTCON0bits `VES653  1 e 1 @1238 ]
-"31 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X/nrf24.h
-[v _TXPIPE0 TXPIPE0 `[5]uc  1 e 5 0 ]
-"33
-[v _ready ready `uc  1 e 1 0 ]
-"34
-[v _irq_ready irq_ready `uc  1 e 1 0 ]
-"35
-[v _done done `uc  1 e 1 0 ]
-"36
-[v _micData micData `[2016]uc  1 e 2016 0 ]
-"37
-[v _transmitted transmitted `uc  1 e 1 0 ]
+[v _INTCON0bits INTCON0bits `VES1305  1 e 1 @1238 ]
 "44 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/adc/src/adc.c
 [v _ADC_ConversionDoneCallback ADC_ConversionDoneCallback `*.38(v  1 s 3 ADC_ConversionDoneCallback ]
 "45
@@ -1024,12 +1024,12 @@ ADC_FILTERED_VALUE_VS_SETPOINT 5
 [v _SPI1_RxCompleteCallback SPI1_RxCompleteCallback `*.38(v  1 s 3 SPI1_RxCompleteCallback ]
 "62
 [v _SPI1_TxCompleteCallback SPI1_TxCompleteCallback `*.38(v  1 s 3 SPI1_TxCompleteCallback ]
-[s S165 . 9 `*.39uc 1 transmitBuffer 2 0 `*.39uc 1 receiveBuffer 2 2 `ui 1 bytesToTransmit 2 4 `ui 1 bytesToReceive 2 6 `E17197 1 status 1 8 ]
+[s S820 . 9 `*.39uc 1 transmitBuffer 2 0 `*.39uc 1 receiveBuffer 2 2 `ui 1 bytesToTransmit 2 4 `ui 1 bytesToReceive 2 6 `E17197 1 status 1 8 ]
 "64
-[v _spi1_descriptor spi1_descriptor `S165  1 s 9 spi1_descriptor ]
-[s S171 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
+[v _spi1_descriptor spi1_descriptor `S820  1 s 9 spi1_descriptor ]
+[s S826 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
 "73
-[v _spi1_configuration spi1_configuration `C[3]S171  1 s 15 spi1_configuration ]
+[v _spi1_configuration spi1_configuration `C[3]S826  1 s 15 spi1_configuration ]
 "38 C:\Users\Kacper Szkoda\MPLABXProjects\nRF24_code.X (3)\nRF24_code.X\mcc_generated_files/system/src/interrupt.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.38(v  1 e 3 0 ]
 "39
