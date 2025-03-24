@@ -29606,7 +29606,7 @@ typedef enum
     ADC_CHANNEL_DAC1 = 0x3d,
     ADC_CHANNEL_FVR_BUFFER1 = 0x3e,
     ADC_CHANNEL_FVR_BUFFER2 = 0x3f,
-    ADC_CHANNEL_ANA0 = 0x0
+    ADC_CHANNEL_ANA1 = 0x1
 } adc_channel_t;
 
 
@@ -30107,6 +30107,10 @@ uint8_t irq_ready = 0;
 uint8_t done;
 uint8_t micData [2016];
 uint8_t transmitted = 0;
+uint8_t last_sample = 0;
+uint8_t control_packet[32] = {'j', 'b'};
+uint8_t ctrl_ind;
+uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
 
 
 typedef enum{
@@ -30119,7 +30123,7 @@ typedef enum {
     RX_MODE = 1,
     TX_MODE = 2
 }NRF24_OPERATION_MODE;
-# 96 "mcc_generated_files/timer/src/../../../nrf24.h"
+# 100 "mcc_generated_files/timer/src/../../../nrf24.h"
 void nrf24_WritePayload(unsigned char *, unsigned char);
 
 

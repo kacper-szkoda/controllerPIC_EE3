@@ -101,7 +101,26 @@ int main(void)
         extern uint8_t ready;
         extern uint8_t done;
         extern uint8_t transmitted;
-        if (ready == 1){
+        extern uint8_t last_sample;
+        extern uint8_t ctrl_ind;
+        extern uint8_t pins_to_sample[3];
+        extern uint8_t control_packet[32];
+        
+        if (last_sample == 1){
+            if (ctrl_ind == 3){
+                nrf24_WritePayload(&control_packet[0], 32);
+                ready = 0;
+                last_sample = 0;
+                ctrl_ind = 0;
+                ADPCH = (1 << _ADPCH_PCH_POSITION);
+            }
+            else {
+                last_sample = 0;
+                ADPCH = (uint8_t)( pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
+                ADC_ConversionStart();
+            }
+        }
+        else {if (ready == 1){
 
             extern uint8_t micData [AUDIO_SIZE]; //Something wrong with accesing array, array has values but 0s received
             
@@ -114,6 +133,7 @@ int main(void)
             CE = 1;         // Set CE high, should be handled by the interrupt of irq
             ready = 0;
         }
+        
 //        else {if payload_ready == 1}
         else {if (irq_ready == 1){
             CE = 0;
@@ -129,6 +149,7 @@ int main(void)
             else {
                 ready = 1;
             }
+        }
         }
         }
         /// maybe act dont stop the timer??? for smoother audio, 

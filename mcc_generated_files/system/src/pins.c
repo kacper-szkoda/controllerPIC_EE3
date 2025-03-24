@@ -157,7 +157,8 @@ void PIN_MANAGER_IOC(void)
     
     extern uint8_t irq_ready;
     irq_ready = 1;
-    if (transmitted == 63){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
+    if (transmitted == 64){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
+        //64 to include the first send of controls
         transmitted = 0;
         done = 1;
         ready = 0;

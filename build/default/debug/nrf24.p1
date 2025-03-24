@@ -22,12 +22,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _SPI1_BufferWrite `(v ~T0 @X0 0 ef2`*v`ui ]
 "65 nrf24.c
 [; ;nrf24.c: 65: NRF24_INIT_STATUS nrf24_Initialize() {
-[c E17744 0 1 .. ]
-[n E17744 . NRF24_INIT_OK NRF24_INIT_FAILED  ]
+[c E17748 0 1 .. ]
+[n E17748 . NRF24_INIT_OK NRF24_INIT_FAILED  ]
 "101
 [; ;nrf24.c: 101: void nrf24_SetMode(NRF24_OPERATION_MODE mode){
-[c E17748 1 2 .. ]
-[n E17748 . RX_MODE TX_MODE  ]
+[c E17752 1 2 .. ]
+[n E17752 . RX_MODE TX_MODE  ]
 "328 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
 [; <" CLKRCON equ 039h ;# ">
@@ -2647,6 +2647,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _transmitted
 -> -> 0 `i `uc
 ]
+"38
+[; ;./nrf24.h: 38: uint8_t last_sample = 0;
+[v _last_sample `uc ~T0 @X0 1 e ]
+[i _last_sample
+-> -> 0 `i `uc
+]
+"39
+[; ;./nrf24.h: 39: uint8_t control_packet[32] = {'j', 'b'};
+[v _control_packet `uc ~T0 @X0 -> 32 `i e ]
+[i _control_packet
+:U ..
+-> -> 106 `ui `uc
+-> -> 98 `ui `uc
+..
+]
+"40
+[; ;./nrf24.h: 40: uint8_t ctrl_ind;
+[v _ctrl_ind `uc ~T0 @X0 1 e ]
+"41
+[; ;./nrf24.h: 41: uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
+[v _pins_to_sample `uc ~T0 @X0 -> 3 `i e ]
+[i _pins_to_sample
+:U ..
+-> -> 25 `i `uc
+-> -> 43 `i `uc
+-> -> 16 `i `uc
+..
+]
 "15 nrf24.c
 [; ;nrf24.c: 15: void nrf24_WriteRegister(unsigned char address, unsigned char value){
 [v _nrf24_WriteRegister `(v ~T0 @X0 1 ef2`uc`uc ]
@@ -2659,8 +2687,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;nrf24.c: 16:         uint8_t fulladd = (0x20 | (address & 0x1F));
 [v _fulladd `uc ~T0 @X0 1 a ]
 [e = _fulladd -> | -> 32 `i & -> _address `i -> 31 `i `uc ]
-[v F17781 `uc ~T0 @X0 -> 2 `i s ]
-[i F17781
+[v F17785 `uc ~T0 @X0 -> 2 `i s ]
+[i F17785
 :U ..
 "18
 [; ;nrf24.c: 18:         uint8_t buffer[2] = {fulladd, value};
@@ -2669,7 +2697,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer `uc ~T0 @X0 -> 2 `i a ]
-[e = _buffer F17781 ]
+[e = _buffer F17785 ]
 [e ; = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux _fulladd = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux _value ]
 "19
 [; ;nrf24.c: 19:         LATAbits.LATA4 = 0;
@@ -2698,8 +2726,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;nrf24.c: 26:     uint8_t fulladd = (0x00 | (address & 0x1F));
 [v _fulladd `uc ~T0 @X0 1 a ]
 [e = _fulladd -> | -> 0 `i & -> _address `i -> 31 `i `uc ]
-[v F17786 `uc ~T0 @X0 -> 2 `i s ]
-[i F17786
+[v F17790 `uc ~T0 @X0 -> 2 `i s ]
+[i F17790
 :U ..
 "27
 [; ;nrf24.c: 27:     uint8_t buffer[2] = {fulladd, 0xFF};
@@ -2708,7 +2736,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _buffer `uc ~T0 @X0 -> 2 `i a ]
-[e = _buffer F17786 ]
+[e = _buffer F17790 ]
 [e ; = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux _fulladd = *U + &U _buffer * -> -> -> 1 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 255 `i `uc ]
 "28
 [; ;nrf24.c: 28:     LATAbits.LATA4 = 0;
@@ -2813,7 +2841,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "65
 [; ;nrf24.c: 65: NRF24_INIT_STATUS nrf24_Initialize() {
-[v _nrf24_Initialize `(E17744 ~T0 @X0 1 ef ]
+[v _nrf24_Initialize `(E17748 ~T0 @X0 1 ef ]
 {
 [e :U _nrf24_Initialize ]
 [f ]
@@ -2878,7 +2906,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "93
 [; ;nrf24.c: 93:         return NRF24_INIT_OK;
-[e ) . `E17744 0 ]
+[e ) . `E17748 0 ]
 [e $UE 2421  ]
 "94
 [; ;nrf24.c: 94:     } else {
@@ -2888,7 +2916,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "95
 [; ;nrf24.c: 95:         return NRF24_INIT_FAILED;
-[e ) . `E17744 1 ]
+[e ) . `E17748 1 ]
 [e $UE 2421  ]
 "96
 [; ;nrf24.c: 96:     }
@@ -2900,14 +2928,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "101
 [; ;nrf24.c: 101: void nrf24_SetMode(NRF24_OPERATION_MODE mode){
-[v _nrf24_SetMode `(v ~T0 @X0 1 ef1`E17748 ]
+[v _nrf24_SetMode `(v ~T0 @X0 1 ef1`E17752 ]
 {
 [e :U _nrf24_SetMode ]
-[v _mode `E17748 ~T0 @X0 1 r1 ]
+[v _mode `E17752 ~T0 @X0 1 r1 ]
 [f ]
 "102
 [; ;nrf24.c: 102:     if (mode == TX_MODE) {
-[e $ ! == -> _mode `ui -> . `E17748 1 `ui 2425  ]
+[e $ ! == -> _mode `ui -> . `E17752 1 `ui 2425  ]
 {
 "103
 [; ;nrf24.c: 103:         nrf24_WriteRegister(0x00, 0x0A);
@@ -2938,7 +2966,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "110
 [; ;nrf24.c: 110:     nrf24_SetMode(TX_MODE);
-[e ( _nrf24_SetMode (1 . `E17748 1 ]
+[e ( _nrf24_SetMode (1 . `E17752 1 ]
 "111
 [; ;nrf24.c: 111:     nrf24_WriteBuffer(0xA0, buffer, 32);
 [e ( _nrf24_WriteBuffer (3 , , -> -> 160 `i `uc _buffer -> -> 32 `i `uc ]

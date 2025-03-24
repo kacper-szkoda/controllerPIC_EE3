@@ -35,6 +35,10 @@ uint8_t irq_ready = 0;
 uint8_t done;
 uint8_t micData [AUDIO_SIZE];
 uint8_t transmitted = 0;
+uint8_t last_sample = 0;
+uint8_t control_packet[32] = {'j', 'b'};
+uint8_t ctrl_ind;
+uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10}; //write what to change the value of the port to be, rx, ry, btn
 
 // nrf24 status 
 typedef enum{
