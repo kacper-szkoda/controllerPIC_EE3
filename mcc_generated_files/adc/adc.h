@@ -43,7 +43,31 @@
  * @ingroup adc
  * @brief Defines the Custom Name pin mapping for channels in @ref adc_channel_t
  */
-#define IO_RA1 ADC_CHANNEL_ANA1
+#define IN_MIC ADC_CHANNEL_ANA1
+
+/**
+ * @ingroup adc
+ * @brief Defines the Custom Name pin mapping for channels in @ref adc_channel_t
+ */
+#define IR_BTN ADC_CHANNEL_ANB1
+
+/**
+ * @ingroup adc
+ * @brief Defines the Custom Name pin mapping for channels in @ref adc_channel_t
+ */
+#define IN_BTN ADC_CHANNEL_ANC0
+
+/**
+ * @ingroup adc
+ * @brief Defines the Custom Name pin mapping for channels in @ref adc_channel_t
+ */
+#define VRx ADC_CHANNEL_AND1
+
+/**
+ * @ingroup adc
+ * @brief Defines the Custom Name pin mapping for channels in @ref adc_channel_t
+ */
+#define VRy ADC_CHANNEL_ANF3
 
 
 

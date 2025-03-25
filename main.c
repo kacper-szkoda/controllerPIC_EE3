@@ -105,6 +105,7 @@ int main(void)
         extern uint8_t ctrl_ind;
         extern uint8_t pins_to_sample[3];
         extern uint8_t control_packet[32];
+        extern uint16_t counter;
         
         if (last_sample == 1){
             if (ctrl_ind == 3){

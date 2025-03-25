@@ -2835,6 +2835,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _transmitted
 -> -> 0 `i `uc
 ]
+"38
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 38: uint8_t last_sample = 0;
+[v _last_sample `uc ~T0 @X0 1 e ]
+[i _last_sample
+-> -> 0 `i `uc
+]
+"39
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 39: uint8_t control_packet[32] = {'j', 'b'};
+[v _control_packet `uc ~T0 @X0 -> 32 `i e ]
+[i _control_packet
+:U ..
+-> -> 106 `ui `uc
+-> -> 98 `ui `uc
+..
+]
+"40
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 40: uint8_t ctrl_ind;
+[v _ctrl_ind `uc ~T0 @X0 1 e ]
+"41
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 41: uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
+[v _pins_to_sample `uc ~T0 @X0 -> 3 `i e ]
+[i _pins_to_sample
+:U ..
+-> -> 25 `i `uc
+-> -> 43 `i `uc
+-> -> 16 `i `uc
+..
+]
+"42
+[; ;mcc_generated_files/system/src/../../../nrf24.h: 42: uint16_t counter;
+[v _counter `us ~T0 @X0 1 e ]
 "40 mcc_generated_files/system/src/pins.c
 [; ;mcc_generated_files/system/src/pins.c: 40: void PIN_MANAGER_Initialize(void)
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
@@ -2889,14 +2920,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 66:     TRISC = 0xE7;
 [e = _TRISC -> -> 231 `i `uc ]
 "67
-[; ;mcc_generated_files/system/src/pins.c: 67:     TRISD = 0xFD;
-[e = _TRISD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 67:     TRISD = 0xFF;
+[e = _TRISD -> -> 255 `i `uc ]
 "68
 [; ;mcc_generated_files/system/src/pins.c: 68:     TRISE = 0xF;
 [e = _TRISE -> -> 15 `i `uc ]
 "69
-[; ;mcc_generated_files/system/src/pins.c: 69:     TRISF = 0xF3;
-[e = _TRISF -> -> 243 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 69:     TRISF = 0xFB;
+[e = _TRISF -> -> 251 `i `uc ]
 "74
 [; ;mcc_generated_files/system/src/pins.c: 74:     ANSELA = 0xAF;
 [e = _ANSELA -> -> 175 `i `uc ]
@@ -2907,14 +2938,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 76:     ANSELC = 0xC7;
 [e = _ANSELC -> -> 199 `i `uc ]
 "77
-[; ;mcc_generated_files/system/src/pins.c: 77:     ANSELD = 0xFD;
-[e = _ANSELD -> -> 253 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 77:     ANSELD = 0xFF;
+[e = _ANSELD -> -> 255 `i `uc ]
 "78
 [; ;mcc_generated_files/system/src/pins.c: 78:     ANSELE = 0x7;
 [e = _ANSELE -> -> 7 `i `uc ]
 "79
-[; ;mcc_generated_files/system/src/pins.c: 79:     ANSELF = 0xF3;
-[e = _ANSELF -> -> 243 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 79:     ANSELF = 0xFB;
+[e = _ANSELF -> -> 251 `i `uc ]
 "84
 [; ;mcc_generated_files/system/src/pins.c: 84:     WPUA = 0x0;
 [e = _WPUA -> -> 0 `i `uc ]
@@ -3058,34 +3089,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 159:     irq_ready = 1;
 [e = _irq_ready -> -> 1 `i `uc ]
 "160
-[; ;mcc_generated_files/system/src/pins.c: 160:     if (transmitted == 63){
-[e $ ! == -> _transmitted `i -> 63 `i 2416  ]
+[; ;mcc_generated_files/system/src/pins.c: 160:     if (transmitted == 64){
+[e $ ! == -> _transmitted `i -> 64 `i 2416  ]
 {
-"161
-[; ;mcc_generated_files/system/src/pins.c: 161:         transmitted = 0;
-[e = _transmitted -> -> 0 `i `uc ]
 "162
-[; ;mcc_generated_files/system/src/pins.c: 162:         done = 1;
-[e = _done -> -> 1 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 162:         transmitted = 0;
+[e = _transmitted -> -> 0 `i `uc ]
 "163
-[; ;mcc_generated_files/system/src/pins.c: 163:         ready = 0;
-[e = _ready -> -> 0 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 163:         done = 1;
+[e = _done -> -> 1 `i `uc ]
 "164
-[; ;mcc_generated_files/system/src/pins.c: 164:     }
+[; ;mcc_generated_files/system/src/pins.c: 164:         ready = 0;
+[e = _ready -> -> 0 `i `uc ]
+"165
+[; ;mcc_generated_files/system/src/pins.c: 165:     }
 }
 [e $U 2417  ]
-"165
-[; ;mcc_generated_files/system/src/pins.c: 165:     else {
+"166
+[; ;mcc_generated_files/system/src/pins.c: 166:     else {
 [e :U 2416 ]
 {
-"166
-[; ;mcc_generated_files/system/src/pins.c: 166:         transmitted ++;
-[e ++ _transmitted -> -> 1 `i `uc ]
 "167
-[; ;mcc_generated_files/system/src/pins.c: 167:     }
+[; ;mcc_generated_files/system/src/pins.c: 167:         transmitted ++;
+[e ++ _transmitted -> -> 1 `i `uc ]
+"168
+[; ;mcc_generated_files/system/src/pins.c: 168:     }
 }
 [e :U 2417 ]
-"168
-[; ;mcc_generated_files/system/src/pins.c: 168: }
+"169
+[; ;mcc_generated_files/system/src/pins.c: 169: }
 [e :UE 2415 ]
 }

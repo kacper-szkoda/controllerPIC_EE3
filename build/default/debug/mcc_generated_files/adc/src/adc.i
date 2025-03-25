@@ -29302,7 +29302,11 @@ typedef enum
     ADC_CHANNEL_DAC1 = 0x3d,
     ADC_CHANNEL_FVR_BUFFER1 = 0x3e,
     ADC_CHANNEL_FVR_BUFFER2 = 0x3f,
-    ADC_CHANNEL_ANA1 = 0x1
+    ADC_CHANNEL_ANA1 = 0x1,
+    ADC_CHANNEL_ANB1 = 0x9,
+    ADC_CHANNEL_ANC0 = 0x10,
+    ADC_CHANNEL_AND1 = 0x19,
+    ADC_CHANNEL_ANF3 = 0x2b
 } adc_channel_t;
 
 
@@ -29412,7 +29416,7 @@ typedef enum
     ADC_2ND_CONVERSION = 0x7
 } adc_conversion_stage_t;
 # 40 "mcc_generated_files/adc/src/../adc.h" 2
-# 56 "mcc_generated_files/adc/src/../adc.h"
+# 80 "mcc_generated_files/adc/src/../adc.h"
 void ADC_Initialize(void);
 
 
@@ -29446,9 +29450,9 @@ void ADC_Disable(void);
 
 
 void ADC_ChannelSelect(adc_channel_t channel);
-# 98 "mcc_generated_files/adc/src/../adc.h"
+# 122 "mcc_generated_files/adc/src/../adc.h"
 void ADC_ConversionStart(void);
-# 108 "mcc_generated_files/adc/src/../adc.h"
+# 132 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsConversionDone(void);
 
 
@@ -29458,7 +29462,7 @@ _Bool ADC_IsConversionDone(void);
 
 
 void ADC_ConversionStop(void);
-# 125 "mcc_generated_files/adc/src/../adc.h"
+# 149 "mcc_generated_files/adc/src/../adc.h"
 adc_result_t ADC_ConversionResultGet(void);
 
 
@@ -29516,7 +29520,7 @@ adc_accumulate_t ADC_AccumulatedResultGet(void);
 
 
 adc_result_t ADC_ChannelSelectAndConvert(adc_channel_t channel);
-# 190 "mcc_generated_files/adc/src/../adc.h"
+# 214 "mcc_generated_files/adc/src/../adc.h"
 void ADC_StopOnInterruptEnable(void);
 
 
@@ -29566,11 +29570,11 @@ adc_repeat_count_t ADC_CurrentConversionCountGet(void);
 
 
 void ADC_AccumulatorClear(void);
-# 247 "mcc_generated_files/adc/src/../adc.h"
+# 271 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsAccumulatorClearComplete(void);
-# 256 "mcc_generated_files/adc/src/../adc.h"
+# 280 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_HasAccumulatorOverflowed(void);
-# 265 "mcc_generated_files/adc/src/../adc.h"
+# 289 "mcc_generated_files/adc/src/../adc.h"
 adc_result_t ADC_FilterValueGet(void);
 
 
@@ -29636,7 +29640,7 @@ void ADC_ContinuousConversionDisable(void);
 
 
 _Bool ADC_IsErrorGreaterThanUpperThreshold(void);
-# 338 "mcc_generated_files/adc/src/../adc.h"
+# 362 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsErrorLesserThanLowerThreshold(void);
 
 
@@ -29686,7 +29690,7 @@ void ADC_ChargePumpEnable(void);
 
 
 void ADC_ChargePumpDisable(void);
-# 395 "mcc_generated_files/adc/src/../adc.h"
+# 419 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsChargePumpReady(void);
 
 
@@ -29696,7 +29700,7 @@ _Bool ADC_IsChargePumpReady(void);
 
 
 uint8_t ADC_ResolutionGet(void);
-# 412 "mcc_generated_files/adc/src/../adc.h"
+# 436 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsBusy(void);
 
 
@@ -29722,9 +29726,9 @@ void ADC_ConversionDoneInterruptFlagClear(void);
 
 
 void ADC_ThresholdInterruptFlagClear(void);
-# 445 "mcc_generated_files/adc/src/../adc.h"
+# 469 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsConversionDoneInterruptFlagSet(void);
-# 454 "mcc_generated_files/adc/src/../adc.h"
+# 478 "mcc_generated_files/adc/src/../adc.h"
 _Bool ADC_IsThresholdInterruptFlagSet(void);
 
 
@@ -29813,7 +29817,7 @@ void CLOCK_Initialize(void);
 # 42 "./mcc_generated_files/system/system.h" 2
 
 # 1 "./mcc_generated_files/system/../system/pins.h" 1
-# 259 "./mcc_generated_files/system/../system/pins.h"
+# 299 "./mcc_generated_files/system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -29831,11 +29835,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IRQ_ISR(void);
-# 285 "./mcc_generated_files/system/../system/pins.h"
+# 325 "./mcc_generated_files/system/../system/pins.h"
 void IRQ_SetInterruptHandler(void (* InterruptHandler)(void));
-# 296 "./mcc_generated_files/system/../system/pins.h"
+# 336 "./mcc_generated_files/system/../system/pins.h"
 extern void (*IRQ_InterruptHandler)(void);
-# 307 "./mcc_generated_files/system/../system/pins.h"
+# 347 "./mcc_generated_files/system/../system/pins.h"
 void IRQ_DefaultInterruptHandler(void);
 # 43 "./mcc_generated_files/system/system.h" 2
 
@@ -30113,6 +30117,7 @@ uint8_t last_sample = 0;
 uint8_t control_packet[32] = {'j', 'b'};
 uint8_t ctrl_ind;
 uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
+uint16_t counter;
 
 
 typedef enum{
@@ -30125,7 +30130,7 @@ typedef enum {
     RX_MODE = 1,
     TX_MODE = 2
 }NRF24_OPERATION_MODE;
-# 100 "mcc_generated_files/adc/src/../../../nrf24.h"
+# 101 "mcc_generated_files/adc/src/../../../nrf24.h"
 void nrf24_WritePayload(unsigned char *, unsigned char);
 
 
@@ -30166,7 +30171,7 @@ static void (*ADC_ConversionDoneCallback)(void);
 static void (*ADC_ThresholdCallback)(void);
 static _Bool adc_busy_status;
 
-static uint16_t counter;
+extern uint16_t counter;
 extern uint8_t micData[2016];
 extern uint8_t control_packet[32];
 extern uint8_t ctrl_ind;
@@ -30177,10 +30182,10 @@ void saveMicData(){
         micData[counter] = res;
         counter ++;
         if (counter == 2016) {
-            counter = 0;
+
             extern uint8_t ready;
             extern uint8_t last_sample;
-            ready = 1;
+
             last_sample = 1;
         }
         else {
@@ -30191,7 +30196,6 @@ void saveMicData(){
         control_packet[ctrl_ind+2] = res;
         ctrl_ind += 1;
         last_sample = 1;
-        return;
     }
 
 }

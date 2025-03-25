@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o
+ C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o
  -Odist/default/debug\nRF24_code.X.debug.hex
  -logfile=dist/default/debug\nRF24_code.X.debug.hxl
  -addressing=1
@@ -9,27 +9,27 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  8h - Bh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  18h - 1Dh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  2600h - 263Ah		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  263Ch - 302Ah		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  302Ch - 305Dh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  300000h - 300007h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
-  300009h - 300009h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  8h - Bh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  18h - 1Dh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  2600h - 263Ah		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  263Ch - 301Ah		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  301Ch - 304Dh		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  300000h - 300007h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
+  300009h - 300009h		(C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
   Ch - 17h
   1Eh - 25FFh
   263Bh - 263Bh
-  302Bh - 302Bh
-  305Eh - 2FFFFFh
+  301Bh - 301Bh
+  304Eh - 2FFFFFh
   300008h - 300008h
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\KACPER~1\AppData\Local\Temp\xcAs694.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\KACPER~1\AppData\Local\Temp\xcAs194.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -197,11 +197,10 @@
 00002FE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00003000 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00003010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00003020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1
+00003010 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- H1 H1 H1 H1
+00003020 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00003030 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00003040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00003050 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
+00003040 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- --
 ----------------------------------------------------------
 00300000 | H1 H1 H1 H1 H1 H1 H1 H1 -- H1 -- -- -- -- -- --
 00300010 | --

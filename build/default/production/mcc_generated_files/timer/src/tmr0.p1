@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F17457 `(v ~T0 @X0 0 tf ]
+[v F17466 `(v ~T0 @X0 0 tf ]
 "23436 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 23436: extern volatile unsigned char TMR0H __attribute__((address(0x319)));
 [v _TMR0H `Vuc ~T0 @X0 0 e@793 ]
@@ -60,10 +60,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23724
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 23724: extern volatile T0CON0bits_t T0CON0bits __attribute__((address(0x31A)));
 [v _T0CON0bits `VS1136 ~T0 @X0 0 e@794 ]
-[v F17476 `(v ~T0 @X0 0 tf ]
-[v F17478 `(v ~T0 @X0 0 tf ]
-[v F17480 `(v ~T0 @X0 0 tf ]
-"98 mcc_generated_files/timer/src/../../adc/adc.h
+[v F17485 `(v ~T0 @X0 0 tf ]
+[v F17487 `(v ~T0 @X0 0 tf ]
+[v F17489 `(v ~T0 @X0 0 tf ]
+"122 mcc_generated_files/timer/src/../../adc/adc.h
 [v _ADC_ConversionStart `(v ~T0 @X0 0 ef ]
 "328 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 328: __asm("CLKRCON equ 039h");
@@ -2684,9 +2684,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _transmitted
 -> -> 0 `i `uc
 ]
+"38
+[; ;mcc_generated_files/timer/src/../../../nrf24.h: 38: uint8_t last_sample = 0;
+[v _last_sample `uc ~T0 @X0 1 e ]
+[i _last_sample
+-> -> 0 `i `uc
+]
+"39
+[; ;mcc_generated_files/timer/src/../../../nrf24.h: 39: uint8_t control_packet[32] = {'j', 'b'};
+[v _control_packet `uc ~T0 @X0 -> 32 `i e ]
+[i _control_packet
+:U ..
+-> -> 106 `ui `uc
+-> -> 98 `ui `uc
+..
+]
+"40
+[; ;mcc_generated_files/timer/src/../../../nrf24.h: 40: uint8_t ctrl_ind;
+[v _ctrl_ind `uc ~T0 @X0 1 e ]
+"41
+[; ;mcc_generated_files/timer/src/../../../nrf24.h: 41: uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
+[v _pins_to_sample `uc ~T0 @X0 -> 3 `i e ]
+[i _pins_to_sample
+:U ..
+-> -> 25 `i `uc
+-> -> 43 `i `uc
+-> -> 16 `i `uc
+..
+]
+"42
+[; ;mcc_generated_files/timer/src/../../../nrf24.h: 42: uint16_t counter;
+[v _counter `us ~T0 @X0 1 e ]
 "40 mcc_generated_files/timer/src/tmr0.c
 [; ;mcc_generated_files/timer/src/tmr0.c: 40: static void (*TMR0_PeriodMatchCallback)(void);
-[v _TMR0_PeriodMatchCallback `*F17457 ~T0 @X0 1 s ]
+[v _TMR0_PeriodMatchCallback `*F17466 ~T0 @X0 1 s ]
 "47
 [; ;mcc_generated_files/timer/src/tmr0.c: 47: void TMR0_Initialize(void)
 [v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
@@ -2917,7 +2948,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "130
 [; ;mcc_generated_files/timer/src/tmr0.c: 130:         if(((void*)0) != TMR0_PeriodMatchCallback)
-[e $ ! != -> -> -> 0 `i `*v `*F17476 _TMR0_PeriodMatchCallback 2426  ]
+[e $ ! != -> -> -> 0 `i `*v `*F17485 _TMR0_PeriodMatchCallback 2426  ]
 "131
 [; ;mcc_generated_files/timer/src/tmr0.c: 131:         {
 {
@@ -2937,14 +2968,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "137
 [; ;mcc_generated_files/timer/src/tmr0.c: 137: void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
-[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 1 ef1`*F17478 ]
+[v _TMR0_PeriodMatchCallbackRegister `(v ~T0 @X0 1 ef1`*F17487 ]
 "138
 [; ;mcc_generated_files/timer/src/tmr0.c: 138: {
 {
 [e :U _TMR0_PeriodMatchCallbackRegister ]
 "137
 [; ;mcc_generated_files/timer/src/tmr0.c: 137: void TMR0_PeriodMatchCallbackRegister(void (* callbackHandler)(void))
-[v _callbackHandler `*F17480 ~T0 @X0 1 r1 ]
+[v _callbackHandler `*F17489 ~T0 @X0 1 r1 ]
 "138
 [; ;mcc_generated_files/timer/src/tmr0.c: 138: {
 [f ]

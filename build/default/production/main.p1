@@ -105,26 +105,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _SPI1_Open `(a ~T0 @X0 0 ef1`uc ]
 "87 main.c
 [; ;main.c: 87:     NRF24_INIT_STATUS init = nrf24_Initialize();
-[c E17423 0 1 .. ]
-[n E17423 . NRF24_INIT_OK NRF24_INIT_FAILED  ]
-"111 ./nrf24.h
-[; ;./nrf24.h: 111: NRF24_INIT_STATUS nrf24_Initialize();
-[v _nrf24_Initialize `(E17423 ~T0 @X0 0 e? ]
-"99
-[; ;./nrf24.h: 99: void nrf24_WriteRegister(unsigned char address, unsigned char value);
+[c E17432 0 1 .. ]
+[n E17432 . NRF24_INIT_OK NRF24_INIT_FAILED  ]
+"116 ./nrf24.h
+[; ;./nrf24.h: 116: NRF24_INIT_STATUS nrf24_Initialize();
+[v _nrf24_Initialize `(E17432 ~T0 @X0 0 e? ]
+"104
+[; ;./nrf24.h: 104: void nrf24_WriteRegister(unsigned char address, unsigned char value);
 [v _nrf24_WriteRegister `(v ~T0 @X0 0 ef2`uc`uc ]
-"72 ./mcc_generated_files/adc/adc.h
+"96 ./mcc_generated_files/adc/adc.h
 [v _ADC_Enable `(v ~T0 @X0 0 ef ]
 "179 ./mcc_generated_files/timer/tmr0.h
 [v _TMR0_Start `(v ~T0 @X0 0 ef ]
-"101 main.c
+"104 main.c
+[; ;main.c: 104:         extern uint8_t last_sample;
+[v _last_sample `uc ~T0 @X0 0 e ]
+"105
+[; ;main.c: 105:         extern uint8_t ctrl_ind;
+[v _ctrl_ind `uc ~T0 @X0 0 e ]
+"101 ./nrf24.h
+[; ;./nrf24.h: 101: void nrf24_WritePayload(unsigned char *, unsigned char);
+[v _nrf24_WritePayload `(v ~T0 @X0 0 ef2`*uc`uc ]
+"107 main.c
+[; ;main.c: 107:         extern uint8_t control_packet[32];
+[v _control_packet `uc ~T0 @X0 -> 0 `x e ]
+"101
 [; ;main.c: 101:         extern uint8_t ready;
 [v _ready `uc ~T0 @X0 0 e ]
-"96 ./nrf24.h
-[; ;./nrf24.h: 96: void nrf24_WritePayload(unsigned char *, unsigned char);
-[v _nrf24_WritePayload `(v ~T0 @X0 0 ef2`*uc`uc ]
+"38573 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-Q_DFP/1.24.430/xc8\pic\include\proc\pic18f57q43.h: 38573: extern volatile unsigned char ADPCH __attribute__((address(0x3EC)));
+[v _ADPCH `Vuc ~T0 @X0 0 e@1004 ]
 "106 main.c
-[; ;main.c: 106:             extern uint8_t micData [2016];
+[; ;main.c: 106:         extern uint8_t pins_to_sample[3];
+[v _pins_to_sample `uc ~T0 @X0 -> 0 `x e ]
+"122 ./mcc_generated_files/adc/adc.h
+[v _ADC_ConversionStart `(v ~T0 @X0 0 ef ]
+"126 main.c
+[; ;main.c: 126:             extern uint8_t micData [2016];
 [v _micData `uc ~T0 @X0 -> 0 `x e ]
 "100
 [; ;main.c: 100:         extern uint8_t irq_ready;
@@ -2751,6 +2768,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _transmitted
 -> -> 0 `i `uc
 ]
+"38
+[; ;./nrf24.h: 38: uint8_t last_sample = 0;
+[v _last_sample `uc ~T0 @X0 1 e ]
+[i _last_sample
+-> -> 0 `i `uc
+]
+"39
+[; ;./nrf24.h: 39: uint8_t control_packet[32] = {'j', 'b'};
+[v _control_packet `uc ~T0 @X0 -> 32 `i e ]
+[i _control_packet
+:U ..
+-> -> 106 `ui `uc
+-> -> 98 `ui `uc
+..
+]
+"40
+[; ;./nrf24.h: 40: uint8_t ctrl_ind;
+[v _ctrl_ind `uc ~T0 @X0 1 e ]
+"41
+[; ;./nrf24.h: 41: uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10};
+[v _pins_to_sample `uc ~T0 @X0 -> 3 `i e ]
+[i _pins_to_sample
+:U ..
+-> -> 25 `i `uc
+-> -> 43 `i `uc
+-> -> 16 `i `uc
+..
+]
+"42
+[; ;./nrf24.h: 42: uint16_t counter;
+[v _counter `us ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "49 main.c
 [; ;main.c: 49: int main(void)
@@ -2810,7 +2858,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _SPI1_Open (1 -> -> 2 `i `uc ]
 "87
 [; ;main.c: 87:     NRF24_INIT_STATUS init = nrf24_Initialize();
-[v _init `E17423 ~T0 @X0 1 a ]
+[v _init `E17432 ~T0 @X0 1 a ]
 [e = _init ( _nrf24_Initialize ..  ]
 "91
 [; ;main.c: 91:     nrf24_WriteRegister(0x07, (1 << 5));
@@ -2823,8 +2871,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TMR0_Start ..  ]
 "96
 [; ;main.c: 96:     static uint8_t index = 0;
-[v F17459 `uc ~T0 @X0 1 s index ]
-[i F17459
+[v F17468 `uc ~T0 @X0 1 s index ]
+[i F17468
 -> -> 0 `i `uc
 ]
 "98
@@ -2833,87 +2881,141 @@ Version 4.0 HI-TECH Software Intermediate Code
 "99
 [; ;main.c: 99:     {
 {
-"104
-[; ;main.c: 104:         if (ready == 1){
-[e $ ! == -> _ready `i -> 1 `i 2418  ]
+"110
+[; ;main.c: 110:         if (last_sample == 1){
+[e $ ! == -> _last_sample `i -> 1 `i 2418  ]
+{
+"111
+[; ;main.c: 111:             if (ctrl_ind == 3){
+[e $ ! == -> _ctrl_ind `i -> 3 `i 2419  ]
 {
 "112
-[; ;main.c: 112:             nrf24_WritePayload(&micData[index*32], 32);
-[e ( _nrf24_WritePayload (2 , &U *U + &U _micData * -> -> * -> F17459 `i -> 32 `i `ui `ux -> -> # *U &U _micData `ui `ux -> -> 32 `i `uc ]
+[; ;main.c: 112:                 nrf24_WritePayload(&control_packet[0], 32);
+[e ( _nrf24_WritePayload (2 , &U *U + &U _control_packet * -> -> -> 0 `i `ui `ux -> -> # *U &U _control_packet `ui `ux -> -> 32 `i `uc ]
 "113
-[; ;main.c: 113:             index ++;
-[e ++ F17459 -> -> 1 `i `uc ]
-"114
-[; ;main.c: 114:             LATAbits.LATA6 = 1;
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-"115
-[; ;main.c: 115:             ready = 0;
+[; ;main.c: 113:                 ready = 0;
 [e = _ready -> -> 0 `i `uc ]
+"114
+[; ;main.c: 114:                 last_sample = 0;
+[e = _last_sample -> -> 0 `i `uc ]
+"115
+[; ;main.c: 115:                 ctrl_ind = 0;
+[e = _ctrl_ind -> -> 0 `i `uc ]
 "116
-[; ;main.c: 116:         }
+[; ;main.c: 116:                 ADPCH = (1 << 0x0);
+[e = _ADPCH -> << -> 1 `i -> 0 `i `uc ]
+"117
+[; ;main.c: 117:             }
 }
-[e $U 2419  ]
+[e $U 2420  ]
 "118
-[; ;main.c: 118:         else {if (irq_ready == 1){
-[e :U 2418 ]
-{
-[e $ ! == -> _irq_ready `i -> 1 `i 2420  ]
+[; ;main.c: 118:             else {
+[e :U 2419 ]
 {
 "119
-[; ;main.c: 119:             LATAbits.LATA6 = 0;
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 119:                 last_sample = 0;
+[e = _last_sample -> -> 0 `i `uc ]
 "120
-[; ;main.c: 120:             nrf24_WriteRegister(0x07, (1 << 5));
-[e ( _nrf24_WriteRegister (2 , -> -> 7 `i `uc -> << -> 1 `i -> 5 `i `uc ]
+[; ;main.c: 120:                 ADPCH = (uint8_t)( pins_to_sample[ctrl_ind] << 0x0);
+[e = _ADPCH -> << -> *U + &U _pins_to_sample * -> _ctrl_ind `ux -> -> # *U &U _pins_to_sample `ui `ux `i -> 0 `i `uc ]
 "121
-[; ;main.c: 121:             irq_ready = 0;
-[e = _irq_ready -> -> 0 `i `uc ]
-"123
-[; ;main.c: 123:             if (done == 1){
-[e $ ! == -> _done `i -> 1 `i 2421  ]
-{
-"124
-[; ;main.c: 124:                 ready = 0;
-[e = _ready -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:                 done = 0;
-[e = _done -> -> 0 `i `uc ]
-"126
-[; ;main.c: 126:                 TMR0_Start();
-[e ( _TMR0_Start ..  ]
-"127
-[; ;main.c: 127:                 index = 0;
-[e = F17459 -> -> 0 `i `uc ]
-"128
-[; ;main.c: 128:             }
-}
-[e $U 2422  ]
-"129
-[; ;main.c: 129:             else {
-[e :U 2421 ]
-{
-"130
-[; ;main.c: 130:                 ready = 1;
-[e = _ready -> -> 1 `i `uc ]
-"131
-[; ;main.c: 131:             }
-}
-[e :U 2422 ]
-"132
-[; ;main.c: 132:         }
+[; ;main.c: 121:                 ADC_ConversionStart();
+[e ( _ADC_ConversionStart ..  ]
+"122
+[; ;main.c: 122:             }
 }
 [e :U 2420 ]
-"133
-[; ;main.c: 133:         }
+"123
+[; ;main.c: 123:         }
 }
-[e :U 2419 ]
+[e $U 2421  ]
+"124
+[; ;main.c: 124:         else {if (ready == 1){
+[e :U 2418 ]
+{
+[e $ ! == -> _ready `i -> 1 `i 2422  ]
+{
+"132
+[; ;main.c: 132:             nrf24_WritePayload(&micData[index*32], 32);
+[e ( _nrf24_WritePayload (2 , &U *U + &U _micData * -> -> * -> F17468 `i -> 32 `i `ui `ux -> -> # *U &U _micData `ui `ux -> -> 32 `i `uc ]
+"133
+[; ;main.c: 133:             index ++;
+[e ++ F17468 -> -> 1 `i `uc ]
+"134
+[; ;main.c: 134:             LATAbits.LATA6 = 1;
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 "135
-[; ;main.c: 135:     }
+[; ;main.c: 135:             ready = 0;
+[e = _ready -> -> 0 `i `uc ]
+"136
+[; ;main.c: 136:         }
+}
+[e $U 2423  ]
+"139
+[; ;main.c: 139:         else {if (irq_ready == 1){
+[e :U 2422 ]
+{
+[e $ ! == -> _irq_ready `i -> 1 `i 2424  ]
+{
+"140
+[; ;main.c: 140:             LATAbits.LATA6 = 0;
+[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
+"141
+[; ;main.c: 141:             nrf24_WriteRegister(0x07, (1 << 5));
+[e ( _nrf24_WriteRegister (2 , -> -> 7 `i `uc -> << -> 1 `i -> 5 `i `uc ]
+"142
+[; ;main.c: 142:             irq_ready = 0;
+[e = _irq_ready -> -> 0 `i `uc ]
+"144
+[; ;main.c: 144:             if (done == 1){
+[e $ ! == -> _done `i -> 1 `i 2425  ]
+{
+"145
+[; ;main.c: 145:                 ready = 0;
+[e = _ready -> -> 0 `i `uc ]
+"146
+[; ;main.c: 146:                 done = 0;
+[e = _done -> -> 0 `i `uc ]
+"147
+[; ;main.c: 147:                 TMR0_Start();
+[e ( _TMR0_Start ..  ]
+"148
+[; ;main.c: 148:                 index = 0;
+[e = F17468 -> -> 0 `i `uc ]
+"149
+[; ;main.c: 149:             }
+}
+[e $U 2426  ]
+"150
+[; ;main.c: 150:             else {
+[e :U 2425 ]
+{
+"151
+[; ;main.c: 151:                 ready = 1;
+[e = _ready -> -> 1 `i `uc ]
+"152
+[; ;main.c: 152:             }
+}
+[e :U 2426 ]
+"153
+[; ;main.c: 153:         }
+}
+[e :U 2424 ]
+"154
+[; ;main.c: 154:         }
+}
+[e :U 2423 ]
+"155
+[; ;main.c: 155:         }
+}
+[e :U 2421 ]
+"157
+[; ;main.c: 157:     }
 }
 [e :U 2415 ]
 [e $U 2416  ]
 [e :U 2417 ]
-"136
-[; ;main.c: 136: }
+"158
+[; ;main.c: 158: }
 [e :UE 2414 ]
 }
