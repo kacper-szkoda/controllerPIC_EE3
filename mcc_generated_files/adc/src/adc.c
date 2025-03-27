@@ -46,14 +46,14 @@ static void (*ADC_ThresholdCallback)(void);
 static bool adc_busy_status;
 
 extern uint16_t counter;
-extern uint8_t micData[AUDIO_SIZE];
+extern uint8_t micData[AUDIO_SIZE+32];
 extern uint8_t control_packet[32];
 extern uint8_t ctrl_ind;
 
 void saveMicData(){
     uint8_t res = (uint8_t)(ADC_ConversionResultGet() >> 4);
     if (counter != AUDIO_SIZE) {
-        micData[counter] = res;
+        micData[32+counter] = res; //leave space at the beginning for the controller data
         counter ++;
         if (counter == AUDIO_SIZE) {
 //            counter = 0;
@@ -67,7 +67,8 @@ void saveMicData(){
         }
     }
     else {  //means we are now doing the last sample
-        control_packet[ctrl_ind+2] = res;
+//        control_packet[ctrl_ind+2] = res;
+        micData[ctrl_ind+2] = res;
         ctrl_ind += 1;
         last_sample = 1;
     }

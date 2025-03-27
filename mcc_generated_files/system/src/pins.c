@@ -145,7 +145,46 @@ void PIN_MANAGER_Initialize(void)
     
 
     PIE0bits.IOCIE = 1;      
-
+    
+    IN_MIC_SetAnalogMode();
+    IN_MIC_SetDigitalInput();
+    
+    CSN_SetDigitalOutput();
+    CSN_SetDigitalMode();
+    
+    CE_SetDigitalOutput();
+    CE_SetDigitalMode();
+    
+    IR_BTN_SetAnalogMode();
+    IR_BTN_SetDigitalInput();
+    //analog input? so like anx
+    
+    IRQ_SetDigitalInput();
+    IRQ_SetDigitalMode();
+    
+    IN_BTN_SetAnalogMode();
+    IN_BTN_SetDigitalInput();
+    
+    SCK_SetDigitalOutput();
+    SCK_SetDigitalMode();
+    
+    MOSI_SetDigitalOutput();
+    MOSI_SetDigitalMode();
+    
+    MISO_SetDigitalInput();
+    MISO_SetDigitalMode();
+    
+    VRx_SetAnalogMode();
+    VRx_SetDigitalInput();
+    
+    PWR_SetDigitalMode();
+    PWR_SetDigitalOutput();
+    PWR_SetHigh();
+    
+    VRy_SetAnalogMode();
+    VRy_SetDigitalInput();
+    
+    
 }
   
 void PIN_MANAGER_IOC(void)

@@ -33,7 +33,7 @@ unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 uint8_t ready = 0;
 uint8_t irq_ready = 0;
 uint8_t done;
-uint8_t micData [AUDIO_SIZE];
+uint8_t micData [AUDIO_SIZE+32];
 uint8_t transmitted = 0;
 uint8_t last_sample = 0;
 uint8_t control_packet[32] = {'j', 'b'};
