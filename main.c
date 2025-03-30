@@ -59,26 +59,25 @@ int main(void)
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
     
-    
-//    ANSELBbits.ANSELB2 = 0; // Set RB0 as digital
-//    TRISBbits.TRISB2 = 1; //set port b as digital input for irq
-//    WPUBbits.WPUB2 = 1;    // Enable weak pull-up on RB0
-//
-////     set VCC high
-//    LATFbits.LATF3 = 1;
-//    __delay_ms(15);
-//    
-////     set CE and CSN as outputs
-////     Configure CS pin (RC3)
-//    TRISAbits.TRISA4 = 0;       // Set RC3 as output
-//    ANSELAbits.ANSELA4 = 0;     // Set RC3 as digital
-//    LATAbits.LATA4 = 0;         // Set CS high (inactive)
-//
-//    // Configure CE pin (RC2)
-//    TRISAbits.TRISA6 = 0;       // Set RC2 as output
-//    ANSELAbits.ANSELA6 = 0;     // Set RC2 as digital
-//    LATAbits.LATA6 = 0;         // Set CE high (inactive)
-//    
+        extern uint8_t irq_ready;
+        extern uint8_t ready;
+        extern uint8_t done;
+        extern uint8_t ready;
+        extern uint8_t last_sample;
+        extern uint8_t ctrl_ind;
+        extern uint8_t pins_to_sample[3];
+        extern uint8_t control_packet[32];
+        extern uint16_t counter;
+        extern uint8_t micData [AUDIO_SIZE+32];
+        
+        irq_ready = 0;
+        ready = 0;
+        done = 0;
+        ready = 0;
+        last_sample = 0;
+        ctrl_ind = 0;
+        counter = 0;
+        
     CSN = 1;
 
     SPI1_Initialize();   
@@ -97,19 +96,10 @@ int main(void)
 
     while(1)
     {
-        extern uint8_t irq_ready;
-        extern uint8_t ready;
-        extern uint8_t done;
-        extern uint8_t transmitted;
-        extern uint8_t last_sample;
-        extern uint8_t ctrl_ind;
-        extern uint8_t pins_to_sample[3];
-        extern uint8_t control_packet[32];
-        extern uint16_t counter;
-        extern uint8_t micData [AUDIO_SIZE+32]; //Something wrong with accesing array, array has values but 0s received
+
         
         if (last_sample == 1){
-            if (ctrl_ind == 3){
+            if (ctrl_ind == 3){  //this must somehow not trigger in a timely manner
                 micData[0]='j';
                 micData[1]='b';
 //                nrf24_WritePayload(&control_packet[0], 32); instead just append it to the array
@@ -117,6 +107,7 @@ int main(void)
                 ready = 1;
                 last_sample = 0;
                 ctrl_ind = 0;
+                counter = 0;
                 ADPCH = (1 << _ADPCH_PCH_POSITION);
             }
             else {
