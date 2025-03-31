@@ -183,7 +183,7 @@ void PIN_MANAGER_Initialize(void)
     
     VRy_SetAnalogMode();
     VRy_SetDigitalInput();
-    
+   
     
 }
   
