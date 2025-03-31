@@ -28,7 +28,6 @@ unsigned char nrf24_ReadRegister(unsigned char address){
     CSN = 0;
     SPI1_BufferExchange(buffer, 2);
     CSN = 1;
-    __delay_us(15);
 
     return buffer[1]; 
 }

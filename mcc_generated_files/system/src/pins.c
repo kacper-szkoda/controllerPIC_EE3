@@ -192,21 +192,18 @@ void PIN_MANAGER_IOC(void)
     extern uint8_t transmitted;
     extern uint8_t done;
     extern uint8_t index; //should be able to replace transmitted
-//    extern uint8_t packets_in_flight;
+    extern uint8_t packets_in_flight;
     extern uint8_t irq_ready;
+    
+    nrf24_WriteRegister(STATUS, (1 << 5)); //WRONG BCS MUTEXES???
     
     uint8_t temp = IOCBF;  // Read the current IOC flags
     IOCBF &= ~temp;        // Clear only the bits that were set
-//    packets_in_flight = packets_in_flight -1;
+    packets_in_flight = packets_in_flight - 1;
     
-    irq_ready = 1; //what if the other interrupts come in later? i should clear status now
-//    if (packets_in_flight == 0){
-//        ready = 1;
-//        if (index >= 63){ 
-//            index = 0;
-//            done = 1;
-//            ready = 0;
-//    }
+    if (packets_in_flight == 0){
+        ready = 1;
+    }
  }
     
     

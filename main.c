@@ -93,9 +93,7 @@ int main(void)
     TMR0_Start();
     
     while(1)
-{
-        
-        
+{    
     if (last_sample == 1)
     {
         if (ctrl_ind == 3)
@@ -106,6 +104,7 @@ int main(void)
             last_sample = 0;
             ctrl_ind = 0;
             counter = 0;
+            index = 0;
             ADPCH = (1 << _ADPCH_PCH_POSITION);
         }
         else
@@ -119,14 +118,13 @@ int main(void)
     {
         if (ready == 1)
         {
-            packets_in_flight = 0;
             for (uint8_t i = 0; i < 3; i++)
             {
                 if (index < 63)
                 {
                     nrf24_WritePayload(&micData[index * 32], 32);
+                    packets_in_flight += 1;
                     index+=1;
-                    packets_in_flight+=1;
                 }
                 else
                 {
@@ -134,28 +132,29 @@ int main(void)
                     break;
                 }
             }
-            CE = 1;    // Begin transmitting whatever we just queued
-            ready = 0; // Wait for TX_DS interrupts to signal completion
+            if (packets_in_flight > 0)
+                    {
+                        // Start TX
+                        CE = 1;
+                        ready = 0; 
+                }
+                else
+                {
+                    // No more data to send
+                    ready = 0;
+                    done = 1;
+                }
         }
         else
         {
-            if (irq_ready == 1)
+            if (done == 1)
             {
-                irq_ready = 0;
-                nrf24_WriteRegister(STATUS, (1 << 5));
-                uint8_t fifoStatus = nrf24_ReadRegister(FIFO_STATUS);
-                if (fifoStatus & (1 << 4)) 
-                {
+                done = 0;
+//                uint8_t fifoStatus = nrf24_ReadRegister(FIFO_STATUS);
                     CE = 0;
-                    if (index >= 63){
-                        ready = 0;
-                        done = 0;
-                        TMR0_Start();
-                        index = 0;
-                    }
-                    else {
-                        ready = 1;
-                    }
+                    ready = 0;
+                    index = 0;
+                    TMR0_Start();
                 }
             }
         }
@@ -163,4 +162,3 @@ int main(void)
     // maybe don't stop the timer??? for smoother audio
 }
 
-}
