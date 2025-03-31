@@ -72,7 +72,6 @@ void saveMicData(){
         ctrl_ind += 1;
         last_sample = 1;
     }
-    
 }
 void ADC_Initialize(void)
 {

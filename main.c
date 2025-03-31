@@ -40,8 +40,6 @@
 #include "mcc_generated_files/timer/tmr0.h"
 #include "mcc_generated_files/adc/adc.h"
 
-extern uint8_t ready;
-
 /*
     Main application
 */
@@ -69,6 +67,8 @@ int main(void)
         extern uint8_t control_packet[32];
         extern uint16_t counter;
         extern uint8_t micData [AUDIO_SIZE+32];
+        extern uint8_t index;
+        extern uint8_t packets_in_flight;
         
         irq_ready = 0;
         ready = 0;
@@ -77,6 +77,8 @@ int main(void)
         last_sample = 0;
         ctrl_ind = 0;
         counter = 0;
+        index = 0;
+        packets_in_flight = 0;
         
     CSN = 1;
 
@@ -84,70 +86,81 @@ int main(void)
     SPI1_Open(2);
     
     NRF24_INIT_STATUS init = nrf24_Initialize();
-    
-//    uint8_t dataToSend2[32] = {9, 100, 110, 120, 130, 140, 150, 16};
-    
+        
     nrf24_WriteRegister(0x07, (1 << 5));
     
     ADC_Enable();
     TMR0_Start();
-
-    static uint8_t index = 0;
-
+    
     while(1)
+{
+        
+        
+    if (last_sample == 1)
     {
+        if (ctrl_ind == 3)
+        {
+            micData[0] = 'j';
+            micData[1] = 'b';
+            ready = 1;
+            last_sample = 0;
+            ctrl_ind = 0;
+            counter = 0;
+            ADPCH = (1 << _ADPCH_PCH_POSITION);
+        }
+        else
+        {
+            last_sample = 0;
+            ADPCH = (uint8_t)(pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
+            ADC_ConversionStart();
+        }
+    }
+    else
+    {
+        if (ready == 1)
+        {
+            packets_in_flight = 0;
+            for (uint8_t i = 0; i < 3; i++)
+            {
+                if (index < 63)
+                {
+                    nrf24_WritePayload(&micData[index * 32], 32);
+                    index+=1;
+                    packets_in_flight+=1;
+                }
+                else
+                {
+                    // No more data to send
+                    break;
+                }
+            }
+            CE = 1;    // Begin transmitting whatever we just queued
+            ready = 0; // Wait for TX_DS interrupts to signal completion
+        }
+        else
+        {
+            if (irq_ready == 1)
+            {
+                irq_ready = 0;
+                nrf24_WriteRegister(STATUS, (1 << 5));
+                uint8_t fifoStatus = nrf24_ReadRegister(FIFO_STATUS);
+                if (fifoStatus & (1 << 4)) 
+                {
+                    CE = 0;
+                    if (index >= 63){
+                        ready = 0;
+                        done = 0;
+                        TMR0_Start();
+                        index = 0;
+                    }
+                    else {
+                        ready = 1;
+                    }
+                }
+            }
+        }
+    }
+    // maybe don't stop the timer??? for smoother audio
+}
 
-        
-        if (last_sample == 1){
-            if (ctrl_ind == 3){  //this must somehow not trigger in a timely manner
-                micData[0]='j';
-                micData[1]='b';
-//                nrf24_WritePayload(&control_packet[0], 32); instead just append it to the array
-//                CE = 1;         // Set CE high, should be handled by the interrupt of irq
-                ready = 1;
-                last_sample = 0;
-                ctrl_ind = 0;
-                counter = 0;
-                ADPCH = (1 << _ADPCH_PCH_POSITION);
-            }
-            else {
-                last_sample = 0;
-                ADPCH = (uint8_t)( pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
-                ADC_ConversionStart();
-            }
-        }
-        else {if (ready == 1){
-
-            
-            
-            //passing a pointer so just increment it like 32*i and pass that to write payload
-            //TODO write loop to wrire all 2k bytes and also write logic to only do the restart in the pin manager, do some counter with modulo
-            
-            
-            nrf24_WritePayload(&micData[index*32], 32);
-            index ++;
-            CE = 1;         // Set CE high, should be handled by the interrupt of irq
-            ready = 0;
-        }
-        
-//        else {if payload_ready == 1}
-        else {if (irq_ready == 1){
-            CE = 0;
-            nrf24_WriteRegister(STATUS, (1 << 5));
-            irq_ready = 0;
-            
-            if (done == 1){
-                ready = 0;
-                done = 0;
-                TMR0_Start();
-                index = 0;
-            }
-            else {
-                ready = 1;
-            }
-        }
-        }
-        }
-        /// maybe act dont stop the timer??? for smoother audio, 
-    }    
 }
