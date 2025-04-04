@@ -117,13 +117,13 @@ int main(void)
         if ((ready == 1 && CE == 0 && irq_ready == 0)){
             if (packets_to_send > 0){
 //                nrf24_WriteRegister(STATUS, (1 << 5));  
-                if (ind != 63){
-                        for (int i = 1; i < 30; i++) {
-                    micData[ind*32+i] = (ind * 2 + i);
-                    }
-                        micData[ind*32] = ind;
-                }
-                else {
+//                if (ind != 63){
+//                        for (int i = 1; i < 30; i++) {
+//                    micData[ind*32+i] = (ind * 2 + i);
+//                    }
+//                        micData[ind*32] = ind;
+//                }
+                if (ind == 63) {
                     for (int i = 5; i < 30; i++) {
                         micData[ind*32+i] = (ind * 2 + i);
                         }
