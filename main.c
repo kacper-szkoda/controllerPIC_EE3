@@ -57,28 +57,28 @@ int main(void)
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
     
-        extern uint8_t irq_ready;
-        extern uint8_t ready;
-        extern uint8_t done;
-        extern uint8_t ready;
-        extern uint8_t last_sample;
-        extern uint8_t ctrl_ind;
+        extern volatile uint8_t irq_ready;
+        extern volatile uint8_t ready;
+        extern volatile uint8_t done;
+        extern volatile uint8_t last_sample;
+        extern volatile uint8_t ctrl_ind;
         extern uint8_t pins_to_sample[3];
         extern uint8_t control_packet[32];
-        extern uint16_t counter;
+        extern volatile uint16_t counter;
         extern uint8_t micData [AUDIO_SIZE+32];
-        extern uint8_t index;
-        extern uint8_t packets_in_flight;
+        extern volatile uint16_t packets_to_send;
+        extern volatile uint8_t ind;
+        extern volatile enum state_t current_state;
+
         
         irq_ready = 0;
         ready = 0;
         done = 0;
-        ready = 0;
         last_sample = 0;
         ctrl_ind = 0;
         counter = 0;
-        index = 0;
-        packets_in_flight = 0;
+        current_state = STATE_SAMPLING;
+        CE = 0;
         
     CSN = 1;
 
@@ -91,74 +91,77 @@ int main(void)
     
     ADC_Enable();
     TMR0_Start();
-    
-    while(1)
-{    
-    if (last_sample == 1)
-    {
-        if (ctrl_ind == 3)
-        {
-            micData[0] = 'j';
-            micData[1] = 'b';
-            ready = 1;
-            last_sample = 0;
-            ctrl_ind = 0;
-            counter = 0;
-            index = 0;
-            ADPCH = (1 << _ADPCH_PCH_POSITION);
-        }
-        else
-        {
-            last_sample = 0;
-            ADPCH = (uint8_t)(pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
-            ADC_ConversionStart();
-        }
-    }
-    else
-    {
-        if (ready == 1)
-        {
-            for (uint8_t i = 0; i < 3; i++)
-            {
-                if (index < 63)
-                {
-                    nrf24_WritePayload(&micData[index * 32], 32);
-                    packets_in_flight += 1;
-                    index+=1;
-                }
-                else
-                {
-                    // No more data to send
-                    break;
-                }
-            }
-            if (packets_in_flight > 0)
-                    {
-                        // Start TX
-                        CE = 1;
-                        ready = 0; 
-                }
-                else
-                {
-                    // No more data to send
-                    ready = 0;
-                    done = 1;
-                }
-        }
-        else
-        {
-            if (done == 1)
-            {
-                done = 0;
-//                uint8_t fifoStatus = nrf24_ReadRegister(FIFO_STATUS);
-                    CE = 0;
-                    ready = 0;
-                    index = 0;
-                    TMR0_Start();
-                }
-            }
-        }
-    }
-    // maybe don't stop the timer??? for smoother audio
-}
 
+    while(1)
+    {
+        if (counter == AUDIO_SIZE){
+            ready = 1;
+        }
+        if (last_sample == 1 && packets_to_send == 0 && CE == 0) {
+            if (current_state == STATE_CONTROL && ctrl_ind == 3) {
+                TMR0_Stop();
+                micData[AUDIO_SIZE]   = 'j'; //never actually being sent, b is set correctly, j is not????
+                micData[AUDIO_SIZE+1] = 'b';  
+                ready = 1;
+                last_sample = 0;
+                current_state = STATE_RESET;
+                packets_to_send++;  
+                ADPCH = (uint8_t)(1 << _ADPCH_PCH_POSITION);  //i think
+            }
+            else if (current_state == STATE_CONTROL && ctrl_ind < 3) {
+                last_sample = 0;
+                ADPCH = (uint8_t)(pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
+                ADC_ConversionStart(); //act why do i only measure two things xd
+            }
+        }
+        if ((ready == 1 && CE == 0 && irq_ready == 0)){
+            if (packets_to_send > 0){
+//                nrf24_WriteRegister(STATUS, (1 << 5));  
+                if (ind != 63){
+                        for (int i = 1; i < 30; i++) {
+                    micData[ind*32+i] = (ind * 2 + i);
+                    }
+                        micData[ind*32] = ind;
+                }
+                else {
+                    for (int i = 5; i < 30; i++) {
+                        micData[ind*32+i] = (ind * 2 + i);
+                        }
+                }
+                uint8_t fifo_status = nrf24_ReadRegister(FIFO_STATUS);
+                if (!(fifo_status & (1 << 5))){
+                    nrf24_WritePayload(&micData[ind*32], 32);
+                    packets_to_send -=1;
+                    ind ++;
+                    ready = 0;
+                    CE = 1;     
+                }
+            }
+        }
+        if (irq_ready == 1){
+            CE = 0;
+            irq_ready = 0;
+            nrf24_WriteRegister(STATUS, (1 << 5));        
+
+            if (done == 1){
+                ready = 0;
+                done = 0;
+                ind = 0;
+                counter = 0;
+                packets_to_send = 0;
+                transmitted = 0;
+                irq_ready = 0;
+                last_sample = 0;
+                ctrl_ind = 0;
+                counter = 0;
+        
+                current_state = STATE_SAMPLING;
+                TMR0_Start();
+            }
+            else {
+                ready = 1;
+            }
+        }
+        }
+        }
+        /// maybe act dont stop the timer??? for smoother audio,   

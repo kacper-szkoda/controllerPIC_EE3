@@ -30,18 +30,26 @@
 unsigned char RXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 unsigned char TXPIPE0[5] = {0xE7,0xE7,0xE7,0xE7,0xE7};
 
-uint8_t ready = 0;
-uint8_t irq_ready = 0;
-uint8_t done;
+enum state_t {
+    STATE_SAMPLING,
+    STATE_CONTROL,
+    STATE_TRANSMITTING,
+    STATE_RESET
+};
+
+uint8_t volatile ready = 0;
+uint8_t volatile irq_ready = 0;
+uint8_t volatile done;
 uint8_t micData [AUDIO_SIZE+32];
-uint8_t transmitted = 0;
-uint8_t last_sample = 0;
+uint8_t volatile transmitted = 0;
+uint8_t volatile last_sample = 0;
 uint8_t control_packet[32] = {'j', 'b'};
-uint8_t ctrl_ind;
+uint8_t volatile ctrl_ind;
 uint8_t pins_to_sample[3] = { 0x19, 0x2B, 0x10}; //write what to change the value of the port to be, rx, ry, btn
-uint16_t counter;
-uint8_t index = 0;
-uint8_t packets_in_flight = 0;
+uint16_t volatile counter;
+uint16_t volatile packets_to_send = 0;
+uint8_t volatile ind;
+volatile enum state_t current_state;
 
 // nrf24 status 
 typedef enum{

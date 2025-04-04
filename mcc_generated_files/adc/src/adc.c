@@ -45,36 +45,51 @@ static void (*ADC_ConversionDoneCallback)(void);
 static void (*ADC_ThresholdCallback)(void);
 static bool adc_busy_status;
 
-extern uint16_t counter;
+extern volatile uint16_t counter;
 extern uint8_t micData[AUDIO_SIZE+32];
 extern uint8_t control_packet[32];
-extern uint8_t ctrl_ind;
+extern volatile uint8_t ctrl_ind;
+extern volatile uint16_t packets_to_send;
+extern volatile uint8_t last_sample;
+
+
+
+extern volatile enum state_t current_state;
 
 void saveMicData(){
     uint8_t res = (uint8_t)(ADC_ConversionResultGet() >> 4);
-    if (counter != AUDIO_SIZE) {
-        micData[32+counter] = res; //leave space at the beginning for the controller data
-        counter ++;
-        if (counter == AUDIO_SIZE) {
-//            counter = 0;
-            extern uint8_t ready;
-            extern uint8_t last_sample;
-//            ready = 1;
-            last_sample = 1;  //write some code
+    
+    if (current_state == STATE_SAMPLING) {
+        // Save audio sample
+        micData[counter] = res;
+        counter++;
+        
+        if (counter % 32 == 0){
+            packets_to_send++;
+            ready = 1;
         }
-        else {
+        
+        if (counter == AUDIO_SIZE) {
+            // Transition to control sample collection
+            TMR0_Stop();
+            current_state = STATE_CONTROL;
+            last_sample = 1;
+//            packets_to_send++;
+//            ready = 1;
+        } else {
             TMR0_Start();
         }
     }
-    else {  //means we are now doing the last sample
-//        control_packet[ctrl_ind+2] = res;
-        micData[ctrl_ind+2] = res;
-        ctrl_ind += 1;
+    else if (current_state == STATE_CONTROL) {
+        // Collect control sample
+        micData[AUDIO_SIZE + ctrl_ind + 2] = res;
+        ctrl_ind++;
         last_sample = 1;
     }
 }
 void ADC_Initialize(void)
 {
+    
     ADCON0bits.ADON = ADC_BIT_CLEAR;
     ADLTHL = (0 << _ADLTHL_ADLTH_POSITION);	/* ADLTH 0x0(0) */
     ADLTHH = (0 << _ADLTHH_ADLTH_POSITION);	/* ADLTH 0x0(0) */

@@ -189,25 +189,23 @@ void PIN_MANAGER_Initialize(void)
   
 void PIN_MANAGER_IOC(void)
 {
-    extern uint8_t transmitted;
-    extern uint8_t done;
-    extern uint8_t index; //should be able to replace transmitted
-    extern uint8_t packets_in_flight;
-    extern uint8_t irq_ready;
-    
-    nrf24_WriteRegister(STATUS, (1 << 5)); //WRONG BCS MUTEXES???
-    
+    extern volatile uint8_t transmitted;
+    extern volatile uint8_t done;
+    extern volatile uint8_t ind;
     uint8_t temp = IOCBF;  // Read the current IOC flags
     IOCBF &= ~temp;        // Clear only the bits that were set
-    packets_in_flight = packets_in_flight - 1;
     
-    if (packets_in_flight == 0){
-        ready = 1;
+    extern volatile uint8_t irq_ready;
+    
+    CE = 0;
+    irq_ready = 1;
+    
+    transmitted += 1;
+    if (transmitted == 64){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
+        //64 to include the first send of controls
+        done = 1;
     }
- }
-    
-    
-
+}
 /**
  End of File
 */
