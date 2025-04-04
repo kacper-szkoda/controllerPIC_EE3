@@ -189,21 +189,21 @@ void PIN_MANAGER_Initialize(void)
   
 void PIN_MANAGER_IOC(void)
 {
-    extern uint8_t transmitted;
-    extern uint8_t done;
+    extern volatile uint8_t transmitted;
+    extern volatile uint8_t done;
+    extern volatile uint8_t ind;
     uint8_t temp = IOCBF;  // Read the current IOC flags
     IOCBF &= ~temp;        // Clear only the bits that were set
     
-    extern uint8_t irq_ready;
+    extern volatile uint8_t irq_ready;
+    
+    CE = 0;
     irq_ready = 1;
-    if (transmitted == 63){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
+    
+    transmitted += 1;
+    if (transmitted == 64){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
         //64 to include the first send of controls
-        transmitted = 0;
         done = 1;
-        ready = 0;
-    }
-    else {
-        transmitted ++;
     }
 }
 /**

@@ -14,12 +14,10 @@
 
 void nrf24_WriteRegister(unsigned char address, unsigned char value){
         uint8_t fulladd = (W_REGISTER | (address & 0x1F));
-
         uint8_t buffer[2] = {fulladd, value};
         CSN = 0;
         SPI1_BufferExchange(buffer, 2);
         CSN = 1;
-        __delay_us(10000);
 }
 
 unsigned char nrf24_ReadRegister(unsigned char address){
@@ -28,8 +26,6 @@ unsigned char nrf24_ReadRegister(unsigned char address){
     CSN = 0;
     SPI1_BufferExchange(buffer, 2);
     CSN = 1;
-    __delay_us(15);
-
     return buffer[1]; 
 }
 
@@ -76,18 +72,19 @@ NRF24_INIT_STATUS nrf24_Initialize() {
     nrf24_WriteRegister(SETUP_RETR, 0x00);       // Disable retransmit
     nrf24_WriteRegister(RF_CH, 0x77);            // Set channel to 2519 MHz
     nrf24_WriteRegister(STATUS, 0x70);           // Clear interrupt flags
+        nrf24_WriteRegister(EN_AA, 0x00);
+        CSN = 0;
+        SPI1_ByteExchange(0xE1);
+        CSN = 1;
+    
+    nrf24_WriteRegister(0xE1, 0);
 //    nrf24_WriteRegister(RX_PW_P0, PAYLOAD_SIZE); // Set payload size                    SHOULD BE TX????????
 //    nrf24_WriteBuffer(RX_ADDR_P0, RXPIPE0, 5);   // Set RX address
     nrf24_WriteBuffer(TX_ADDR, TXPIPE0, 5);      // Set TX address maybe wrong?         doesnt match the ds
-    nrf24_WriteRegister(EN_AA, 0x00);
 
     // Validate basic initialization
     uint8_t stat = nrf24_ReadRegister(CONFIG);
     uint8_t fifostat_not = nrf24_ReadRegister(FIFO_STATUS);
-    CSN = 0;                            // Pull CSN low
-    SPI1_ByteWrite(FLUSH_TX);           // Send the flush command (0xE1)
-    CSN = 1;                            // Release CSN
-    __delay_us(10); 
 
     if (stat & (1 << 1)) { // Check if PWR_UP bit is set
         return NRF24_INIT_OK;
