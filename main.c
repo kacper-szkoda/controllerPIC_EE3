@@ -32,7 +32,6 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-//#pragma config WDTE = OFF
 
 #include "mcc_generated_files/system/system.h"
 #include "mcc_generated_files/system/pins.h"
@@ -126,7 +125,7 @@ int main(void)
                 if (ind == 63) {
                     for (int i = 5; i < 30; i++) {
                         micData[ind*32+i] = (ind * 2 + i);
-                        }
+                        } //to avoid duplicate detection
                 }
                 uint8_t fifo_status = nrf24_ReadRegister(FIFO_STATUS);
                 if (!(fifo_status & (1 << 5))){

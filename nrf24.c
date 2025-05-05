@@ -1,6 +1,6 @@
 /* 
  * File:   nrf24.c
- * Author: Marie Berx
+ * Author: Marie Berx, Kacper Szkoda
  * 
  * Inspired from the functions in the .h file of Noyel
  * debugged using chatGPT
@@ -78,8 +78,6 @@ NRF24_INIT_STATUS nrf24_Initialize() {
         CSN = 1;
     
     nrf24_WriteRegister(0xE1, 0);
-//    nrf24_WriteRegister(RX_PW_P0, PAYLOAD_SIZE); // Set payload size                    SHOULD BE TX????????
-//    nrf24_WriteBuffer(RX_ADDR_P0, RXPIPE0, 5);   // Set RX address
     nrf24_WriteBuffer(TX_ADDR, TXPIPE0, 5);      // Set TX address maybe wrong?         doesnt match the ds
 
     // Validate basic initialization
@@ -92,8 +90,6 @@ NRF24_INIT_STATUS nrf24_Initialize() {
         return NRF24_INIT_FAILED;
     }
 }
-
-
 
 void nrf24_SetMode(NRF24_OPERATION_MODE mode){
     if (mode == TX_MODE) {
