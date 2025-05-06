@@ -157,7 +157,6 @@ void PIN_MANAGER_Initialize(void)
     
     IR_BTN_SetAnalogMode();
     IR_BTN_SetDigitalInput();
-    //analog input? so like anx
     
     IRQ_SetDigitalInput();
     IRQ_SetDigitalMode();
@@ -201,8 +200,7 @@ void PIN_MANAGER_IOC(void)
     irq_ready = 1;
     
     transmitted += 1;
-    if (transmitted == 64){ //check if you shouldnt stop at 63, dont send prog memory pls, dont hardcode, use floor division or smth
-        //64 to include the first send of controls
+    if (transmitted == 64){ 
         done = 1;
     }
 }

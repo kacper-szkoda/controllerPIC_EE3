@@ -56,28 +56,27 @@ int main(void)
     // Disable the Global Interrupts 
     //INTERRUPT_GlobalInterruptDisable(); 
     
-        extern volatile uint8_t irq_ready;
-        extern volatile uint8_t ready;
-        extern volatile uint8_t done;
-        extern volatile uint8_t last_sample;
-        extern volatile uint8_t ctrl_ind;
-        extern uint8_t pins_to_sample[3];
-        extern uint8_t control_packet[32];
-        extern volatile uint16_t counter;
-        extern uint8_t micData [AUDIO_SIZE+32];
-        extern volatile uint16_t packets_to_send;
-        extern volatile uint8_t ind;
-        extern volatile enum state_t current_state;
+    extern volatile uint8_t irq_ready;
+    extern volatile uint8_t ready;
+    extern volatile uint8_t done;
+    extern volatile uint8_t last_sample;
+    extern volatile uint8_t ctrl_ind;
+    extern uint8_t pins_to_sample[3];
+    extern uint8_t control_packet[32];
+    extern volatile uint16_t counter;
+    extern uint8_t micData [AUDIO_SIZE+32];
+    extern volatile uint16_t packets_to_send;
+    extern volatile uint8_t ind;
+    extern volatile enum state_t current_state;
 
-        
-        irq_ready = 0;
-        ready = 0;
-        done = 0;
-        last_sample = 0;
-        ctrl_ind = 0;
-        counter = 0;
-        current_state = STATE_SAMPLING;
-        CE = 0;
+    irq_ready = 0;
+    ready = 0;
+    done = 0;
+    last_sample = 0;
+    ctrl_ind = 0;
+    counter = 0;
+    current_state = STATE_SAMPLING;
+    CE = 0;
         
     CSN = 1;
 
@@ -85,7 +84,7 @@ int main(void)
     SPI1_Open(2);
     
     NRF24_INIT_STATUS init = nrf24_Initialize();
-        
+    
     nrf24_WriteRegister(0x07, (1 << 5));
     
     ADC_Enable();
@@ -99,29 +98,22 @@ int main(void)
         if (last_sample == 1 && packets_to_send == 0 && CE == 0) {
             if (current_state == STATE_CONTROL && ctrl_ind == 3) {
                 TMR0_Stop();
-                micData[AUDIO_SIZE]   = 'j'; //never actually being sent, b is set correctly, j is not????
+                micData[AUDIO_SIZE]   = 'j';
                 micData[AUDIO_SIZE+1] = 'b';  
                 ready = 1;
                 last_sample = 0;
                 current_state = STATE_RESET;
                 packets_to_send++;  
-                ADPCH = (uint8_t)(1 << _ADPCH_PCH_POSITION);  //i think
+                ADPCH = (uint8_t)(1 << _ADPCH_PCH_POSITION); 
             }
             else if (current_state == STATE_CONTROL && ctrl_ind < 3) {
                 last_sample = 0;
                 ADPCH = (uint8_t)(pins_to_sample[ctrl_ind] << _ADPCH_PCH_POSITION);
-                ADC_ConversionStart(); //act why do i only measure two things xd
+                ADC_ConversionStart(); 
             }
         }
         if ((ready == 1 && CE == 0 && irq_ready == 0)){
             if (packets_to_send > 0){
-//                nrf24_WriteRegister(STATUS, (1 << 5));  
-//                if (ind != 63){
-//                        for (int i = 1; i < 30; i++) {
-//                    micData[ind*32+i] = (ind * 2 + i);
-//                    }
-//                        micData[ind*32] = ind;
-//                }
                 if (ind == 63) {
                     for (int i = 5; i < 30; i++) {
                         micData[ind*32+i] = (ind * 2 + i);
@@ -163,4 +155,3 @@ int main(void)
         }
         }
         }
-        /// maybe act dont stop the timer??? for smoother audio,   
